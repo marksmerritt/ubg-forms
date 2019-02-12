@@ -1,24 +1,8 @@
-# README
+[![Maintainability](https://api.codeclimate.com/v1/badges/e73ba378ceca2ab5d179/maintainability)](https://codeclimate.com/github/marksmerritt/united-masonry/maintainability)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# United Masonry
 
-Things you may want to cover:
+A saftey management system for United Masonry Inc
 
-* Ruby version
+[View it Live](https://unitedmasonry.herokuapp.com/)
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
