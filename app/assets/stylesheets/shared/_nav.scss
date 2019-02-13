@@ -1,0 +1,37 @@
+.nav {
+  height: 7rem;
+  padding: 0 25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: $color-white;
+
+  &__links {
+    flex: 1;
+    margin-left: 10rem;
+    display: flex;
+    list-style: none;
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-right: 3rem;
+    }
+  }
+
+  &__link {
+    color: $color-black;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 1.4rem;
+  }
+
+  &__contact-btn {
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 1.4rem;
+    border: 1px solid currentColor;
+    padding: .5rem 1rem;
+    border-radius: 2rem;  
+  }
+}
