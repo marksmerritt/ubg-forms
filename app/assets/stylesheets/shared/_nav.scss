@@ -1,6 +1,6 @@
 .nav {
   height: 7rem;
-  padding: 0 25rem;
+  padding: 0 15rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -19,18 +19,16 @@
     }
   }
 
-  &__link {
-    color: $color-black;
-    text-transform: uppercase;
-    font-weight: 600;
-    font-size: 1.4rem;
-  }
-
+  &__link,
   &__contact-btn {
     text-transform: uppercase;
     font-weight: 600;
     font-size: 1.4rem;
-    border: 1px solid currentColor;
+    color: $color-black;
+  }
+
+  &__contact-btn {
+    border: 2px solid currentColor;
     padding: .5rem 1rem;
     border-radius: 2rem;  
   }
