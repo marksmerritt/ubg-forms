@@ -1,14 +1,18 @@
-.hero {
-  height: 100vh;
-  opacity: .8;
-  background-image: linear-gradient(to bottom right, #E1E2E4, #fff);
+//------------------ Image Slider ------------------//
+
+.img-container {
+  height: 60vh;
+
+  &__img {
+    width:100%;
+  }
 }
 
-.cropped-bldg {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 60%;
-  filter: brightness(110%);
+.slick-dots {
+  bottom: 2rem;  
 }
 
+.slick-dots li button:before {
+    font-size: 1.5rem;
+    color: $color-white;
+}
