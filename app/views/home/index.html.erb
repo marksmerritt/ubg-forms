@@ -1,11 +1,67 @@
-<div class="slide-show">
-  <div class="img-container">
-    <%= image_tag("slide1.jpg", class: "img-container__img") %>
+<!-- TODO: 
+- Replace sldier images
+- Give slider images opacity
+- Add text on top of slider images
+-->
+
+<div class="home">
+  <div class="slide-show">
+    <div class="img-container">
+      <%= image_tag("slide1.jpg", class: "img-container__img") %>
+    </div>
+    <div class="img-container">
+      <%= image_tag("slide2.jpg", class: "img-container__img") %>
+    </div>
+    <div class="img-container">
+      <%= image_tag("slide3.jpg", class: "img-container__img") %>
+    </div>
   </div>
-  <div class="img-container">
-    <%= image_tag("slide2.jpg", class: "img-container__img") %>
-  </div>
-  <div class="img-container">
-    <%= image_tag("slide3.jpg", class: "img-container__img") %>
-  </div>
+  
+  <!------------------ About Us Section ------------------>
+
+  <!------------------ Services Section ------------------>
+
+  <section class="services">
+    <div class="services__header">
+      <h3 class="services__heading">Our Services</h3>
+      <p class="services__desc">
+        From large high-rise structures to small retail establishments, our work can be seen from Maryland to the Carolinas.
+      </p>
+    </div>
+
+    <div class="service-cards">
+
+      <div class="service-card">
+        <%= image_tag("services1.jpg", class: "service-card__img") %>
+        <div class="service-card__bottom">
+          <%= display_icon("office", "service-card__icon") %>
+          <div class="service-card__desc">
+            <h4>Commercial</h4>
+          </div>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <%= image_tag("services2.jpg", class: "service-card__img") %>
+        <div class="service-card__bottom">
+          <%= display_icon("home", "service-card__icon") %>
+          <h4>Residential</h4>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <%= image_tag("services3.jpg", class: "service-card__img") %>
+        <div class="service-card__bottom">
+          <%= display_icon("store-front", "service-card__icon") %>
+          <h4>Retail</h4>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!------------------ Projects Section ------------------>
+
+  <!------------------ News Section ------------------>
+
+  <!------------------ Careers Section ------------------>
 </div>

@@ -1,9 +1,14 @@
+<!-- TODO: 
+  - Replace h1 with UM Logo
+  - Link to appropriate pages
+  - add more contact links 
+-->
 <div class="nav">
   <div class="nav__logo-box">
-    <h1>UM</h1>
+    <h1 class="nav__logo">UM</h1>
   </div>
 
-  <ul class="nav__links">
+  <ul class="nav__items">
     <li class="nav__item">
       <a href="#" class="nav__link">About Us</a>
     </li>
@@ -14,11 +19,16 @@
       <a href="#" class="nav__link">Projects</a>
     </li>
     <li class="nav__item">
-      <a href="#" class="nav__link">Projects</a>
+      <a href="#" class="nav__link">News</a>
+    </li>
+    <li class="nav__item">
+      <a href="#" class="nav__link">Careers</a>
     </li>
   </ul>
-
-  <div class="nav__contact">
-    <%= link_to "Contact Us", root_path, class: "nav__contact-btn" %>
+  
+  <div class="nav__contacts">
+    <%= link_to root_path do %>
+      <%= display_icon("mail", "nav__contact-icon") %>
+    <% end %>
   </div>
 </div>

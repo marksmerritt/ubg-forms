@@ -1,35 +1,46 @@
 .nav {
-  height: 7rem;
+  position: relative;
+  z-index: 100;
+  height: $height-nav-bar;
   padding: 0 15rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
   background-color: $color-white;
+  box-shadow: 0 2rem 6rem rgba(0, 0, 0, .3);
+  
+  &__logo {
+    color: $color-primary;
+    font-size: 5rem;
+  }
 
-  &__links {
+  &__items {
     flex: 1;
-    margin-left: 10rem;
+    margin-left: 8rem;
     display: flex;
     list-style: none;
   }
 
   &__item {
     &:not(:last-child) {
-      margin-right: 3rem;
+      margin-right: 5rem;
     }
   }
 
-  &__link,
-  &__contact-btn {
+  &__link {
     text-transform: uppercase;
     font-weight: 600;
     font-size: 1.4rem;
-    color: $color-black;
+    color: $color-grey-dark-1;
+  }
+  
+  &__contacts {
+    display: flex;
   }
 
-  &__contact-btn {
-    border: 2px solid currentColor;
-    padding: .5rem 1rem;
-    border-radius: 2rem;  
+  &__contact-icon {
+    display: block;
+    width: 2.5rem;
+    fill: $color-grey-dark-1;
   }
 }
