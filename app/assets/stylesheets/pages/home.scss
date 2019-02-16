@@ -87,15 +87,15 @@
     height: 17rem;
 
     &--first {
-      background-image: url("services1.jpg");
+      background-image: asset_url("services1.jpg");
     }
 
     &--second {
-      background-image: url("services2.jpg");
+      background-image: asset_url("services2.jpg");
     }
 
     &--third {
-      background-image: url("services3.jpg");
+      background-image: asset_url("services3.jpg");
     }
   }
 
