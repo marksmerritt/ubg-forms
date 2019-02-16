@@ -3,8 +3,8 @@
   
   //------ Home Buttons ------//
   
-  &--section-cta,
-  &--service-card-back {
+  &--lg,
+  &--md {
     font-weight: 600;
     font-size: 1.8rem;
     color: $color-secondary;
@@ -17,14 +17,13 @@
     }
   }  
 
-  &--section-cta {
+  &--lg {
     padding: 1rem 4rem;
   }
 
-  &--service-card-back {
+  &--md {
     padding: .5rem 2rem;
   }
-  
 
   //------ Hover arrows ------//
 

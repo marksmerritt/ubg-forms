@@ -16,8 +16,29 @@
       <%= image_tag("slide3.jpg", class: "img-container__img") %>
     </div>
   </div>
-  
+
   <!------------------ About Us Section ------------------>
+  <section class="about-us">
+    <h3 class="about-us__heading">About Us</h3>
+    <div class="about-us__content">
+      <div class="about-us__desc">
+        <h4 class="about-us__subheading">
+          We Like Doing A Lot Of Stuff 
+        </h4>
+        <p class="about-us__text">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam alias sunt laboriosam iure recusandae, ullam modi mollitia, veniam eligendi eum ab temporibus praesentium eveniet accusamus amet rerum nam maxime corporis!
+        </p>
+        <%= link_to root_path, class: "btn btn--md" do %>
+          <%= content_tag(:span, "Our Services") %>
+        <% end %>
+      </div>
+      <div class="about-us__image-box">
+        <div class="about-us__img-bg">&nbsp;</div>
+        <%= image_tag("services1.jpg", class: "about-us__img") %>
+      </div>
+    </div>
+  </section>
+
 
   <!------------------ Services Section ------------------>
 
@@ -28,13 +49,14 @@
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores quam eveniet voluptatum, eos eius possimus quo!
       </p>
     </div>
-    
-    <%= render "service_cards" %>
-    
-    <div class="link">
-      <%= link_to root_path, class: "btn btn--section-cta" do %>
-        <%= content_tag(:span, "View All Services") %>
-      <% end %>
+    <div class="services__content">
+      <%= render "service_cards" %>
+      
+      <div class="link">
+        <%= link_to root_path, class: "btn btn--lg" do %>
+          <%= content_tag(:span, "View All Services") %>
+        <% end %>
+      </div>
     </div>
   </section>
 
