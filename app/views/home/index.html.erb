@@ -25,37 +25,16 @@
     <div class="services__header">
       <h3 class="services__heading">Our Services</h3>
       <p class="services__desc">
-        From large high-rise structures to small retail establishments, our work can be seen from Maryland to the Carolinas.
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores quam eveniet voluptatum, eos eius possimus quo!
       </p>
     </div>
-
-    <div class="service-cards">
-
-      <div class="service-card">
-        <%= image_tag("services1.jpg", class: "service-card__img") %>
-        <div class="service-card__bottom">
-          <%= display_icon("office", "service-card__icon") %>
-          <div class="service-card__desc">
-            <h4>Commercial</h4>
-          </div>
-        </div>
-      </div>
-
-      <div class="service-card">
-        <%= image_tag("services2.jpg", class: "service-card__img") %>
-        <div class="service-card__bottom">
-          <%= display_icon("home", "service-card__icon") %>
-          <h4>Residential</h4>
-        </div>
-      </div>
-
-      <div class="service-card">
-        <%= image_tag("services3.jpg", class: "service-card__img") %>
-        <div class="service-card__bottom">
-          <%= display_icon("store-front", "service-card__icon") %>
-          <h4>Retail</h4>
-        </div>
-      </div>
+    
+    <%= render "service_cards" %>
+    
+    <div class="link">
+      <%= link_to root_path, class: "btn btn--section-cta" do %>
+        <%= content_tag(:span, "View All Services") %>
+      <% end %>
     </div>
   </section>
 

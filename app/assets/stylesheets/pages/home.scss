@@ -19,20 +19,13 @@
 .services {
   position: relative;
   max-width: 90%;
+  padding: 5rem 0;
   margin: -15rem auto;
   border-radius: .5rem;
   overflow-x: hidden;
   background-color: $color-grey-light-3;
   box-shadow: 0 2rem 5rem rgba(0,0,0,.06);
-  padding-bottom: 15rem;
-  
-  &__header {
-    text-align: center;
-  }
-
-  &__heading {
-    margin-top: 5rem; 
-  }
+  text-align: center;
 
   &__desc {
     width: 70%;
@@ -41,47 +34,97 @@
   }
 }
 
+//--------- Service Cards ---------//
+
 .service-cards {
-  margin: 5rem 0;
-  padding: 0 7rem;
+  padding: 7rem;
   display: flex;
+  justify-content: space-between;
 }
 
 .service-card {
-  height: 25rem;
-  border-radius: 1rem;
-  box-shadow: 0 1rem 4rem rgba(0,0,0,.18);
-  overflow: hidden;
+  height: 37rem;
+  position: relative;
+  perspective: 200rem;
+  flex-basis: 33.333%;
+  margin-right: 2rem;
 
-  &:not(:last-child) {
-    margin-right: 3.5rem;
+  &__side {
+    height: 37rem;
+    width: 100%;
+    transition: all 1s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    backface-visibility: hidden;
+    border-radius: .5rem;
+    overflow: hidden;
+    box-shadow: 0 1.5rem 4rem rgba($color-grey-dark-1, .15);
+
+    &--front {
+      background-color: $color-white;
+    }
+
+    &--back {
+      background-color: $color-grey-light-1;
+      transform: rotateY(180deg);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  &:hover &__side--front {
+    transform: rotateY(-180deg);
+  }
+
+  &:hover &__side--back {
+    transform: rotateY(0deg);
   }
 
   &__img {
-    width: 100%;
-    height: 60%;
+    background-size: cover;
+    height: 17rem;
+
+    &--first {
+      background-image: url("services1");
+    }
+
+    &--second {
+      background-image: url("services2");
+    }
+
+    &--third {
+      background-image: url("services3");
+    }
   }
 
-  &__bottom {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 1rem;
+  &__title {
+    padding: 1.5rem;
+    font-size: 2.3rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: $color-secondary;
   }
 
-  &__icon {
-    margin-right: 1rem;
-    width: 2rem;
-    height: 2rem;
-    fill: $color-secondary;
-  }
+  &__details {
 
-  &__heading {
+    ul {
+      width: 70%;
+      margin: 0 auto;
+      list-style: none;
 
-  }
+      li {
+        text-align: center;
+        font-size: 1.5rem;
+        color: $color-grey-dark-2;
+        padding: .5rem 0;
 
-  &__text {
-
+        &:not(:last-child){
+          border-bottom: 1px solid $color-grey-light;
+        }
+      }
+    }
   }
 }
 

@@ -1,0 +1,55 @@
+.btn {
+  cursor: pointer;
+  
+  //------ Home Buttons ------//
+  
+  &--section-cta,
+  &--service-card-back {
+    font-weight: 600;
+    font-size: 1.8rem;
+    color: $color-secondary;
+    border: .2rem solid currentColor;
+    border-radius: 3rem;
+
+    &:hover {
+      color: $color-primary;
+      border-color: $color-primary;
+    }
+  }  
+
+  &--section-cta {
+    padding: 1rem 4rem;
+  }
+
+  &--service-card-back {
+    padding: .5rem 2rem;
+  }
+  
+
+  //------ Hover arrows ------//
+
+  span {
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+
+    &::after {
+      content: '\00bb';
+      position: absolute;
+      opacity: 0;
+      top: 0;
+      right: -2rem;
+    }
+  }
+
+  &:hover span {
+    padding-right: 2.5rem;
+  }
+
+  &:hover {
+    span:after {
+      opacity: 1;
+      right: 0;
+    }
+  }
+}
