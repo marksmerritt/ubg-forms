@@ -6,24 +6,24 @@
 
   &__header {
     max-width: 100%;
-    background-color: #E0E0E0;
-    padding: 5rem 0;
+    background-color: #F0F0F0;
+    padding: 2rem 0 4rem 0;
+  }
 
-    &__heading {
-    
-    }
+  &__heading {
+  
+  }
 
-    &__desc {
-      width: 70%;
-      margin: 0 auto;
-      font-size: 2rem;
-    }
+  &__desc {
+    max-width: 60%;
+    margin: 0 auto;
+    font-size: 2rem;
   }
 
   &__content {
     max-width: 90%;
     margin: 0 auto;
-    background-color: $color-grey-light-2;
+    background-color: $color-white;
     padding: 6rem 5rem 15rem 5rem;
   }
 
