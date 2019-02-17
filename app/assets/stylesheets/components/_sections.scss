@@ -1,0 +1,33 @@
+.section {
+  margin: 0 auto;
+  position: relative;
+  box-shadow: 0 2rem 5rem rgba(0,0,0,.06);
+  text-align: center; 
+
+  &__header {
+    max-width: 100%;
+    background-color: #E0E0E0;
+    padding: 5rem 0;
+
+    &__heading {
+    
+    }
+
+    &__desc {
+      width: 70%;
+      margin: 0 auto;
+      font-size: 2rem;
+    }
+  }
+
+  &__content {
+    max-width: 90%;
+    margin: 0 auto;
+    background-color: $color-grey-light-2;
+    padding: 6rem 5rem 15rem 5rem;
+  }
+
+  &__btn-cta {
+    margin-top: 8rem;
+  }
+}

@@ -4,21 +4,21 @@
 - Add text on top of slider images
 -->
 
-<div class="home">
+<div id="home">
   <div class="slide-show">
-    <div class="img-container">
-      <%= image_tag("slide1.jpg", class: "img-container__img") %>
+    <div class="slide-show__img-container">
+      <%= image_tag("slide1.jpg", class: "slide-show__img") %>
     </div>
-    <div class="img-container">
-      <%= image_tag("slide2.jpg", class: "img-container__img") %>
+    <div class="slide-show__img-container">
+      <%= image_tag("slide2.jpg", class: "slide-show__img") %>
     </div>
-    <div class="img-container">
-      <%= image_tag("slide3.jpg", class: "img-container__img") %>
+    <div class="slide-show__img-container">
+      <%= image_tag("slide3.jpg", class: "slide-show__img") %>
     </div>
   </div>
 
   <!------------------ About Us Section ------------------>
-  <section class="about-us">
+  <section id="about-us" class="about-us">
     <h3 class="about-us__heading">About Us</h3>
     <div class="about-us__content">
       <div class="about-us__desc">
@@ -33,7 +33,6 @@
         <% end %>
       </div>
       <div class="about-us__image-box">
-        <div class="about-us__img-bg">&nbsp;</div>
         <%= image_tag("services1.jpg", class: "about-us__img") %>
       </div>
     </div>
@@ -42,17 +41,17 @@
 
   <!------------------ Services Section ------------------>
 
-  <section class="services">
-    <div class="services__header">
-      <h3 class="services__heading">Our Services</h3>
-      <p class="services__desc">
+  <section id="services" class="section">
+    <div class="section__header">
+      <h3 class="section__heading">Services</h3>
+      <p class="section__desc">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores quam eveniet voluptatum, eos eius possimus quo!
       </p>
     </div>
-    <div class="services__content">
+    <div class="section__content">
       <%= render "service_cards" %>
       
-      <div class="link">
+      <div class="section__btn-cta">
         <%= link_to root_path, class: "btn btn--lg" do %>
           <%= content_tag(:span, "View All Services") %>
         <% end %>
@@ -61,7 +60,52 @@
   </section>
 
   <!------------------ Projects Section ------------------>
+  <section id="projects" class="section">
+    <div class="section__header">
+      <h3 class="section__heading">Projects</h3>
+      <p class="section__desc">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores quam eveniet voluptatum, eos eius possimus quo!
+      </p>
+    </div>
+    <div class="section__content">
 
+      <div class="gallery">
+        <figure class="gallery__item gallery__item--1">
+          <%= image_tag("services1.jpg", class: "gallery__img") %>
+        </figure>
+        <figure class="gallery__item gallery__item--2">
+          <%= image_tag("services2.jpg", class: "gallery__img") %>
+        </figure>
+        <figure class="gallery__item gallery__item--3">
+          <%= image_tag("services3.jpg", class: "gallery__img") %>
+        </figure>
+        <figure class="gallery__item gallery__item--4">
+          <%= image_tag("services1.jpg", class: "gallery__img") %>
+        </figure>
+        <figure class="gallery__item gallery__item--5">
+          <%= image_tag("services2.jpg", class: "gallery__img") %>
+        </figure>
+        <figure class="gallery__item gallery__item--6">
+          <%= image_tag("services3.jpg", class: "gallery__img") %>
+        </figure>
+        <figure class="gallery__item gallery__item--7">
+          <%= image_tag("services1.jpg", class: "gallery__img") %>
+        </figure>
+        <figure class="gallery__item gallery__item--8">
+          <%= image_tag("services2.jpg", class: "gallery__img") %>
+        </figure>
+        <figure class="gallery__item gallery__item--9">
+          <%= image_tag("services3.jpg", class: "gallery__img") %>
+        </figure>
+      </div>
+      
+      <div class="section__btn-cta">
+        <%= link_to root_path, class: "btn btn--lg" do %>
+          <%= content_tag(:span, "View All Projects") %>
+        <% end %>
+      </div>
+    </div>
+  </section>
   <!------------------ News Section ------------------>
 
   <!------------------ Careers Section ------------------>

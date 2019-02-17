@@ -10,6 +10,7 @@
     color: $color-secondary;
     border: .2rem solid currentColor;
     border-radius: 3rem;
+    transition: all .2s;
 
     &:hover {
       color: $color-primary;

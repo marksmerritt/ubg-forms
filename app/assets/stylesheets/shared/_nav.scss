@@ -36,11 +36,14 @@
   
   &__contacts {
     display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   &__contact-icon {
     display: block;
     width: 2.5rem;
+    height: 2.5rem;
     fill: $color-grey-dark-1;
   }
 }
