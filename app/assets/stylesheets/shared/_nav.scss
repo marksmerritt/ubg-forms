@@ -22,16 +22,44 @@
   }
 
   &__item {
+    position: relative;
+
     &:not(:last-child) {
       margin-right: 5rem;
     }
   }
 
-  &__link {
+  &__item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: .3rem;
+    background-color: rgba($color-primary, .8);
+    transform: scaleY(0);
+    transition: transform .4s;
+  }
+
+  &__item:hover::before {
+    transform: scaleY(1.2);
+    width: 100%;
+  }
+
+  &__link:link,
+  &__link:visited {
+    position: relative;
+    z-index: 10;
+    display: block;
     text-transform: uppercase;
     font-weight: 600;
     font-size: 1.4rem;
     color: $color-grey-dark-1;
+    padding: 1.3rem;
+  }
+
+  &__link:hover {
+    color: $color-white;
   }
   
   &__contacts {

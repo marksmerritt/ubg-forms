@@ -61,11 +61,6 @@
     width: 30vw;
     height: 20vw;
     box-shadow: 2vw -2vw 0 0 rgba($color-primary, 0.7);
-    transition: all .5s;
-
-    &:hover {
-      transform: scale(1.1);
-    }
   }
 }
 
@@ -315,6 +310,10 @@
 
     a {
       color: $color-primary;
+    }
+
+    &:hover {
+      text-decoration: underline;
     }
   }
 
