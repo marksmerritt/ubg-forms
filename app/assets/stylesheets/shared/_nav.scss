@@ -35,9 +35,7 @@
   }
   
   &__contacts {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include centered-flex;
   }
 
   &__contact-icon {
