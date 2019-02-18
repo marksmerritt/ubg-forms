@@ -323,9 +323,29 @@
 }
 
 
+//------------------ Locations Section ------------------//
 
+.location {
+  @include centered-flex;
+  text-align: left;
+  
+  &:last-child {
+    margin-top: 4rem;
+  }
 
+  &__map {
+    border-radius: 3rem;
+    overflow: hidden;
+  }
 
+  &__desc {
+    margin-left: 3rem;
+  }
+
+  &__title {
+    font-weight: 600;
+  }
+}
 
 
 
