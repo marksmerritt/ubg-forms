@@ -18,6 +18,8 @@
     <%= render "shared/contact_modal" %>
   </body>
   <script>
-    var scroll = new SmoothScroll('a[href*="#"]');
-  </script>
+  var scroll = new SmoothScroll('a[href*="#"]', {
+    ignore: '[data-scroll-ignore]'
+  });
+</script>
 </html>
