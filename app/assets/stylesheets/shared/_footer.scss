@@ -1,5 +1,5 @@
 .footer {
-  border-top: 1px solid $color-grey-light-3;
+  border-top: 1px solid $color-grey-light-4;
   padding: .5rem 1rem;
   font-size: 1.6rem;
   display: flex;
@@ -16,10 +16,6 @@
 
   &__copyright {
     margin-left: 2rem; 
-  }
-
-  &__nav {
-
   }
 
   &__links {
@@ -48,10 +44,5 @@
     border: 2px solid currentColor;
     padding: .5rem 1rem;
     border-radius: 3rem;
-
-    &:hover {
-      color: $color-white;
-      background-color: $color-primary;
-    }
   }
 }
