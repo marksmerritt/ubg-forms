@@ -71,5 +71,9 @@
     width: 2.5rem;
     height: 2.5rem;
     fill: $color-grey-dark-1;
+
+    &:hover {
+      fill: $color-primary;
+    }
   }
 }

@@ -5,30 +5,32 @@
 -->
 <div class="nav">
   <div class="nav__logo-box">
-    <h1 class="nav__logo">UM</h1>
+    <%= link_to root_path do %>
+      <h1 class="nav__logo">UM</h1>
+    <% end %>
   </div>
 
   <ul class="nav__items">
     <li class="nav__item">
-      <a href="#about-us" class="nav__link">About Us</a>
+      <a href="#about-us" class="nav__link" data-turbolinks="false">About Us</a>
     </li>
     <li class="nav__item">
-      <a href="#services" class="nav__link">Services</a>
+      <a href="#services" class="nav__link" data-turbolinks="false">Services</a>
     </li>
     <li class="nav__item">
-      <a href="#projects" class="nav__link">Projects</a>
+      <a href="#projects" class="nav__link" data-turbolinks="false">Projects</a>
     </li>
     <li class="nav__item">
-      <a href="#news" class="nav__link">News</a>
+      <a href="#news" class="nav__link" data-turbolinks="false">News</a>
     </li>
     <li class="nav__item">
-      <a href="#locations" class="nav__link">Locations</a>
+      <a href="#locations" class="nav__link" data-turbolinks="false">Locations</a>
     </li>
   </ul>
   
   <div class="nav__contacts">
-    <%= link_to root_path do %>
+    <a href="#contact" data-turbolinks="false">
       <%= display_icon("mail", "nav__contact-icon") %>
-    <% end %>
+    </a>
   </div>
 </div>

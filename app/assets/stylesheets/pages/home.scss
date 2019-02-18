@@ -13,6 +13,7 @@
   &__img {
     width: 100%;
     height: 100%;
+    // filter: brightness(50%);
   }
 }
 
@@ -325,12 +326,33 @@
 
 //------------------ Locations Section ------------------//
 
+
+.locations {
+  margin: 0 auto;
+  text-align: center; 
+
+  &__header {
+    max-width: 100%;
+    background-color: #F0F0F0;
+    padding: 1.5rem 0;
+  }
+}
+
+.location-items {
+  display: flex;
+  flex-direction: column;
+}
+
+.locations__content {
+  padding: 7rem 2rem 20rem;
+}
+
 .location {
   @include centered-flex;
   text-align: left;
-  
+
   &:last-child {
-    margin-top: 4rem;
+    margin-top: 6rem;
   }
 
   &__map {
@@ -346,7 +368,6 @@
     font-weight: 600;
   }
 }
-
 
 
 

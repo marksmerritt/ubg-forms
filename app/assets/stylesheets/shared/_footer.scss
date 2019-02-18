@@ -1,0 +1,57 @@
+.footer {
+  border-top: 1px solid $color-grey-light-3;
+  padding: .5rem 1rem;
+  font-size: 1.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &__logo-box {
+    @include centered-flex;
+  }
+
+  &__logo {
+    color: $color-primary;
+  }
+
+  &__copyright {
+    margin-left: 2rem; 
+  }
+
+  &__nav {
+
+  }
+
+  &__links {
+    display: flex;
+    justify-content: flex-start;
+    list-style: none;
+
+    li {
+      &:not(:last-child){
+        margin-right: 6rem;
+      }
+    }
+  }
+
+  &__link {
+    color: $color-secondary;
+  }
+
+  &__btn-portal-box {
+
+  }
+
+  &__btn-portal {
+    font-size: 1.4rem;
+    color: $color-primary;
+    border: 2px solid currentColor;
+    padding: .5rem 1rem;
+    border-radius: 3rem;
+
+    &:hover {
+      color: $color-white;
+      background-color: $color-primary;
+    }
+  }
+}
