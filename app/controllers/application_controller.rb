@@ -1,5 +1,7 @@
 class ApplicationController < ActionController::Base
-  before_action :authenticate_user!, if: :portal_controller?
+  before_action :authenticate_user!, unless: :home_controller?
+
+  layout :layout_by_controller
 
   protected
 
@@ -7,8 +9,11 @@ class ApplicationController < ActionController::Base
     portal_index_path
   end
 
-  def portal_controller?
-    controller_name == "portal"
+  def home_controller?
+    controller_name == "home" || controller_name == "legal"
   end
 
+  def layout_by_controller
+    "portal" unless home_controller?
+  end
 end
