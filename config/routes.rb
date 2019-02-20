@@ -11,4 +11,8 @@ Rails.application.routes.draw do
     get :privacy_policy
     get :terms
   end
+
+  scope module: 'portal' do 
+    resources :portal, only: [:index]
+  end
 end
