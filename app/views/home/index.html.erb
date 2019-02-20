@@ -1,13 +1,3 @@
-<!-- TODO: 
-- Pull out common components into partial
-- Responsive Design
-- Replace slider images
-- Give slider images opacity
-- Add text on top of slider images
-- Compatibility with IE
-- Responsive Design
--->
-
 <div id="home">
   <div class="slide-show">
     <div class="slide-show__img-container">
@@ -33,7 +23,7 @@
         <p class="about-us__text">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam alias sunt laboriosam iure recusandae, ullam modi mollitia, veniam eligendi eum ab temporibus praesentium eveniet accusamus amet rerum nam maxime corporis!
         </p>
-        <%= link_to root_path, class: "btn btn--md" do %>
+        <%= link_to about_us_path, class: "btn btn--md", id: "more-about_us" do %>
           <%= content_tag(:span, "Our History") %>
         <% end %>
       </div>
@@ -55,10 +45,10 @@
       </p>
     </div>
     <div class="section__content">
-      <%= render "service_cards" %>
+      <%= render "home/partials/service_cards" %>
       
       <div class="section__btn-cta">
-        <%= link_to root_path, class: "btn btn--lg" do %>
+        <%= link_to services_path, class: "btn btn--lg", id: "more-services" do %>
           <%= content_tag(:span, "View All Services") %>
         <% end %>
       </div>
@@ -109,7 +99,7 @@
       </div>
       
       <div class="section__btn-cta">
-        <%= link_to root_path, class: "btn btn--lg" do %>
+        <%= link_to projects_path, class: "btn btn--lg", id: "more-projects" do %>
           <%= content_tag(:span, "View All Projects") %>
         <% end %>
       </div>
