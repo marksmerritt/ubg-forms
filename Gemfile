@@ -15,6 +15,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rspec-rails', '~> 3.0'
+  gem 'factory_bot_rails', '~> 5.0', '>= 5.0.1'
 end
 
 group :development do
@@ -35,3 +36,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'sassc-rails', '~> 2.1'
 gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
 gem "jquery-slick-rails"
+gem 'devise', '~> 4.6', '>= 4.6.1'
