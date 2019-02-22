@@ -15,6 +15,7 @@ class Portal::FormTypesController < Portal::BaseController
   end
 
   def show
+    @form_type = FormType.find(params[:id])
   end
 
 

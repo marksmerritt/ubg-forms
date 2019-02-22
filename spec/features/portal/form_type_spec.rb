@@ -29,4 +29,18 @@ describe "navigation" do
       end
     end
   end
+
+  describe "show" do 
+    let(:form_type) { FactoryBot.create(:form_type) }
+    let(:admin_user) { FactoryBot.create(:admin_user) }
+
+    before do 
+      login_as(admin_user, :scope => :user)
+    end
+
+    it "displays the form type attributes" do 
+      visit form_type_path(form_type)
+      expect(page).to have_content(form_type.name)
+    end
+  end
 end
