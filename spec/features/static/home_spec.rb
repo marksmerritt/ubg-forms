@@ -9,7 +9,7 @@ describe "home pages" do
   end
 
   describe "home sub pages" do 
-    let(:pages) { ["about_us", "services", "projects"] }
+    pages = ["about_us", "services", "projects"] 
 
     it "is reachable from the homepage" do
       pages.each do |page| 

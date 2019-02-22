@@ -28,6 +28,8 @@ end
 group :test do 
   gem 'capybara', '~> 3.13', '>= 3.13.2'
   gem 'database_cleaner', '~> 1.7'
+  gem 'shoulda-matchers', '~> 4.0'
+  gem 'rails-controller-testing', '~> 1.0', '>= 1.0.4'
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

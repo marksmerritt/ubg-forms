@@ -8,11 +8,6 @@ RSpec.describe FormType, type: :model do
   end
 
   describe "validation" do 
-    let(:form_type) { FactoryBot.build_stubbed(:form_type) }
-
-    it "is not valid without a name" do 
-      form_type.name = nil
-      expect(form_type).to_not be_valid
-    end
+    it { should validate_presence_of(:name) }
   end
 end

@@ -1,19 +1,13 @@
 require 'rails_helper'
 
-describe "legal pages" do  
-  describe "privacy policy" do 
-    it "is reachable from the homepage" do 
-      visit root_path
-      click_link "privacy-policy-link"
-      expect(current_path).to eq(privacy_policy_path)
-    end
-  end
+describe "legal pages" do 
+  legal_pages = ["privacy_policy", "terms"] 
 
-  describe "terms" do 
-    it "is reachable from the homepage" do 
+  it "is reachable from the homepage" do 
+    legal_pages.each do |page|
       visit root_path
-      click_link "terms-link"
-      expect(current_path).to eq(terms_path)
+      click_link "#{page}-link"
+      expect(current_path).to eq(eval("#{page}_path"))
     end
   end
 end
