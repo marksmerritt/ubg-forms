@@ -1,6 +1,23 @@
 require "rails_helper"
 
 describe "navigation" do 
+  
+  describe "index" do 
+    let(:admin_user) { FactoryBot.create(:admin_user) }
+
+    before do 
+      login_as(admin_user, :scope => :user)
+    end
+
+    it "displays a list of form types" do 
+      @scaffold_form_type = FactoryBot.create(:scaffold_form_type) 
+      @forklift_form_type = FactoryBot.create(:forklift_form_type) 
+      
+      visit form_types_path
+      expect(page).to have_content(@scaffold_form_type.name).and have_content(@forklift_form_type.name)
+    end
+  end
+
   describe "new" do 
     describe "admin user signed in" do 
       let(:admin_user) { FactoryBot.create(:admin_user) }
