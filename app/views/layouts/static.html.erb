@@ -5,17 +5,17 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'static', media: 'all', 'data-turbolinks-track': 'reload' %>
     <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,600,700" rel="stylesheet">
 
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= render "shared/nav" %>
+    <%= render "static/shared/nav" %>
     <%= yield %>
-    <%= render "shared/footer" %>
-    <%= render "shared/contact_modal" %>
+    <%= render "static/shared/footer" %>
+    <%= render "static/shared/contact_modal" %>
   </body>
   <script>
   var scroll = new SmoothScroll('a[href*="#"]', {
