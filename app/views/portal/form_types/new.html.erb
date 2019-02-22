@@ -1,0 +1,7 @@
+<h1>New Form Type</h1>
+
+<%= form_for @form_type do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name, id: "field-name" %>
+  <%= f.submit "Create", id: "create-form-type-btn" %>
+<% end %>
