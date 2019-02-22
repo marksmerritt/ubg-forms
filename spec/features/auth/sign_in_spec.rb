@@ -12,12 +12,12 @@ describe "user sign in" do
   end
 
   describe "successful sign in" do 
-    it "redirects to portal index" do 
+    it "redirects to dashboard index" do 
       visit new_user_session_path
       fill_in("field-email", with: @user.email)
       fill_in("field-password", with: "helloworld")
       click_button("sign-in-submit")
-      expect(current_path).to eq(portal_index_path)
+      expect(current_path).to eq(dashboard_index_path)
     end
   end
 end

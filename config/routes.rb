@@ -15,6 +15,6 @@ Rails.application.routes.draw do
   end
 
   scope module: 'portal' do 
-    resources :portal, only: [:index]
+    resources :dashboard, only: :index
   end
 end
