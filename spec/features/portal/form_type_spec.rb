@@ -23,6 +23,11 @@ describe "navigation" do
       fill_in("field-name", with: "Forklift Inspection")
       expect{ click_button("create-form-type-btn") }.to change{ FormType.count }.by(1)
     end
+
+    it "cannot be created with missing attributes" do 
+      visit new_form_type_path
+      expect{ click_button("create-form-type-btn") }.to change{ FormType.count }.by(0)
+    end
   end
 
   describe "show" do 

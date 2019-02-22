@@ -30,6 +30,7 @@ group :test do
   gem 'database_cleaner', '~> 1.7'
   gem 'shoulda-matchers', '~> 4.0'
   gem 'rails-controller-testing', '~> 1.0', '>= 1.0.4'
+  gem 'simplecov', require: false
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
