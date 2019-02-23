@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_23_164020) do
+ActiveRecord::Schema.define(version: 2019_02_23_182537) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,16 +23,6 @@ ActiveRecord::Schema.define(version: 2019_02_23_164020) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["form_type_id"], name: "index_form_fields_on_form_type_id"
-  end
-
-  create_table "form_header_fields", force: :cascade do |t|
-    t.string "name"
-    t.string "field_type"
-    t.boolean "required"
-    t.bigint "form_type_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["form_type_id"], name: "index_form_header_fields_on_form_type_id"
   end
 
   create_table "form_types", force: :cascade do |t|
@@ -71,5 +61,4 @@ ActiveRecord::Schema.define(version: 2019_02_23_164020) do
   end
 
   add_foreign_key "form_fields", "form_types"
-  add_foreign_key "form_header_fields", "form_types"
 end
