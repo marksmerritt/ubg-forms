@@ -7,4 +7,12 @@ module ApplicationHelper
       content_tag(:use, nil, 'xlink:href' => path + svg_name)
     end
   end
+
+  def form_submit_text(obj)
+    if obj.new_record?
+      "Create"
+    else
+      "Update"
+    end
+  end
 end

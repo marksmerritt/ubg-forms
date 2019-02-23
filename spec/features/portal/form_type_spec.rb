@@ -31,12 +31,23 @@ describe "navigation" do
       visit form_types_path
       click_link "new-form-type"
       fill_in("field-name", with: "Forklift Inspection")
-      expect{ click_button("create-form-type-btn") }.to change{ FormType.count }.by(1)
+      expect{ click_button("Create") }.to change{ FormType.count }.by(1)
     end
 
     it "cannot be created with missing attributes" do 
       visit new_form_type_path
-      expect{ click_button("create-form-type-btn") }.to change{ FormType.count }.by(0)
+      expect{ click_button("Create") }.to change{ FormType.count }.by(0)
+    end
+  end
+
+  describe "update" do 
+    it "can be updated from its show page" do 
+      @scaffold_form_type = FactoryBot.create(:scaffold_form_type) 
+      visit form_type_path(@scaffold_form_type)
+      click_link "edit-form-type-#{@scaffold_form_type.id}"
+      fill_in "field-name", with: "Something Else"
+      click_button "Update"
+      expect(@scaffold_form_type.reload.name).to eq("Something Else")
     end
   end
 

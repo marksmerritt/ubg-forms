@@ -1,5 +1,5 @@
 class Portal::FormTypesController < Portal::BaseController
-  before_action :set_form_type, only: [:show, :destroy]
+  before_action :set_form_type, :authorize_form_type, only: [:show, :edit, :update, :destroy]
   
   def index
     @form_types = FormType.all
@@ -7,7 +7,6 @@ class Portal::FormTypesController < Portal::BaseController
   end
 
   def show
-    authorize @form_type
   end
 
   def new
@@ -26,9 +25,18 @@ class Portal::FormTypesController < Portal::BaseController
     end
   end
 
-  def destroy
-    authorize @form_type
+  def edit
+  end
 
+  def update
+    if @form_type.update(form_type_params)
+      redirect_to @form_type, notice: "#{@form_type.name} Form updated successfully!"
+    else
+      render :edit, notice: "Unable to update form type. Please try again."
+    end
+  end
+
+  def destroy
     if @form_type.destroy
       redirect_to form_types_path, notice: "The form type has been deleted."
     else
@@ -46,5 +54,9 @@ class Portal::FormTypesController < Portal::BaseController
 
   def set_form_type
     @form_type = FormType.find(params[:id])
+  end
+
+  def authorize_form_type
+    authorize @form_type
   end
 end

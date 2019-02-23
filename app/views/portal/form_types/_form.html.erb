@@ -1,0 +1,5 @@
+<%= form_for @form_type do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name, id: "field-name" %>
+  <%= f.submit form_submit_text(@form_type) %>
+<% end %>
