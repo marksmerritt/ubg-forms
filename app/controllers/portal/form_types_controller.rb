@@ -1,7 +1,13 @@
 class Portal::FormTypesController < Portal::BaseController
+  before_action :set_form_type, only: [:show, :destroy]
+  
   def index
     @form_types = FormType.all
     authorize @form_types
+  end
+
+  def show
+    authorize @form_type
   end
 
   def new
@@ -20,15 +26,25 @@ class Portal::FormTypesController < Portal::BaseController
     end
   end
 
-  def show
-    @form_type = FormType.find(params[:id])
+  def destroy
     authorize @form_type
+
+    if @form_type.destroy
+      redirect_to form_types_path, notice: "The form type has been deleted."
+    else
+      redirect_to (request.referrer || form_types_path), notice: "Unable to delete form type. Please try again"
+    end
   end
+  
 
 
   private
 
   def form_type_params
     params.require(:form_type).permit(:name)
+  end
+
+  def set_form_type
+    @form_type = FormType.find(params[:id])
   end
 end

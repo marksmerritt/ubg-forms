@@ -1,3 +1,2 @@
-<%= @form_types.each do |type| %>
-  <%= type.inspect %>
-<% end %>
+<%= link_to "New Form Type", new_form_type_path, id: "new-form-type" %>
+<%= render @form_types %>

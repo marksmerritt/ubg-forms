@@ -4,7 +4,7 @@ describe FormTypePolicy do
   let(:admin_user) { FactoryBot.create(:admin_user) }
   let(:employee_user) { FactoryBot.create(:employee_user) }
 
-  permissions :index?, :create? do
+  permissions :index?, :create?, :destroy? do
     it "grants access if admin is present" do
       expect(subject).to permit(admin_user, FormType.new)
     end

@@ -1,0 +1,4 @@
+<div>
+  <%= link_to form_type.name, form_type_path(form_type) %>
+  <%= link_to "Delete", form_type_path(form_type), method: :delete, id: "destroy-form-type-#{form_type.id}" %>
+</div>

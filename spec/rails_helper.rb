@@ -1,3 +1,4 @@
+## Uncomment to generate tests coverage data
 require 'simplecov'
 SimpleCov.start
 
