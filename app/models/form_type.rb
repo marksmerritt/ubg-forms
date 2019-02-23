@@ -1,5 +1,6 @@
 class FormType < ApplicationRecord
-  validates :name, 
-    presence: true, 
-    uniqueness: true
+  has_many :fields, class_name: "FormField", dependent: :destroy
+  accepts_nested_attributes_for :fields, allow_destroy: true, reject_if: proc { |attr| attr['name'].blank? }
+
+  validates :name, presence: true, uniqueness: true
 end

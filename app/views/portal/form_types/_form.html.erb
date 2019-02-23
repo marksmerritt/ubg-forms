@@ -1,5 +1,27 @@
 <%= form_for @form_type do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name, id: "field-name" %>
-  <%= f.submit form_submit_text(@form_type) %>
+  <div>
+    <%= f.label :name %>
+    <%= f.text_field :name, id: "field-name" %>
+  </div>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th></th>
+        <th>Name</th>
+        <th>Field Type</th>
+        <th>Required</th>
+      </tr>
+    </thead>
+    <tbody class="fields">
+      <%= f.fields_for :fields do |builder| %>
+        <%= render "field_fields", f: builder %>
+      <% end %>
+    </tbody>
+  </table>
+
+  <div>
+    <%= f.submit form_submit_text(@form_type) %>
+    <%= link_to_add_association "Add Field", f, :fields, data: { association_insertion_node: ".fields", association_insertion_method: :append } %>
+  </div>
 <% end %>

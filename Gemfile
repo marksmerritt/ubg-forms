@@ -41,3 +41,4 @@ gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
 gem "jquery-slick-rails"
 gem 'devise', '~> 4.6', '>= 4.6.1'
 gem 'pundit', '~> 1.1'
+gem 'cocoon', '~> 1.2', '>= 1.2.12'
