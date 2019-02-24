@@ -3,6 +3,6 @@ class FormField < ApplicationRecord
 
   belongs_to :form_type
 
-  validates_presence_of :name, :field_type
+  validates_presence_of :name
   validates :field_type, inclusion: FIELD_TYPE_OPTIONS
 end
