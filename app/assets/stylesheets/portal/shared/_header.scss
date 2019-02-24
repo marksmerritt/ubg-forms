@@ -1,0 +1,118 @@
+
+.logo-box {
+  flex: 0 0 10%;
+  @include centered-flex;
+}
+
+.logo {
+  margin-left: 2rem;
+  color: $color-primary;
+  font-weight: 700;
+}
+
+.logo-text {
+  margin-left: 1rem;
+  font-size: 1.3rem;
+}
+
+.search {
+  flex: 1 1 70%;
+  @include centered-flex;
+
+  &__input {
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    background-color: $color-white;
+    border: none;
+    border: 1px solid $color-grey-light-3;
+    padding: .7rem 2rem;
+    border-radius: 20rem;
+    width: 60%;
+    transition: all .2s;
+    margin-right: -3.5rem;
+
+    &:focus {
+      outline: none;
+      width: 70%;
+      border: 1px solid $color-grey-light-4;
+    }
+
+    &::-webkit-input-placeholder {
+      font-weight: 100;
+      color: $color-grey-light-4;
+    }
+  }
+
+  &__btn {
+    border: none;
+
+    &:focus {
+      outline: none;
+    }
+
+    &:active {
+      transform: translateY(2px);
+    }
+  }
+
+  &__icon {
+    margin-top: .2rem;
+    height: 2rem;
+    width: 2rem;
+    fill: $color-grey-light-4;
+  }
+}
+
+
+.user-nav {
+  align-self: stretch;
+
+  @include centered-flex;
+
+  & > * {
+    display: flex;
+    align-items: center;
+
+    padding: 0 2rem;
+    cursor: pointer;
+    height: 100%;
+  }
+
+  & > *:hover {
+    background-color: $color-grey-light-2;
+  }
+
+  &__icon-box {
+    position: relative;
+  }
+
+  &__icon {
+    height: 2.25rem;
+    width: 2.25rem;
+    fill: $color-grey-dark-3;
+  }
+
+  &__notification {
+    font-size: .8rem;
+    height: 1.75rem;
+    width: 1.75rem;
+    border-radius: 50%;
+    background-color: $color-primary;
+    color: $color-white;
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+
+    @include centered-flex;
+  }
+
+  &__user {
+
+  }
+
+  &__user-photo {
+    height: 3.75rem;
+    border-radius: 50%;
+  }
+}

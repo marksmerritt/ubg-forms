@@ -1,0 +1,24 @@
+<header class="header">
+  <div class="logo-box">
+    <h1 class="logo">UM</h1>
+    <span class="logo-text">Portal</span>
+  </div>
+
+
+  <form action="#" class="search">
+    <input class="search__input" placeholder="Search...">
+    <button class="search__btn">
+      <%= display_icon("search", "search__icon") %>
+    </button>
+  </form>
+  
+  <nav class="user-nav">
+    <div class="user-nav__icon-box">
+      <%= display_icon("bell", "user-nav__icon") %>
+      <span class="user-nav__notification">3</span>
+    </div> 
+    <div class="user-nav__user">
+      <img src="https://ui-avatars.com/api/?name=John+Doe" alt="User avatar" class="user-nav__user-photo">
+    </div>  
+  </nav>
+</header>

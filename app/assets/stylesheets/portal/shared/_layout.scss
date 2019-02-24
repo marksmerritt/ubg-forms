@@ -1,0 +1,69 @@
+.container {
+  margin: 0 auto;
+  background-color: $color-grey-light-1;
+  min-height: 50rem;
+}
+
+.header {
+  height: 7rem;
+  background-color: $color-white;
+  border-bottom: 1px solid $color-grey-light-2;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.content {
+  display: flex;
+}
+
+.sidebar {
+  background-color: $color-white;
+  border-right: 2px solid $color-grey-light-2;
+  height: 80rem;
+  flex: 0 0 10%;
+}
+
+.portal-content {
+  background-color: $color-grey-light-1;
+  flex: 1;
+  padding: 4rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
