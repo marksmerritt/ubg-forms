@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_24_153159) do
+ActiveRecord::Schema.define(version: 2019_02_26_210232) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 2019_02_24_153159) do
   create_table "form_fields", force: :cascade do |t|
     t.string "name"
     t.string "field_type"
-    t.boolean "required"
+    t.boolean "required", default: false
     t.bigint "form_type_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

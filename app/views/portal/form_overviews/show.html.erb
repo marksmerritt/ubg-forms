@@ -1,13 +1,13 @@
 <h4>Create a new form</h4>
 <% @form_types.each do |form_type| %>
   <div>
-    <%= link_to "#{form_type.name}", new_form_type_form_path(form_type) %>
+    <%= link_to "#{form_type.name}", new_form_type_form_path(form_type), id: "create-new-form-#{form_type.id}" %>
   </div>
 <% end %>
 <br>
 <br>
 
-<h4>My Forms</h4><br>
+<h4>My Recent Forms</h4><br>
 
 <% @forms.each do |form| %>
   <div>

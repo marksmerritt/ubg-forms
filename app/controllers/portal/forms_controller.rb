@@ -11,7 +11,7 @@ class Portal::FormsController < Portal::BaseController
   end
 
   def new
-    @form = Form.new(form_type: @form_type)
+    @form = Form.new
     authorize @form
   end
 
@@ -42,7 +42,7 @@ class Portal::FormsController < Portal::BaseController
 
   def destroy
     if @form.destroy
-      redirect_to forms_path, notice: "Your form was successfully deleted"
+      redirect_to form_overview_path, notice: "Your form was successfully deleted"
     else
       redirect_to [@form_type, @form], notice: "Unable to delete form. Please try again"
     end
@@ -52,7 +52,7 @@ class Portal::FormsController < Portal::BaseController
   private
 
   def form_params
-    valid_params = @form_type.valid_fields.map(&:to_sym)
+    valid_params = @form_type.valid_fields
     params.require(:form).permit(properties: valid_params)
   end
 

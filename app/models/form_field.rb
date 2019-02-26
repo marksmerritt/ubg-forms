@@ -5,4 +5,11 @@ class FormField < ApplicationRecord
 
   validates_presence_of :name
   validates :field_type, inclusion: FIELD_TYPE_OPTIONS
+
+  before_save :downcase_name
+
+
+  def downcase_name
+    self.name.downcase!
+  end
 end

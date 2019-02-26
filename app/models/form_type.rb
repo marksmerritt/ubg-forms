@@ -7,6 +7,6 @@ class FormType < ApplicationRecord
   validates :name, presence: true, uniqueness: true
 
   def valid_fields
-    fields.pluck(:name).map(&:downcase)
+    fields.pluck(:name).map(&:to_sym)
   end
 end
