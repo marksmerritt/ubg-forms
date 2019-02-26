@@ -1,10 +1,11 @@
 <h1>My Forms</h1>
 
-<%= form_tag new_form_path, method: :get do %>
-  <%= select_tag :form_type_id, options_from_collection_for_select(FormType.all, :id, :name) %>
-  <%= submit_tag "New Form", name: nil %>
+<h3>Create a new form</h3>
+<% @form_types.each do |form_type| %>
+  <%= link_to "#{form_type.name}", new_form_type_form(form_type) %>
 <% end %>
 
 <% current_user.forms.each do |form| %>
   <%= form.inspect %>
 <% end %>
+

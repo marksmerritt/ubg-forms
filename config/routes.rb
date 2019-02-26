@@ -18,7 +18,9 @@ Rails.application.routes.draw do
 
   scope module: 'portal' do 
     resources :dashboard, only: :index
-    resources :form_types
-    resources :forms
+    resource :form_overview, only: :show
+    resources :form_types, except: [:show] do 
+      resources :forms
+    end
   end
 end

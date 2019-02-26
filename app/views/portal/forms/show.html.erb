@@ -1,4 +1,4 @@
-<h1>Form Show</h1>
+<h1><%= @form_type.name %></h1>
 
 <% @form.properties.each do |name, value| %>
   <p>
@@ -7,4 +7,4 @@
   </p>
 <% end %>
 
-<%= link_to "Edit", edit_form_path(@form) %>
+<%= link_to "Edit", edit_form_type_form_path(@form_type, @form) %>

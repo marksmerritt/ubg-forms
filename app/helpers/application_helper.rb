@@ -15,4 +15,8 @@ module ApplicationHelper
       "Update"
     end
   end
+
+  def active_link?(path, style)
+    current_page?(path) ? style : ""
+  end
 end

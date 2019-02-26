@@ -17,15 +17,6 @@ describe "navigation" do
     end
   end
 
-  describe "show" do 
-    let(:form_type) { FactoryBot.create(:form_type) }
-
-    it "displays the form type attributes" do 
-      visit form_type_path(form_type)
-      expect(page).to have_content(form_type.name)
-    end
-  end
-
   describe "new" do 
     it "can be created from the index page" do 
       visit form_types_path
@@ -41,37 +32,13 @@ describe "navigation" do
   end
 
   describe "update" do 
-    it "can be updated from its show page" do 
+    it "can be updated from the index page" do 
       @scaffold_form_type = FactoryBot.create(:scaffold_form_type) 
-      visit form_type_path(@scaffold_form_type)
+      visit form_types_path
       click_link "edit-form-type-#{@scaffold_form_type.id}"
       fill_in "field-name", with: "Something Else"
       click_button "Update"
       expect(@scaffold_form_type.reload.name).to eq("Something Else")
-    end
-  end
-
-  describe "destroy" do 
-    before do 
-      @scaffold_form_type = FactoryBot.create(:scaffold_form_type) 
-      @scaffold_html_id = "destroy-form-type-#{@scaffold_form_type.id}" 
-    end
-
-    it "can be destroyed from the index page" do 
-      visit form_types_path
-      expect{ click_link @scaffold_html_id }.to change{ FormType.count }.by(-1)
-    end
-
-    it "destroys the correct form type" do
-      @forklift_form_type = FactoryBot.create(:forklift_form_type) 
-      visit form_types_path
-      click_link @scaffold_html_id
-      expect(FormType.first.name).to eq(@forklift_form_type.name)
-    end
-
-    it "can be destroyed from its show page" do 
-      visit form_type_path(@scaffold_form_type.id)
-      expect{ click_link @scaffold_html_id }.to change{ FormType.count }.by(-1)
     end
   end
 end

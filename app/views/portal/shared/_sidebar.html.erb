@@ -1,13 +1,13 @@
 <nav class="sidebar">
   <ul class="side-nav">
-    <li class="side-nav__item side-nav__item--active">
+    <li class="side-nav__item <%= active_link?(dashboard_index_path, "side-nav__item--active") %>">
       <%= link_to dashboard_index_path, class: "side-nav__link" do %>
         <%= display_icon("spinner2", "side-nav__icon") %>
         <span class="side-nav__link-text">Overview</span>
       <% end %>
     </li>
-    <li class="side-nav__item">
-      <%= link_to forms_path, class: "side-nav__link" do %>
+    <li class="side-nav__item <%= active_link?(form_overview_path, "side-nav__item--active") %>">
+      <%= link_to form_overview_path, class: "side-nav__link" do %>
         <%= display_icon("clipboard-edit", "side-nav__icon") %>
         <span class="side-nav__link-text">Forms</span>
       <% end %>

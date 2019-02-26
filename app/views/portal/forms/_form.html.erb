@@ -1,4 +1,4 @@
-<%= form_for @form do |f| %>
+<%= form_for [@form_type, @form] do |f| %>
   <% if @form.errors.any? %>
     <div>
       <ul>
@@ -8,11 +8,9 @@
       </ul>
     </div>
   <% end %>
-  
-  <%= f.hidden_field :form_type_id %>
 
   <%= f.fields_for :properties, OpenStruct.new(@form.properties) do |builder| %>
-    <% @form.form_type.fields.each do |field| %>
+    <% @form_type.fields.each do |field| %>
       <%= render "portal/forms/fields/#{field.field_type}", field: field, f: builder %>
     <% end %>
   <% end %>

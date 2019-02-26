@@ -1,4 +1,5 @@
 class Portal::FormsController < Portal::BaseController
+  before_action :set_form_type
   before_action :set_form, :authorize_form, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -10,7 +11,7 @@ class Portal::FormsController < Portal::BaseController
   end
 
   def new
-    @form = Form.new(form_type_id: params[:form_type_id])
+    @form = Form.new(form_type: @form_type)
     authorize @form
   end
 
@@ -18,12 +19,13 @@ class Portal::FormsController < Portal::BaseController
     @form = Form.new(form_params)
     authorize @form
 
+    @form.form_type = @form_type
     @form.user = current_user
 
     if @form.save
-      redirect_to form_path(@form), notice: "Your Form was submitted successfully"
+      redirect_to [@form_type, @form], notice: "Your Form was submitted successfully"
     else
-      redirect_to forms_path, notice: "Unable to create form. Please try again."
+      render :new
     end
   end
 
@@ -32,7 +34,7 @@ class Portal::FormsController < Portal::BaseController
 
   def update
     if @form.update(form_params)
-      redirect_to @form, notice: "Your #{@form.form_type.name} was updated successfully"
+      redirect_to [@form_type, @form], notice: "Your Form was updated successfully"
     else
       render :edit
     end
@@ -42,7 +44,7 @@ class Portal::FormsController < Portal::BaseController
     if @form.destroy
       redirect_to forms_path, notice: "Your form was successfully deleted"
     else
-      redirect_to @form, notice: "Unable to delete form. Please try again"
+      redirect_to [@form_type, @form], notice: "Unable to delete form. Please try again"
     end
   end
 
@@ -50,7 +52,12 @@ class Portal::FormsController < Portal::BaseController
   private
 
   def form_params
-    params.require(:form).permit!
+    valid_params = @form_type.valid_fields.map(&:to_sym)
+    params.require(:form).permit(properties: valid_params)
+  end
+
+  def set_form_type
+    @form_type = FormType.find(params[:form_type_id])
   end
 
   def set_form
