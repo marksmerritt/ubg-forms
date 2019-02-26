@@ -1,12 +1,9 @@
 class Portal::FormTypesController < Portal::BaseController
-  before_action :set_form_type, :authorize_form_type, only: [:show, :edit, :update, :destroy]
+  before_action :set_form_type, :authorize_form_type, only: [:edit, :update, :destroy]
   
   def index
     @form_types = FormType.all
     authorize @form_types
-  end
-
-  def show
   end
 
   def new
@@ -21,7 +18,7 @@ class Portal::FormTypesController < Portal::BaseController
     authorize @form_type
 
     if @form_type.save
-      redirect_to @form_type, notice: "#{@form_type.name} Form created successfully!"
+      redirect_to form_types_path, notice: "#{@form_type.name} Form created successfully!"
     else
       render :new
     end
@@ -33,7 +30,7 @@ class Portal::FormTypesController < Portal::BaseController
 
   def update
     if @form_type.update(form_type_params)
-      redirect_to @form_type, notice: "#{@form_type.name} Form updated successfully!"
+      redirect_to form_types_path, notice: "#{@form_type.name} Form updated successfully!"
     else
       render :edit, notice: "Unable to update form type. Please try again."
     end
