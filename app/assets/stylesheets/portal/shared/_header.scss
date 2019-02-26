@@ -28,7 +28,7 @@
     border: 1px solid $color-grey-light-3;
     padding: .7rem 2rem;
     border-radius: 20rem;
-    width: 60%;
+    width: 50%;
     transition: all .2s;
     margin-right: -3.5rem;
 
@@ -95,8 +95,8 @@
 
   &__notification {
     font-size: .8rem;
-    height: 1.75rem;
-    width: 1.75rem;
+    height: 1.5rem;
+    width: 1.5rem;
     border-radius: 50%;
     background-color: $color-primary;
     color: $color-white;

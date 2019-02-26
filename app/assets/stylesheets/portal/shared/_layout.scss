@@ -1,13 +1,13 @@
 .container {
   margin: 0 auto;
   background-color: $color-grey-light-1;
-  min-height: 50rem;
+  // min-height: 50rem;
 }
 
 .header {
-  height: 7rem;
+  height: 6rem;
   background-color: $color-white;
-  border-bottom: 1px solid $color-grey-light-2;
+  border-bottom: 2px solid $color-grey-light-3;
 
   display: flex;
   justify-content: space-between;
@@ -20,9 +20,8 @@
 
 .sidebar {
   background-color: $color-white;
-  border-right: 2px solid $color-grey-light-2;
-  height: 80rem;
-  flex: 0 0 10%;
+  border-right: 2px solid $color-grey-light-3;
+  min-height: 100vh;
 }
 
 .portal-content {
