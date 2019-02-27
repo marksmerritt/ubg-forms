@@ -1,0 +1,2 @@
+class FooterFormField < FormField 
+end

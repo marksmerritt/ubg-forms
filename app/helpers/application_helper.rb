@@ -9,11 +9,7 @@ module ApplicationHelper
   end
 
   def form_submit_text(obj)
-    if obj.new_record?
-      "Create"
-    else
-      "Update"
-    end
+    obj.new_record? ? "Create" : "Update"
   end
 
   def active_link?(path, style)

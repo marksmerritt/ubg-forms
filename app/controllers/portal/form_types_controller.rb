@@ -8,7 +8,6 @@ class Portal::FormTypesController < Portal::BaseController
 
   def new
     @form_type = FormType.new
-    @form_type.fields.build
 
     authorize @form_type
   end
@@ -25,7 +24,6 @@ class Portal::FormTypesController < Portal::BaseController
   end
 
   def edit
-    @form_type.fields.build
   end
 
   def update
@@ -49,8 +47,10 @@ class Portal::FormTypesController < Portal::BaseController
   private
 
   def form_type_params
+    valid_field_params = FormField.attribute_names.map(&:to_sym).push(:_destroy)
     params.require(:form_type).permit(:name, 
-                                      fields_attributes: FormField.attribute_names.map(&:to_sym).push(:_destroy))
+                                      header_fields_attributes: valid_field_params,
+                                      footer_fields_attributes: valid_field_params)
   end
 
   def set_form_type

@@ -1,0 +1,2 @@
+class HeaderFormField < FormField 
+end

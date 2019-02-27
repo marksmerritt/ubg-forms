@@ -10,7 +10,13 @@
   <% end %>
 
   <%= f.fields_for :properties, OpenStruct.new(@form.properties) do |builder| %>
-    <% @form_type.fields.each do |field| %>
+    <h4>Header Fields</h4>
+    <% @form_type.header_fields.each do |field| %>
+      <%= render "portal/forms/fields/#{field.field_type}", field: field, f: builder %>
+    <% end %>
+
+    <h4>Footer Fields</h4>
+    <% @form_type.footer_fields.each do |field| %>
       <%= render "portal/forms/fields/#{field.field_type}", field: field, f: builder %>
     <% end %>
   <% end %>

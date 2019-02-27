@@ -5,11 +5,11 @@ describe "navigation" do
 
   before do 
     login_as(admin_user, :scope => :user)
+    @scaffold_form_type = FactoryBot.create(:scaffold_form_type)
   end
 
   describe "index" do 
     it "displays a list of form types" do 
-      @scaffold_form_type = FactoryBot.create(:scaffold_form_type) 
       @forklift_form_type = FactoryBot.create(:forklift_form_type) 
       
       visit form_types_path
@@ -17,23 +17,8 @@ describe "navigation" do
     end
   end
 
-  describe "new" do 
-    it "can be created from the index page" do 
-      visit form_types_path
-      click_link "new-form-type"
-      fill_in("field-name", with: "Forklift Inspection")
-      expect{ click_button("Create") }.to change{ FormType.count }.by(1)
-    end
-
-    it "cannot be created with missing attributes" do 
-      visit new_form_type_path
-      expect{ click_button("Create") }.to change{ FormType.count }.by(0)
-    end
-  end
-
   describe "update" do 
     it "can be updated from the index page" do 
-      @scaffold_form_type = FactoryBot.create(:scaffold_form_type) 
       visit form_types_path
       click_link "edit-form-type-#{@scaffold_form_type.id}"
       fill_in "field-name", with: "Something Else"

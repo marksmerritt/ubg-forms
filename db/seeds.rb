@@ -89,7 +89,16 @@ puts "#{FormType.count} Form Types created"
 field_type_options = FormField::FIELD_TYPE_OPTIONS
 
 50.times do 
-  FormField.create!(
+  HeaderFormField.create!(
+    name: Faker::Lorem.word,
+    field_type: field_type_options.sample,
+    required: Faker::Boolean.boolean,
+    form_type: @form_types.sample
+  )
+end
+
+50.times do 
+  FooterFormField.create!(
     name: Faker::Lorem.word,
     field_type: field_type_options.sample,
     required: Faker::Boolean.boolean,
