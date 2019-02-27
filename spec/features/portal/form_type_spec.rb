@@ -21,7 +21,7 @@ describe "navigation" do
     it "can be updated from the index page" do 
       visit form_types_path
       click_link "edit-form-type-#{@scaffold_form_type.id}"
-      fill_in "field-name", with: "Something Else"
+      fill_in "field-form-type-name", with: "Something Else"
       click_button "Update"
       expect(@scaffold_form_type.reload.name).to eq("Something Else")
     end

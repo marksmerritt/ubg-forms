@@ -8,6 +8,8 @@ class Portal::FormTypesController < Portal::BaseController
 
   def new
     @form_type = FormType.new
+    @form_type.header_fields.build
+    @form_type.footer_fields.build
 
     authorize @form_type
   end

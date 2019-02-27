@@ -3,7 +3,7 @@
 <%= form_for @form_type do |f| %>
   <div>
     <%= f.label :name %>
-    <%= f.text_field :name, id: "field-name" %>
+    <%= f.text_field :name, id: "field-form-type-name" %>
   </div>
 
   <table class="table">
@@ -24,7 +24,7 @@
 
   <div>
     <%= link_to_add_association "Add header field", f, :fields,  :render_options => { :wrapper => 'inline' },
-     :wrap_object => Proc.new { |field| field.type = 'HeaderFormField'; field } %>
+     :wrap_object => Proc.new { |field| field.type = 'HeaderFormField'; field }, id: "add-header-field-link" %>
   </div>
 
   <table class="table">
