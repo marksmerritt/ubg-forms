@@ -18,11 +18,14 @@
         <span class="side-nav__link-text">Courses</span>
       </a>
     </li>
-    <li class="side-nav__item">
-      <a href="#" class="side-nav__link">
-        <%= display_icon("lock1", "side-nav__icon") %>
-        <span class="side-nav__link-text">Admin</span>
-      </a>
-    </li>
+
+    <% if current_user.admin? %>
+      <li class="side-nav__item <%= active_link?(admin_index_path, "side-nav__item--active") %>">
+        <%= link_to admin_index_path, class: "side-nav__link", id: "link-admin-index" do %>
+          <%= display_icon("lock1", "side-nav__icon") %>
+          <span class="side-nav__link-text">Admin</span>
+        <% end %>
+      </li>
+    <% end %>
   </ul>
 </nav>
