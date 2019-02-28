@@ -1,5 +1,6 @@
 
 
+
 # United Masonry (Rough Draft)
 
 A website redesign and safety management system for United Masonry Inc.
@@ -8,11 +9,11 @@ A website redesign and safety management system for United Masonry Inc.
 
 ## Contributing
 
-This project is **not seeking external contributors**.
+This project is not seeking external contributors.
 
 ## Getting Started 
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. If you are on a Windows machine, these instructions **do not apply** and you should checkout [Cloud9](https://c9.io/login) or similar. 
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. If you are on a **Windows machine**, these instructions do not apply and you should checkout [Cloud9](https://c9.io/login) or similar. 
 
 ### Prerequisites
 
@@ -24,14 +25,8 @@ If you are not familiar with how to contribute to a project on GitHub, please fo
 ### Installing
 
 With the prerequisites out of the way, you'll need to install Postgres
-
-First, install Postgres via homebrew...
-
 ```
 $ brew update
-```
-
-```
 $ brew install postgres
 ```
 
@@ -39,11 +34,7 @@ Once you have Postgres installed, start the DB server with...
 
 ```
 $ mkdir -p ~/Library/LaunchAgents
-```
-```
 $ ln -sfv /usr/local/opt/postgresql/*.plist ~/Library/LaunchAgents
-```
-```
 $ launchctl load ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist
 ```
 
@@ -51,20 +42,37 @@ Next, make sure that you are in the projects root directory and run...
 
 ```
 $ rails db:create && rails db:migrate
-```
-
-```
 $ bundle install
 ```
+### Rails Server
+To view the app locally you'll need to startup the Rails server and visit localhost:3000
+
+```
+$ rails s
+```
+visit [localhost:3000](localhost:3000) in your browser
 
 
-## License
+## MIT License
 
-Copyright 2019 Mark Merritt
+Copyright (c) 2019 Mark Merritt
 
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
 
