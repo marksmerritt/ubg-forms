@@ -1,6 +1,80 @@
-// Place all the styles related to the portal/FormTypes controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+// TODO: Refactor
+
+.new_form_type {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(6, min-content);
+  grid-gap: 3rem;
+  grid-auto-rows: 5rem;
+  
+  background-color: $color-white;
+  padding: 2rem;
+  border: 1px solid $color-grey-light-4;
+
+
+  &__name {
+    grid-column: 1 / -1;
+    
+    text-align: center;  
+  }
+
+  &__checklist {
+    grid-column: 1 / -1;
+  }
+
+  &__submit {
+    grid-column: 1 / -1;
+    text-align: center;
+  }
+}
+
+.company-header {
+  grid-column: 1 / -1;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  text-align: center;
+  
+  &__logo {
+    font-size: 3rem;
+  }
+
+  &__name, 
+  &__contact {
+    color: $color-grey-dark-2;
+    font-size: 1.3rem;
+  }
+}
+
+#btn-submit-new-form-type {
+  font-size: 1.5rem;
+  color: $color-primary;
+  padding: 1rem 6rem;
+  border: none;
+  border: 2px solid currentColor;
+  border-radius: 3rem;
+
+  &:hover {
+    cursor: pointer;
+    color: $color-white;
+    background-color: $color-primary
+  }
+}
+
+#field-form-type-name {
+  width: 80%;
+  height: 5rem;
+  font-size: 2.5rem;
+  text-align: center;
+  font-weight: 700;
+
+  &:hover,
+  &:active {
+    outline: none;
+  }
+}
 
 .icon-remove-field {
   width: 1rem;
