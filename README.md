@@ -45,12 +45,11 @@ $ rails db:create && rails db:migrate
 $ bundle install
 ```
 ### Rails Server
-To view the app locally you'll need to startup the Rails server and visit localhost:3000
+To view the app locally you'll need to startup the Rails server and visit localhost:3000 in your browser
 
 ```
 $ rails s
 ```
-visit [localhost:3000](localhost:3000) in your browser
 
 
 ## MIT License
