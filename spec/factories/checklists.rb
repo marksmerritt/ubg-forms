@@ -1,7 +1,5 @@
 FactoryBot.define do
   factory :checklist do
-    col { ["col1", "col2", "col3"] }
-    row { ["row1", "row2", "row3"] }
     properties { 
                   { 
                     col1: { row1: "val11", row2: "val12", row3: "val13" },
