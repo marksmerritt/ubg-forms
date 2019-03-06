@@ -10,15 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_06_201253) do
+ActiveRecord::Schema.define(version: 2019_03_06_202222) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "checklist_types", force: :cascade do |t|
+    t.string "name"
+    t.text "cols", default: [], array: true
+    t.text "rows", default: [], array: true
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "checklists", force: :cascade do |t|
     t.jsonb "properties", default: {}, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "checklist_type_id"
+    t.index ["checklist_type_id"], name: "index_checklists_on_checklist_type_id"
   end
 
   create_table "form_fields", force: :cascade do |t|
@@ -78,6 +88,7 @@ ActiveRecord::Schema.define(version: 2019_03_06_201253) do
     t.index ["unlock_token"], name: "index_users_on_unlock_token", unique: true
   end
 
+  add_foreign_key "checklists", "checklist_types"
   add_foreign_key "form_fields", "form_types"
   add_foreign_key "forms", "form_types"
   add_foreign_key "forms", "users"
