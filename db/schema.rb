@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_06_202222) do
+ActiveRecord::Schema.define(version: 2019_03_08_120320) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,7 +28,9 @@ ActiveRecord::Schema.define(version: 2019_03_06_202222) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "checklist_type_id"
+    t.bigint "form_id"
     t.index ["checklist_type_id"], name: "index_checklists_on_checklist_type_id"
+    t.index ["form_id"], name: "index_checklists_on_form_id"
   end
 
   create_table "form_fields", force: :cascade do |t|
@@ -46,6 +48,8 @@ ActiveRecord::Schema.define(version: 2019_03_06_202222) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "checklist_type_id"
+    t.index ["checklist_type_id"], name: "index_form_types_on_checklist_type_id"
   end
 
   create_table "forms", force: :cascade do |t|
@@ -89,7 +93,9 @@ ActiveRecord::Schema.define(version: 2019_03_06_202222) do
   end
 
   add_foreign_key "checklists", "checklist_types"
+  add_foreign_key "checklists", "forms"
   add_foreign_key "form_fields", "form_types"
+  add_foreign_key "form_types", "checklist_types"
   add_foreign_key "forms", "form_types"
   add_foreign_key "forms", "users"
 end

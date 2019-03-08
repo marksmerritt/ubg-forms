@@ -2,6 +2,8 @@ class Form < ApplicationRecord
   belongs_to :form_type
   belongs_to :user
 
+  has_one :checklist
+
   validate :required_properties_present
 
   def required_properties_present

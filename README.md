@@ -1,7 +1,7 @@
 
 
 
-# United Masonry (Rough Draft)
+# United Masonry
 
 A website redesign and safety management system for United Masonry Inc.
 

@@ -1,6 +1,7 @@
 FactoryBot.define do
   factory :checklist do
     association :checklist_type
+    association :form
     properties { 
                   { 
                     col1: { row1: "val11", row2: "val12", row3: "val13" },
