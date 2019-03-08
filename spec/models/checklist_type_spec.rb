@@ -6,4 +6,8 @@ RSpec.describe ChecklistType, type: :model do
       expect{ FactoryBot.create(:checklist_type) }.to change{ ChecklistType.count }.by(1)
     end
   end
+
+  describe "validation" do
+    it { should validate_presence_of(:name) }
+  end
 end
