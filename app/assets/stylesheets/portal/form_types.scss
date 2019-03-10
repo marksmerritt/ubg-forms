@@ -1,12 +1,7 @@
-// TODO: Refactor
 
 .new_form_type {
   min-height: 100vh;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(6, min-content);
-  grid-gap: 3rem;
-  grid-auto-rows: 5rem;
+  
   
   background-color: $color-white;
   padding: 2rem;
@@ -27,7 +22,43 @@
     grid-column: 1 / -1;
     text-align: center;
   }
+
+  &__header-fields {
+    text-align: center;
+  }
+
 }
+
+
+
+.nested-fields,
+.header-fields,
+.footer-fields {
+  text-align: center;
+}
+
+.text-field {
+  height: 3rem;
+  width: 70%;
+  font-size: inherit;
+  text-align: center;
+}
+
+
+.header-fields-container,
+.footer-fields-container {
+  margin-top: 5rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(6, min-content);
+  grid-gap: 3rem;
+  grid-auto-rows: 5rem;
+}
+
+
+
+
+
 
 .company-header {
   grid-column: 1 / -1;

@@ -1,0 +1,2 @@
+class ChecklistFormField < FormField 
+end

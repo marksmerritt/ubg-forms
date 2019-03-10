@@ -1,10 +1,11 @@
 class FormType < ApplicationRecord
-  FIELD_TYPES = [:fields, :header_fields, :footer_fields].freeze
+  FIELD_TYPES = [:fields, :header_fields, :checklist_fields, :footer_fields].freeze
 
   has_many :forms
 
   has_many :fields, class_name: "FormField", dependent: :destroy
   has_many :header_fields, class_name: "HeaderFormField", dependent: :destroy
+  has_many :checklist_fields, class_name: "ChecklistFormField", dependent: :destroy
   has_many :footer_fields, class_name: "FooterFormField", dependent: :destroy
 
   FIELD_TYPES.each do |type|

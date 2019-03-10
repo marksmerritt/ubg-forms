@@ -1,8 +1,6 @@
-<tr class="nested-fields">
-  <td>
-    <%= link_to_remove_association display_icon("cross", "icon-remove-field"), f %>
-  </td>
-  <td><%= f.text_field :name %></td>
-  <td><%= f.select :field_type, FormField::FIELD_TYPE_OPTIONS %></td>
-  <td><%= f.check_box :required %></td>
-</tr>
+<div class="nested-fields">
+  <%= link_to_remove_association display_icon("cross", "icon-remove-field"), f %>
+  <%= f.text_field :name, class: "text-field" %>
+  <%= f.select :field_type, FormField::FIELD_TYPE_OPTIONS %>
+  <%= f.check_box :required %>
+</div>

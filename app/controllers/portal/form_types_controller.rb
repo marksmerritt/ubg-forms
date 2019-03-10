@@ -8,8 +8,7 @@ class Portal::FormTypesController < Portal::BaseController
 
   def new
     @form_type = FormType.new
-    @form_type.header_fields.build
-    @form_type.footer_fields.build
+    build_fields
 
     authorize @form_type
   end
@@ -52,6 +51,7 @@ class Portal::FormTypesController < Portal::BaseController
     valid_field_params = FormField.attribute_names.map(&:to_sym).push(:_destroy)
     params.require(:form_type).permit(:name, 
                                       header_fields_attributes: valid_field_params,
+                                      checklist_fields_attributes: valid_field_params,
                                       footer_fields_attributes: valid_field_params)
   end
 
@@ -61,5 +61,11 @@ class Portal::FormTypesController < Portal::BaseController
 
   def authorize_form_type
     authorize @form_type
+  end
+
+  def build_fields
+    @form_type.header_fields.build
+    @form_type.checklist_fields.build
+    @form_type.footer_fields.build
   end
 end
