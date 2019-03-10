@@ -1,7 +1,7 @@
 
 
 
-# United Masonry
+# United Masonry (Rough Draft)
 
 A website redesign and safety management system for United Masonry Inc.
 
@@ -44,14 +44,6 @@ Next, make sure that you are in the projects root directory and run...
 $ rails db:create && rails db:migrate
 $ bundle install
 ```
-
-If you run into errors after running bundler, make sure to update your dependencies...
-
-```
-$ bundle update && bundle install
-```
-
-
 ### Rails Server
 To view the app locally you'll need to startup the Rails server and visit localhost:3000 in your browser
 
