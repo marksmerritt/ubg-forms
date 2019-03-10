@@ -23,5 +23,6 @@ Rails.application.routes.draw do
     resources :form_types, except: [:show] do 
       resources :forms
     end
+    resources :checklist_types
   end
 end
