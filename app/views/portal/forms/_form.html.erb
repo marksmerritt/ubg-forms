@@ -16,11 +16,20 @@
     <% end %>
   <% end %>
 
-  <%= f.fields_for :checklist_properties, OpenStruct.new(@form.checklist_properties) do |builder| %>
-    <% @form_type.checklist_fields.each do |field| %>
-      <%= render "portal/forms/fields/pass_fail", field: field, f: builder %>
+  <table>
+    <tr>
+      <th></th>
+      <th>Pass</th>
+      <th>Fail</th>
+    </tr>
+    <%= f.fields_for :checklist_properties, OpenStruct.new(@form.checklist_properties) do |builder| %>
+      <% @form_type.checklist_fields.each do |field| %>
+        <%= render "portal/forms/fields/pass_fail", field: field, f: builder %>
+      <% end %>
     <% end %>
-  <% end %>
+  </table>
+
+  
 
   <%= f.fields_for :footer_properties, OpenStruct.new(@form.footer_properties) do |builder| %>
     <h4>Footer Fields</h4>
