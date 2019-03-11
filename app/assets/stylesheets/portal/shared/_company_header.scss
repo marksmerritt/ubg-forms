@@ -1,0 +1,18 @@
+.company-header {
+  grid-column: 1 / -1;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  text-align: center;
+  
+  &__logo {
+    font-size: 3rem;
+  }
+
+  &__name, 
+  &__contact {
+    color: $color-grey-dark-2;
+    font-size: 1.3rem;
+  }
+}

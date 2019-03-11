@@ -14,6 +14,14 @@
     text-align: center;  
   }
 
+  &__name-field {
+    width: 80%;
+    height: 5rem;
+    font-size: 2.5rem;
+    text-align: center;
+    font-weight: 700;
+  }
+
   &__checklist {
     grid-column: 1 / -1;
   }
@@ -23,92 +31,78 @@
     text-align: center;
   }
 
-  &__header-fields {
-    text-align: center;
+  &__header-fields-container,
+  &__footer-fields-container {
+    margin-top: 5rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(6, min-content);
+  }
+
+  &__text-field {
+    height: 3rem;
+    width: 70%;
+    font-size: inherit;
+  }
+
+  &__add-field-icon {
+    height: 2rem;
+    width: 2rem;
+    margin: 1rem 2rem;
+    fill: green;
+  }
+
+  &__icon-remove-field {
+    width: 1rem;
+    height: 1rem;
+    fill: red;
+  }
+
+  &__btn-submit {
+    font-size: 1.5rem;
+    color: $color-primary;
+    padding: 1rem 6rem;
+    border: none;
+    border: 2px solid currentColor;
+    border-radius: 3rem;
+
+    &:hover {
+      cursor: pointer;
+      color: $color-white;
+      background-color: $color-primary
+    }
   }
 
 }
 
-
-
-.nested-fields,
-.header-fields,
-.footer-fields {
+.nested-fields {
   text-align: center;
-}
-
-.text-field {
-  height: 3rem;
-  width: 70%;
-  font-size: inherit;
-  text-align: center;
+  margin-bottom: 5rem;
 }
 
 
-.header-fields-container,
-.footer-fields-container {
-  margin-top: 5rem;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(6, min-content);
-  grid-gap: 3rem;
-  grid-auto-rows: 5rem;
-}
+// ------------ Checklist Columns ------------ //
 
-
-
-
-
-
-.company-header {
-  grid-column: 1 / -1;
-
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  text-align: center;
-  
-  &__logo {
-    font-size: 3rem;
-  }
-
-  &__name, 
-  &__contact {
-    color: $color-grey-dark-2;
-    font-size: 1.3rem;
-  }
-}
-
-#btn-submit-new-form-type {
-  font-size: 1.5rem;
-  color: $color-primary;
-  padding: 1rem 6rem;
-  border: none;
-  border: 2px solid currentColor;
-  border-radius: 3rem;
-
-  &:hover {
-    cursor: pointer;
-    color: $color-white;
-    background-color: $color-primary
-  }
-}
-
-#field-form-type-name {
+.checklist-fields-container {
+  margin-top: 20rem;
   width: 80%;
-  height: 5rem;
-  font-size: 2.5rem;
-  text-align: center;
-  font-weight: 700;
-
-  &:hover,
-  &:active {
-    outline: none;
-  }
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
 }
 
-.icon-remove-field {
-  width: 1rem;
-  height: 1rem;
-  fill: red;
+.checklist-fields {
+  border: 1px solid black;
+  flex: 33.33%;
 }
+
+.pass-col {
+  flex: 33.33%;
+  border: 1px solid black;
+}
+
+.fail-col {
+  border: 1px solid black;
+  flex: 33.33%;
+}
+

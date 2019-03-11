@@ -1,32 +1,18 @@
 <div class="form-container">
 
   <%= form_for @form_type do |f| %>
-    <div class="company-header">
-      <div class="company-header__logo-box">
-        <h3 class="comany-header__logo">UM</h3>
-      </div> 
-
-      <div class="company-header__name">
-        United Masonry <br>
-        Incorporated of <br>
-        Virginia
-      </div> 
-
-      <div class="company-header__contact">
-        9204 Venture Court<br>
-        Manassas, VA 20111<br>
-        P) 703.971.6840<br>
-      </div>
-    </div>
+    <%= render "portal/shared/company_header" %>
+    
+    <!----------------- Name of Form Field ----------------->
 
     <div class="new_form_type__name">
-      <%= f.text_field :name, id: "field-form-type-name", placeholder: "Name of the form..." %>
+      <%= f.text_field :name, class: "new_form_type__name-field", id: "field-form-type-name", placeholder: "Form title..." %>
     </div>  
     
     
     <!----------------- Header Fields ----------------->
     
-    <div class="header-fields-container">
+    <div class="new_form_type__header-fields-container">
       <%= f.fields_for :header_fields do |builder| %>
         <div class="new_form_type__header-fields">
           <%= render "header_field_fields", f: builder %>
@@ -34,7 +20,7 @@
       <% end %>
 
       <div class="new_form_type__add-header-btn">
-        <%= link_to_add_association "Add header field", f, :header_fields,  :render_options => { :wrapper => 'inline' },
+        <%= link_to_add_association display_icon("add-solid", "new_form_type__add-field-icon"), f, :header_fields,  :render_options => { :wrapper => 'inline' },
        :wrap_object => Proc.new { |field| field.type = 'HeaderFormField'; field }, id: "add-header-field-link" %>
       </div>
     </div>
@@ -42,27 +28,30 @@
     
     <!----------------- Checklist Fields ----------------->
     
-    <table>
-      <tr>
-        <th>Field Name</th>
-        <th>Pass</th>
-        <th>Fail</th>
-      </tr>
+    <div class="checklist-fields-container">
+      <div class="checklist-fields">
+        <p>Column Name</p>
         <%= f.fields_for :checklist_fields do |builder| %>
           <%= render "checklist_field_fields", f: builder %>
         <% end %>
-    </table>
-    
-    <div class="new_form_type__add-checklist-btn">
-      <%= link_to_add_association "Add Checklist field", f, :checklist_fields,  :render_options => { :wrapper => 'inline' },
-     :wrap_object => Proc.new { |field| field.type = 'ChecklistFormField'; field }, id: "add-checklist-field-link" %>
+
+        <div class="new_form_type__add-checklist-btn">
+          <%= link_to_add_association display_icon("add-solid", "new_form_type__add-field-icon"), f, :checklist_fields,  :render_options => { :wrapper => 'inline' },
+         :wrap_object => Proc.new { |field| field.type = 'ChecklistFormField'; field }, id: "add-checklist-field-link" %>
+        </div>
+      </div>
+      <div class="pass-col">
+        Pass
+      </div>
+      <div class="fail-col">
+        Fail
+      </div>
     </div>
-    
 
 
     <!----------------- Footer Fields ----------------->
     
-    <div class="footer-fields-container">
+    <div class="new_form_type__footer-fields-container">
       <%= f.fields_for :footer_fields do |builder| %>
         <div class="new_form_type__footer-fields">
           <%= render "footer_field_fields", f: builder %>
@@ -70,13 +59,13 @@
       <% end %>
 
       <div class="new_form_type__add-footer-btn">
-        <%= link_to_add_association "Add footer field", f, :footer_fields,  :render_options => { :wrapper => 'inline' },
+        <%= link_to_add_association display_icon("add-solid", "new_form_type__add-field-icon"), f, :footer_fields,  :render_options => { :wrapper => 'inline' },
        :wrap_object => Proc.new { |field| field.type = 'FooterFormField'; field } %>
       </div>
     </div>
 
     <div class="new_form_type__submit">
-      <%= f.submit form_submit_text(@form_type), id: "btn-submit-new-form-type" %>
+      <%= f.submit form_submit_text(@form_type), class: "new_form_type__btn-submit" %>
     </div>
   <% end %>
 </div>
