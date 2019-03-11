@@ -97,6 +97,15 @@ field_type_options = FormField::FIELD_TYPE_OPTIONS
   )
 end
 
+200.times do 
+  ChecklistFormField.create!(
+    name: Faker::Lorem.word,
+    field_type: "check_box",
+    required: Faker::Boolean.boolean,
+    form_type: @form_types.sample
+  )
+end
+
 50.times do 
   FooterFormField.create!(
     name: Faker::Lorem.word,

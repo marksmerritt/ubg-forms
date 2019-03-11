@@ -15,6 +15,10 @@
       <%= render "portal/forms/fields/#{field.field_type}", field: field, f: builder %>
     <% end %>
 
+    <% @form_type.checklist_fields.each do |field| %>
+      <%= render "portal/forms/fields/pass_fail", field: field, f: builder %>
+    <% end %>
+
     <h4>Footer Fields</h4>
     <% @form_type.footer_fields.each do |field| %>
       <%= render "portal/forms/fields/#{field.field_type}", field: field, f: builder %>
