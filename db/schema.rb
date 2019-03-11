@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_26_211411) do
+ActiveRecord::Schema.define(version: 2019_03_11_185930) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,11 +35,12 @@ ActiveRecord::Schema.define(version: 2019_02_26_211411) do
   create_table "forms", force: :cascade do |t|
     t.bigint "form_type_id"
     t.bigint "user_id"
-    t.jsonb "properties", default: {}, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.jsonb "header_properties", default: {}
+    t.jsonb "checklist_properties", default: {}
+    t.jsonb "footer_properties", default: {}
     t.index ["form_type_id"], name: "index_forms_on_form_type_id"
-    t.index ["properties"], name: "index_forms_on_properties", using: :gin
     t.index ["user_id"], name: "index_forms_on_user_id"
   end
 
