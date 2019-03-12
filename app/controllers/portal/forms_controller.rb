@@ -8,6 +8,13 @@ class Portal::FormsController < Portal::BaseController
   end
 
   def show
+    respond_to do |format|
+      format.html 
+      format.pdf do 
+        render pdf: "form_#{@form.id}",
+        template: "portal/forms/pdf.html.erb"
+      end
+    end
   end
 
   def new

@@ -1,0 +1,22 @@
+<h1><%= @form_type.name %></h1>
+
+<% @form.header_properties.each do |name, value| %>
+  <p>
+    <b><%= name.humanize %>:</b>
+    <%= value %>
+  </p>
+<% end %>
+
+<% @form.checklist_properties.each do |name, value| %>
+  <p>
+    <b><%= name.humanize %>:</b>
+    <%= value %>
+  </p>
+<% end %>
+
+<% @form.footer_properties.each do |name, value| %>
+  <p>
+    <b><%= name.humanize %>:</b>
+    <%= value %>
+  </p>
+<% end %>
