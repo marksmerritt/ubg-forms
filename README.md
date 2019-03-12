@@ -51,6 +51,12 @@ To view the app locally you'll need to startup the Rails server and visit localh
 $ rails s
 ```
 
+If you run into an issue after trying to start the server, make sure you update your dependencies...
+
+```
+$ bundle update && bundle install
+```
+
 
 ## MIT License
 
