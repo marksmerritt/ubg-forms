@@ -5,7 +5,7 @@
 
 A website redesign and safety management system for United Masonry Inc.
 
-[View It Live](https://unitedmasonry.herokuapp.com/)
+[View It Live](https://united-masonry.herokuapp.com/)
 
 ## Contributing
 
