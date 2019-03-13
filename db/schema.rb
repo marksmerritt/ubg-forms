@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_13_191948) do
+ActiveRecord::Schema.define(version: 2019_03_13_223231) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -69,7 +69,9 @@ ActiveRecord::Schema.define(version: 2019_03_13_191948) do
     t.jsonb "header_properties", default: {}
     t.jsonb "checklist_properties", default: {}
     t.jsonb "footer_properties", default: {}
+    t.string "job_number"
     t.index ["form_type_id"], name: "index_forms_on_form_type_id"
+    t.index ["job_number"], name: "index_forms_on_job_number"
     t.index ["user_id"], name: "index_forms_on_user_id"
   end
 
