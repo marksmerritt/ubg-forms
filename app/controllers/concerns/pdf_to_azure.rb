@@ -18,11 +18,14 @@ module PdfToAzure
       filename = "form_#{form.id}"
       content = generate_pdf(form)
       client = create_azure_instance
-      
+
       file = client.create_file(share, directory, filename, content.size)
       client.put_file_range(share, directory, filename, 0, content.size - 1, content)
     end
   end
+
+
+  private
 
   def generate_pdf(form)
     render_to_string pdf: "form_#{form.id}",
