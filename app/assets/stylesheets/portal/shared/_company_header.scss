@@ -2,17 +2,27 @@
   grid-column: 1 / -1;
 
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
   text-align: center;
+  padding: 4rem;
   
   &__logo {
-    font-size: 3rem;
+    color: $color-primary;
+    font-size: 5rem;
   }
 
   &__name, 
   &__contact {
     color: $color-grey-dark-2;
+    font-weight: 600;
+  }
+
+  &__name {
+    font-size: 2rem;
+  }
+
+  &__contact {
     font-size: 1.3rem;
   }
 }

@@ -20,7 +20,7 @@
       <% end %>
 
       <div class="new_form_type__add-header-btn">
-        <%= link_to_add_association display_icon("add-solid", "new_form_type__add-field-icon"), f, :header_fields,  :render_options => { :wrapper => 'inline' },
+        <%= link_to_add_association display_icon("plus", "new_form_type__add-field-icon"), f, :header_fields,  :render_options => { :wrapper => 'inline' },
        :wrap_object => Proc.new { |field| field.type = 'HeaderFormField'; field }, id: "add-header-field-link" %>
       </div>
     </div>
@@ -30,21 +30,21 @@
     
     <div class="checklist-fields-container">
       <div class="checklist-fields">
-        <p>Column Name</p>
+        <p class="checklist-col-name">Row Name</p>
         <%= f.fields_for :checklist_fields do |builder| %>
           <%= render "checklist_field_fields", f: builder %>
         <% end %>
 
         <div class="new_form_type__add-checklist-btn">
-          <%= link_to_add_association display_icon("add-solid", "new_form_type__add-field-icon"), f, :checklist_fields,  :render_options => { :wrapper => 'inline' },
+          <%= link_to_add_association display_icon("plus", "new_form_type__add-field-icon"), f, :checklist_fields,  :render_options => { :wrapper => 'inline' },
          :wrap_object => Proc.new { |field| field.type = 'ChecklistFormField'; field }, id: "add-checklist-field-link" %>
         </div>
       </div>
       <div class="pass-col">
-        Pass
+        <p class="checklist-col-name">Pass</p>
       </div>
       <div class="fail-col">
-        Fail
+        <p class="checklist-col-name">Fail</p>
       </div>
     </div>
 
@@ -59,7 +59,7 @@
       <% end %>
 
       <div class="new_form_type__add-footer-btn">
-        <%= link_to_add_association display_icon("add-solid", "new_form_type__add-field-icon"), f, :footer_fields,  :render_options => { :wrapper => 'inline' },
+        <%= link_to_add_association display_icon("plus", "new_form_type__add-field-icon"), f, :footer_fields,  :render_options => { :wrapper => 'inline' },
        :wrap_object => Proc.new { |field| field.type = 'FooterFormField'; field } %>
       </div>
     </div>

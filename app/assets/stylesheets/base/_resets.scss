@@ -19,3 +19,7 @@ body {
 a {
   text-decoration: none;
 }
+
+textarea:focus, input:focus{
+  outline: none;
+}
