@@ -39,6 +39,11 @@
   <% end %>
 
   <div>
+    <%= f.label :images %>
+    <%= f.file_field :images, multiple: true %>
+  </div>
+
+  <div>
     <%= f.submit form_submit_text(@form) %>
   </div>
 <% end %>

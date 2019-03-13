@@ -45,5 +45,6 @@ gem 'cocoon', '~> 1.2', '>= 1.2.12'
 gem 'faker', '~> 1.6', '>= 1.6.6'
 gem 'wicked_pdf', '~> 1.1'
 gem 'wkhtmltopdf-binary', '~> 0.12.4'
+gem "azure-storage"
 gem 'azure-storage-file', '~> 1.0', '>= 1.0.1'
 gem 'figaro', '~> 1.1', '>= 1.1.1'

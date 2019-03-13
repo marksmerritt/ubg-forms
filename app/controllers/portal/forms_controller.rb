@@ -64,7 +64,8 @@ class Portal::FormsController < Portal::BaseController
     valid_params = @form_type.valid_fields
     params.require(:form).permit(header_properties: valid_params,
                                  checklist_properties: valid_params,
-                                 footer_properties: valid_params)
+                                 footer_properties: valid_params,
+                                 images: [])
   end
 
   def set_form_type

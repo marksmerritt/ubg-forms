@@ -49,6 +49,11 @@ GEM
       faraday (~> 0.9)
       faraday_middleware (~> 0.10)
       nokogiri (~> 1.6)
+    azure-storage (0.15.0.preview)
+      azure-core (~> 0.1)
+      faraday (~> 0.9)
+      faraday_middleware (~> 0.10)
+      nokogiri (~> 1.6, >= 1.6.8)
     azure-storage-common (1.1.0)
       azure-core (~> 0.1.13)
       nokogiri (~> 1.6, >= 1.6.8)
@@ -261,6 +266,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  azure-storage
   azure-storage-file (~> 1.0, >= 1.0.1)
   bootsnap (>= 1.1.0)
   byebug

@@ -21,5 +21,15 @@
   </p>
 <% end %>
 
+<% if @form.images.attached? %>
+  <p>
+    <strong>Attached Images:</strong>
+    <br>
+    <% @form.images.each do |image| %>
+      <%= image_tag(image, class: "form-image") %>
+    <% end %>
+  </p>
+<% end %>
+
 <%= link_to "Edit", edit_form_type_form_path(@form_type, @form), id: "edit-form-#{@form.id}" %>
 <%= link_to "Delete", form_type_form_path(@form_type, @form), method: :delete, id: "destroy-form-#{@form.id}", data: { confirm: 'Are you sure you want to delete this form?' } %>
