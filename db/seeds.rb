@@ -97,7 +97,7 @@ field_type_options = FormField::FIELD_TYPE_OPTIONS
   )
 end
 
-200.times do 
+50.times do 
   ChecklistFormField.create!(
     name: Faker::Lorem.word,
     field_type: "check_box",
@@ -122,24 +122,28 @@ puts "#{FormField.count} Form Fields created"
 
 # -------------------- Forms --------------------------
 
-500.times do 
+100.times do 
   @form_type = @form_types.sample
-  @properties = {}
+  @header_properties = {}
+  @checklist_properties = {}
+  @footer_properties = {}
 
   @form_type.fields.each do |field|
-    if field.field_type == "text_field"
-      @properties[field.name] = Faker::Lorem.word
-    elsif field.field_type == "text_area"
-      @properties[field.name] = Faker::Lorem.sentence
-    elsif field.field_type == "check_box"
-      @properties[field.name] = [0,1].sample
+    if field.type == "HeaderFormField"
+      @header_properties[field.name] = Faker::Lorem.word
+    elsif field.type == "FooterFormField"
+      @footer_properties[field.name] = Faker::Lorem.word
+    else
+      @checklist_properties[field.name] = ["pass","fail"].sample
     end
   end
 
   Form.create!(
     form_type: @form_type,
     user: @users.sample,
-    properties: @properties
+    header_properties: @header_properties,
+    checklist_properties: @checklist_properties,
+    footer_properties: @footer_properties
   )
 end
 

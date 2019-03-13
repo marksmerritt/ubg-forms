@@ -12,16 +12,14 @@ module PdfToAzure
   extend ActiveSupport::Concern 
 
   def send_pdf_to_azure(form)
-    unless Rails.env.test?
-      share = "forms"
-      directory = "forklift_inspections"
-      filename = "form_#{form.id}"
-      content = generate_pdf(form)
-      client = create_azure_instance
+    share = "forms"
+    directory = "forklift_inspections"
+    filename = "form_#{form.id}"
+    content = generate_pdf(form)
+    client = create_azure_instance
 
-      file = client.create_file(share, directory, filename, content.size)
-      client.put_file_range(share, directory, filename, 0, content.size - 1, content)
-    end
+    file = client.create_file(share, directory, filename, content.size)
+    client.put_file_range(share, directory, filename, 0, content.size - 1, content)
   end
 
 

@@ -31,7 +31,7 @@ class Portal::FormsController < Portal::BaseController
     @form.user = current_user
 
     if @form.save
-      send_pdf_to_azure(@form)
+      send_pdf_to_azure(@form) unless Rails.env.test?
       redirect_to [@form_type, @form], notice: "Your Form was submitted successfully"
     else
       render :new
