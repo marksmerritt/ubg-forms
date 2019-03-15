@@ -48,3 +48,4 @@ gem 'wkhtmltopdf-binary', '~> 0.12.4'
 gem "azure-storage"
 gem 'azure-storage-file', '~> 1.0', '>= 1.0.1'
 gem 'figaro', '~> 1.1', '>= 1.1.1'
+gem 'mini_magick', '~> 4.9', '>= 4.9.3'

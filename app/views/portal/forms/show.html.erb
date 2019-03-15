@@ -26,7 +26,7 @@
     <strong>Attached Images:</strong>
     <br>
     <% @form.images.each do |image| %>
-      <%= image_tag(image, class: "form-image") %>
+      <%= image_tag(image.representation(resize: '300x300'), class: "form-image") %>
     <% end %>
   </p>
 <% end %>
