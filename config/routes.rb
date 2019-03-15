@@ -20,8 +20,16 @@ Rails.application.routes.draw do
     resources :admin, only: :index
     resources :dashboard, only: :index
     resource :form_overview, only: :show
+
     resources :form_types, except: [:show] do 
       resources :forms
     end
+
+    resources :notifications do 
+      collection do 
+        post :mark_as_read
+      end
+    end
+
   end
 end

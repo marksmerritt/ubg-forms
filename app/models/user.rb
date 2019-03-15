@@ -2,6 +2,7 @@ class User < ApplicationRecord
   enum role: { employee: 0, supervisor: 1, admin: 2 }
   
   has_many :forms
+  has_many :notifications, foreign_key: :recipient_id
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
