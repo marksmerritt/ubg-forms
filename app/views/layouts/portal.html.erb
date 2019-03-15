@@ -12,13 +12,15 @@
   </head>
 
   <body>
-    <div class="container-fluid">
-      <%= render "portal/shared/header" %>
-      <div class="content">
-        <%= render "portal/shared/sidebar" %>
-        <main class="portal-content">
-          <%= yield %>  
-        </main>
+    <div class="wrapper ">
+      <%= render "portal/shared/sidebar" %>
+      <div class="main-panel">
+        <%= render "portal/shared/header" %>
+
+        <div class="content">
+          <%= yield %>
+          <!-- Footer -->  
+        </div>
       </div>
     </div>
   </body>

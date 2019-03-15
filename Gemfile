@@ -50,3 +50,4 @@ gem 'azure-storage-file', '~> 1.0', '>= 1.0.1'
 gem 'figaro', '~> 1.1', '>= 1.1.1'
 gem 'mini_magick', '~> 4.9', '>= 4.9.3'
 gem 'bootstrap', '~> 4.3.1'
+gem "font-awesome-rails"
