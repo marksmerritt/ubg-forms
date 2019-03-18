@@ -45,39 +45,35 @@ $ rails db:create && rails db:migrate
 $ bundle install
 ```
 ### Rails Server
-To view the app locally you'll need to startup the Rails server and visit localhost:3000 in your browser
+This app utilizes Redis for background jobs. Install Redis with
+
+```
+$ brew install redis
+```
+
+To avoid having to start Redis each time you startup the app run...
+
+```
+$ ln -sfv /usr/local/opt/redis/*.plist ~/Library/LaunchAgents
+```
+
+
+To view the app locally you'll need to startup the Rails server and sidekiq. Create two terminal sessions in 
+the project's root directory
+
+In the first session...
 
 ```
 $ rails s
 ```
 
-If you run into an issue after trying to start the server, make sure you update your dependencies...
+In the second session...
 
 ```
-$ bundle update && bundle install
+$ sidekiq
 ```
 
+Visit [localhost:3000](localhost:3000) in your browser.
 
-## MIT License
-
-Copyright (c) 2019 Mark Merritt
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
 
 
