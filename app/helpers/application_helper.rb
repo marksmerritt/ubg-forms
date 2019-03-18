@@ -15,4 +15,14 @@ module ApplicationHelper
   def active_link?(path, style)
     current_page?(path) ? style : ""
   end
+
+  def display_avatar(user, size=40)
+    if current_user.present?
+      if user.avatar.attached?
+        user.avatar.variant(resize: "#{size}x#{size}!")
+      else
+        gravatar_image_url(user.email, size: size)
+      end
+    end
+  end
 end

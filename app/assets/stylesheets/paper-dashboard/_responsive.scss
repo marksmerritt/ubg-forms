@@ -125,7 +125,7 @@
     .nav-open{
         .main-panel{
             right: 0;
-            @include transform-translate-x(260px);
+            @include transform-translate-x(200px);
         }
 
         .sidebar{
@@ -139,7 +139,7 @@
 
         .menu-on-right{
             .main-panel{
-                @include transform-translate-x(-260px);
+                @include transform-translate-x(-200px);
             }
 
             .navbar-collapse,

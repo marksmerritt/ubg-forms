@@ -1,82 +1,51 @@
-    <div class="sidebar" data-color="brown" data-active-color="danger">
-      <div class="logo">
-    <!--     <a href="http://www.creative-tim.com" class="simple-text logo-mini">
-          UM
-        </a> -->
-        <a href="http://www.creative-tim.com" class="simple-text logo-normal">
-          UM - Portal
-        </a>
-      </div>
+    <div class="sidebar" data-color="white" data-active-color="danger">
       <div class="sidebar-wrapper">
         <div class="user">
-          <!-- <div class="photo">
-            <img src="../assets/img/faces/ayo-ogunseinde-2.jpg" />
-          </div> -->
+          <div class="photo">
+            <%= image_tag(display_avatar(current_user, 40), class: "rounded-circle") %>
+          </div>
           <div class="info">
             <a data-toggle="collapse" href="#collapseExample" class="collapsed">
               <span>
                 <%= "#{current_user.first_name} #{current_user.last_name}" %>
-                <b class="caret"></b>
               </span>
             </a>
             <div class="clearfix"></div>
-            <div class="collapse" id="collapseExample">
-              <ul class="nav">
-                <li>
-                  <a href="#">
-                    <span class="sidebar-mini-icon">MP</span>
-                    <span class="sidebar-normal">My Profile</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <span class="sidebar-mini-icon">EP</span>
-                    <span class="sidebar-normal">Edit Profile</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <span class="sidebar-mini-icon">S</span>
-                    <span class="sidebar-normal">Settings</span>
-                  </a>
-                </li>
-              </ul>
-            </div>
           </div>
         </div>
         <ul class="nav">
           <li class="<%= active_link?(dashboard_index_path, "active") %>">
             <%= link_to dashboard_index_path do %>
               <%= display_icon("spinner2", "icon--md") %>
-              Dashboard
+              <span class="sidebar__link">Dashboard</span>
             <% end %>
           </li>
           
           <li class="<%= active_link?(form_overview_path, "active") %>">
             <%= link_to form_overview_path do %>
               <%= display_icon("clipboard-edit", "icon--md") %>
-              Forms
+              <span class="sidebar__link">Forms</span>
             <% end %>
           </li>
 
           <li class="<%= active_link?(root_path, "active") %>">
             <%= link_to root_path do %>
               <%= display_icon("play", "icon--md") %>
-              Training
+              <span class="sidebar__link">Training</span>
             <% end %>
           </li>
 
           <li class="<%= active_link?(root_path, "active") %>">
             <%= link_to root_path do %>
               <%= display_icon("bar-graph", "icon--md") %>
-              Stats
+              <span class="sidebar__link">Stats</span>
             <% end %>
           </li>
 
           <li class="<%= active_link?(root_path, "active") %>">
             <%= link_to root_path do %>
               <%= display_icon("help-with-circle", "icon--md") %>
-              Help
+              <span class="sidebar__link">Help</span>
             <% end %>
           </li>
           
@@ -84,7 +53,7 @@
             <li class="<%= active_link?(admin_index_path, "active") %>">
               <%= link_to admin_index_path, id: "link-admin-index" do %>
                 <%= display_icon("network", "icon--md") %>
-                Admin Area
+                <span class="sidebar__link">Admin Area</span>
               <% end %>
             </li>
           <% end %>

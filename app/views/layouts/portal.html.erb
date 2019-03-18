@@ -12,16 +12,20 @@
   </head>
 
   <body>
-    <div class="wrapper ">
-      <%= render "portal/shared/sidebar" %>
-      <div class="main-panel">
-        <%= render "portal/shared/header" %>
+    <% if current_user.present? %>
+      <div class="wrapper ">
+        <%= render "portal/shared/sidebar" %>
+        <div class="main-panel">
+          <%= render "portal/shared/header" %>
 
-        <div class="content">
-          <%= yield %>
-          <!-- Footer -->  
+          <div class="content">
+            <%= yield %>
+            <!-- Footer -->  
+          </div>
         </div>
       </div>
-    </div>
+    <% else %>
+      <%= yield %>
+    <% end %>
   </body>
 </html>
