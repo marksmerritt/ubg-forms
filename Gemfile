@@ -52,3 +52,4 @@ gem 'mini_magick', '~> 4.9', '>= 4.9.3'
 gem 'bootstrap', '~> 4.3.1'
 gem "font-awesome-rails"
 gem 'gravatar_image_tag'
+gem 'sidekiq', '~> 5.0', '>= 5.0.5'
