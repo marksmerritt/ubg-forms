@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root "static/home#index"
+  root "portal/dashboard#index"
   
   devise_for :users
 
