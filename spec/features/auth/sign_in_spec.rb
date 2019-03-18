@@ -8,7 +8,6 @@ describe "user sign in" do
   describe "successful sign in" do 
     before do 
       visit root_path
-      click_link "sign-in-btn"
     end
 
     it "redirects to dashboard index" do 
