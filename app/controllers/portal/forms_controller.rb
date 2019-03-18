@@ -1,5 +1,4 @@
 class Portal::FormsController < Portal::BaseController
-  include PdfToAzure
   before_action :set_form_type
   before_action :set_form, :authorize_form, only: [:show, :edit, :update, :destroy]
 
@@ -32,7 +31,7 @@ class Portal::FormsController < Portal::BaseController
 
     if @form.save
       Notification.create(recipient: User.admin.first, actor: current_user, action: "submitted", notifiable: @form)
-      send_pdf_to_azure(@form) unless Rails.env.test?
+      FormToAzureJob.perform_later(@form.id) unless Rails.env.test?
       redirect_to [@form_type, @form], notice: "Your Form was submitted successfully"
     else
       render :new
@@ -57,6 +56,7 @@ class Portal::FormsController < Portal::BaseController
       redirect_to [@form_type, @form], notice: "Unable to delete form. Please try again"
     end
   end
+
 
 
   private
