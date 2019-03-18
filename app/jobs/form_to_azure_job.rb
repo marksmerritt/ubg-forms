@@ -10,10 +10,10 @@ class FormToAzureJob < ApplicationJob
 
   def perform(form_id)
     form = Form.find(form_id)
-    send_pdf_to_azure(form)
+    send_form(form)
   end
 
-  def send_pdf_to_azure(form)
+  def send_form(form)
     share = "forms"
     directory = "forklift_inspections"
     filename = "form_#{form.id}"
