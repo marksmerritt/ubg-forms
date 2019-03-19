@@ -1,0 +1,10 @@
+:verbose: false
+:concurrency: 10
+
+# 8 is the recommended timeout for Heroku
+:timeout: 8
+
+production: 
+  :concurrency: 25
+staging: 
+  :concurrency: 15
