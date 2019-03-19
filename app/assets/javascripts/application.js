@@ -17,7 +17,6 @@
 //= require jquery.slick
 //= require cocoon
 //= require activestorage
-//= require turbolinks
 //= require_tree .
 
 $(document).ready(function () {
