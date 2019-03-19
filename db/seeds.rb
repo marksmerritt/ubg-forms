@@ -48,20 +48,6 @@ admin_user = User.new(
 admin_user.skip_confirmation!
 admin_user.save!
 
-
-50.times do 
-  employee_user = User.new(
-    first_name: Faker::Name.first_name,
-    last_name: Faker::Name.last_name, 
-    role: :employee,
-    email: Faker::Internet.email,
-    password: "helloworld",
-    password_confirmation: "helloworld"
-  )
-  employee_user.skip_confirmation!
-  employee_user.save!
-end
-
 @users = User.all
 
 puts "#{User.count} Users created"
@@ -122,7 +108,7 @@ puts "#{FormField.count} Form Fields created"
 
 # -------------------- Forms --------------------------
 
-100.times do 
+1000.times do 
   @form_type = @form_types.sample
   @header_properties = {}
   @checklist_properties = {}
