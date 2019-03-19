@@ -9,5 +9,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable,
          :confirmable, :lockable, :trackable
   
-  validates_presence_of :first_name, :last_name, :role         
+  validates_presence_of :first_name, :last_name, :role   
+
+  def display_name
+    "#{first_name} #{last_name.first}."
+  end      
 end
