@@ -129,7 +129,8 @@ puts "#{FormField.count} Form Fields created"
     user: @users.sample,
     header_properties: @header_properties,
     checklist_properties: @checklist_properties,
-    footer_properties: @footer_properties
+    footer_properties: @footer_properties,
+    job_number: Faker::Code.nric
   )
 end
 
