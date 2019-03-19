@@ -20,3 +20,7 @@
 //= require turbolinks
 //= require_tree .
 
+$(document).ready(function () {
+  $('#datatable').DataTable();
+  $('.dataTables_length').addClass('bs-select');
+});

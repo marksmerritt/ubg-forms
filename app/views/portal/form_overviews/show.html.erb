@@ -4,16 +4,43 @@
     <%= link_to "#{form_type.name}", new_form_type_form_path(form_type), id: "create-new-form-#{form_type.id}" %>
   </div>
 <% end %>
-<br>
-<br>
 
-<h4>My Recent Forms</h4><br>
 
-<% @forms.each do |form| %>
-  <div>
-    <%= link_to "#{form.form_type.name}", form_type_form_path(form.form_type, form) %>
-  
-    <div>User: <%= form.user.first_name %></div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header">
+        <h4 class="card-title">Recently Submitted Forms</h4>
+      </div>
+      <div class="card-body">
+        <div class="toolbar">
+        </div>
+        <table id="datatable" class="table table-striped table-bordered" cellspacing="0" width="100%">
+          <thead>
+            <tr>
+              <th>Form Type</th>
+              <th>Date Submitted</th>
+              <th>Submitted By</th>
+              <th>Job #</th>
+              <th class="disabled-sorting text-right">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @forms.each do |form| %>
+              <tr>
+                <td><%= form.form_type.name %></td>
+                <td><%= form.created_at %></td>
+                <td><%= form.user.first_name %></td>
+                <td><%= form.job_number %></td>
+                <td class="text-right">
+                  <a href="#" class="btn btn-warning btn-link btn-icon btn-sm edit"><i class="fa fa-edit"></i></a>
+                  <a href="#" class="btn btn-danger btn-link btn-icon btn-sm remove"><i class="fa fa-times"></i></a>
+                </td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
   </div>
-  <br>
-<% end %>
+</div>
