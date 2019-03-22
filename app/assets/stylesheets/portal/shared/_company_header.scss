@@ -1,15 +1,8 @@
 .company-header {
-  grid-column: 1 / -1;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  text-align: center;
-  padding: 4rem;
-  
   &__logo {
     color: $color-primary;
-    font-size: 5rem;
+    font-size: 2rem;
+    font-weight: 700;
   }
 
   &__name, 
@@ -19,10 +12,13 @@
   }
 
   &__name {
-    font-size: 2rem;
+    margin-top: .8rem;
+    font-size: 1.2rem;
+    text-align: center;
   }
 
   &__contact {
-    font-size: 1.3rem;
+    text-align: right;
+    font-size: .8rem;
   }
 }
