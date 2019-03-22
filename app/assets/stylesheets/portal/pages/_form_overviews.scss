@@ -1,0 +1,27 @@
+.forms-table-container {
+  text-align: center;
+}
+
+.forms-table {
+  background-color: $color-white;
+  text-align: center;
+  
+  &__form-link {
+    color: $color-primary;
+
+    &:active,
+    &:hover {
+      color: $color-primary;
+      font-weight: 700;
+    }
+  }
+
+  &__header {
+    font-size: 1.7rem;
+  }
+
+  &__search-bar {
+    margin: 0 auto;
+    width: 50%;
+  }
+}
