@@ -56,7 +56,7 @@ puts "#{User.count} Users created"
 # -------------------- Form Types ---------------------
 
 form_types = ["Scaffold Inspection", "Forklift Inspection", "Boom/Scissor Inspection",
-              "Daily Mast Climber Work Platform Scaffold Check List", "Mixer Inspection",
+              "Mast Climber Inspection", "Mixer Inspection",
               "Ladder Inspection", "Request For Accident Information", "Job Hazard Analysis"]
 
 form_types.each do |form_type|

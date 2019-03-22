@@ -1,10 +1,48 @@
-.forms-table-container {
+//------------------ New Form Links ------------------//
+
+.new-form-links {
+  
+  &__header {
+    
+  }
+}
+
+.new-form-link-container {
+  margin-top: 3rem;
   text-align: center;
+}
+
+.new-form-link {
+  padding: .7rem 3rem;
+  color: $color-primary;
+  border: 2px solid currentColor;
+  border-radius: 1rem;
+  background-color: $color-white;
+  
+  &:not(last-child) {
+    margin-right: 1rem;
+  }
+
+
+
+  &:active,
+  &:hover {
+    background-color: $color-primary;
+    color: $color-white;
+    text-decoration: none;
+  }
+}
+
+
+
+//------------------ Forms Table ------------------//
+
+.forms-table-container {
+  margin-top: 10rem;
 }
 
 .forms-table {
   background-color: $color-white;
-  text-align: center;
   
   &__form-link {
     color: $color-primary;
@@ -21,7 +59,7 @@
   }
 
   &__search-bar {
-    margin: 0 auto;
     width: 50%;
   }
 }
+
