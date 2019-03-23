@@ -28,10 +28,10 @@
             <% end %>
           </li>
 
-          <li class="<%= active_link?(root_path, "active") %>">
-            <%= link_to root_path do %>
+          <li class="<%= active_link?(courses_path, "active") %>">
+            <%= link_to courses_path, id: "courses-index-link" do %>
               <%= display_icon("play", "icon--md") %>
-              <span class="sidebar__link">Training</span>
+              <span class="sidebar__link">Courses</span>
             <% end %>
           </li>
 

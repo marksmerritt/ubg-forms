@@ -2,7 +2,9 @@ require 'faker'
 
 # -------------------- Reset --------------------
 
-
+Registration.delete_all
+Exam.delete_all
+Course.delete_all
 Form.delete_all
 FormField.delete_all
 FormType.delete_all
@@ -140,18 +142,51 @@ puts "#{Form.count} Forms created"
 
 
 
+# -------------------- Active Courses --------------------------
+
+100.times do 
+  Course.create!(
+    title: Faker::Educator.subject,
+    body: Faker::Lorem.sentence,
+    status: "active"
+  )
+end
+
+@courses = Course.all
+
+puts "#{Course.count} Courses created"
+
+# -------------------- Exams --------------------------
+
+@courses.each do |course|
+  Exam.create!(
+    instructions: Faker::Lorem.sentence,
+    course: course
+  )
+end
+
+@exams = Exam.all
+
+puts "#{Exam.count} Exams created"
 
 
 
+# -------------------- Registrations --------------------------
 
+# Register Users for all courses (for now)
 
+@users.each do |user|
+  @courses.each do |course|
+    Registration.create!(
+      user: user,
+      course: course
+    )
+  end
+end
 
+@registrations = Registration.all
 
-
-
-
-
-
+puts "#{Registration.count} Registrations created"
 
 
 

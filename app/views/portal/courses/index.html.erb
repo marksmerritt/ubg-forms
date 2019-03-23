@@ -1,0 +1,3 @@
+<% @courses.each do |course| %>
+  <%= link_to course.title, course_path(course), id: "view-course-#{course.id}" %>
+<% end %>

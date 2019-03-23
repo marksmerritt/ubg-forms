@@ -42,7 +42,7 @@ gem "jquery-slick-rails"
 gem 'devise', '~> 4.6', '>= 4.6.1'
 gem 'pundit', '~> 1.1'
 gem 'cocoon', '~> 1.2', '>= 1.2.12'
-gem 'faker', '~> 1.6', '>= 1.6.6'
+gem 'faker'
 gem 'wicked_pdf', '~> 1.1'
 gem 'wkhtmltopdf-binary', '~> 0.12.4'
 gem "azure-storage"
