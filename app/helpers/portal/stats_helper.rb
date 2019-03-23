@@ -1,0 +1,2 @@
+module Portal::StatsHelper
+end

@@ -24,6 +24,7 @@ employee_user = User.new(
 
 employee_user.skip_confirmation!
 employee_user.save!
+employee_user.update(created_at: Faker::Date.between(20.days.ago, Date.today))
 
 
 supervisor_user = User.new(
@@ -37,7 +38,7 @@ supervisor_user = User.new(
 
 supervisor_user.skip_confirmation!
 supervisor_user.save!
-
+supervisor_user.update(created_at: Faker::Date.between(20.days.ago, Date.today))
 
 admin_user = User.new(
   first_name: "Admin",
@@ -50,6 +51,7 @@ admin_user = User.new(
 
 admin_user.skip_confirmation!
 admin_user.save!
+admin_user.update(created_at: Faker::Date.between(20.days.ago, Date.today))
 
 @users = User.all
 
@@ -127,7 +129,7 @@ puts "#{FormField.count} Form Fields created"
     end
   end
 
-  Form.create!(
+  @form = Form.create!(
     form_type: @form_type,
     user: @users.sample,
     header_properties: @header_properties,
@@ -135,6 +137,8 @@ puts "#{FormField.count} Form Fields created"
     footer_properties: @footer_properties,
     job_number: Faker::Code.nric
   )
+
+  @form.update(updated_at: Faker::Date.between(20.days.ago, Date.today))
 end
 
 @forms = Form.all

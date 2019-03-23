@@ -17,9 +17,7 @@
 //= require jquery.slick
 //= require cocoon
 //= require activestorage
+//= require moment
+//= require Chart.bundle
+//= require chartkick
 //= require_tree .
-
-$(document).ready(function () {
-  $('#datatable').DataTable();
-  $('.dataTables_length').addClass('bs-select');
-});

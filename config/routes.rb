@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'stats/index'
   get 'exams/index'
   get 'exams/show'
   root "portal/dashboard#index"
@@ -36,5 +37,10 @@ Rails.application.routes.draw do
     resources :courses
     resources :exams
 
+    resources :stats, only: :index
+
+     
+    get "stats/new-forms"
+    get "stats/new-users"
   end
 end

@@ -35,8 +35,8 @@
             <% end %>
           </li>
 
-          <li class="<%= active_link?(root_path, "active") %>">
-            <%= link_to root_path do %>
+          <li class="<%= active_link?(stats_path, "active") %>">
+            <%= link_to stats_path, id: "stats-overview-link" do %>
               <%= display_icon("bar-graph", "icon--md") %>
               <span class="sidebar__link">Stats</span>
             <% end %>
