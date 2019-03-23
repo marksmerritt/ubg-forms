@@ -3,6 +3,10 @@ class User < ApplicationRecord
   
   has_many :forms
   has_many :notifications, foreign_key: :recipient_id
+  has_many :registrations
+  has_many :courses, through: :registrations
+  has_many :exams, through: :courses
+
   has_one_attached :avatar
 
   devise :database_authenticatable, :registerable,
