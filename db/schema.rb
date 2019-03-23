@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_23_202522) do
+ActiveRecord::Schema.define(version: 2019_03_23_202932) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -117,6 +117,8 @@ ActiveRecord::Schema.define(version: 2019_03_23_202522) do
     t.boolean "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "exam_id"
+    t.index ["exam_id"], name: "index_questions_on_exam_id"
   end
 
   create_table "registrations", force: :cascade do |t|
@@ -162,6 +164,7 @@ ActiveRecord::Schema.define(version: 2019_03_23_202522) do
   add_foreign_key "form_fields", "form_types"
   add_foreign_key "forms", "form_types"
   add_foreign_key "forms", "users"
+  add_foreign_key "questions", "exams"
   add_foreign_key "registrations", "courses"
   add_foreign_key "registrations", "users"
 end
