@@ -3,6 +3,7 @@ require 'faker'
 # -------------------- Reset --------------------
 
 Registration.delete_all
+Question.delete_all
 Exam.delete_all
 Course.delete_all
 Form.delete_all
@@ -159,6 +160,8 @@ end
 
 puts "#{Course.count} Courses created"
 
+
+
 # -------------------- Exams --------------------------
 
 @courses.each do |course|
@@ -172,6 +175,28 @@ end
 
 puts "#{Exam.count} Exams created"
 
+
+
+# -------------------- Questions --------------------------
+
+@exams.each do |exam|
+  10.times do 
+    @answer_bank = []
+    4.times { @answer_bank.push(Faker::Lorem.sentence) }
+
+    Question.create!(
+      title: Faker::Lorem.sentence,
+      answer_bank: @answer_bank,
+      correct_answer: [0,1,2,3].sample,
+      status: "active",
+      exam: exam
+    )
+  end
+end
+
+@questions = Question.all
+
+puts "#{Question.count} Questions created"
 
 
 # -------------------- Registrations --------------------------

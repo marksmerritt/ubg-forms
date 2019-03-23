@@ -1,2 +1,6 @@
-<h1>Portal::Exams#show</h1>
-<p>Find me in app/views/portal/exams/show.html.erb</p>
+<% @exam.questions.each do |question| %>
+  <div>
+    <%= question.title %> <br>
+    <%= question.answer_bank %>
+  </div>
+<% end %>
