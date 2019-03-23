@@ -9,7 +9,7 @@ class User < ApplicationRecord
 
   has_one_attached :avatar
 
-  devise :database_authenticatable, :registerable,
+  devise :invitable, :database_authenticatable,
          :recoverable, :rememberable, :validatable,
          :confirmable, :lockable, :trackable
   

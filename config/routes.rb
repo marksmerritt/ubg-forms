@@ -1,10 +1,7 @@
 Rails.application.routes.draw do
-  get 'stats/index'
-  get 'exams/index'
-  get 'exams/show'
   root "portal/dashboard#index"
   
-  devise_for :users
+  devise_for :users, skip: :registrations
 
   scope module: 'static' do 
     scope controller: :home do
