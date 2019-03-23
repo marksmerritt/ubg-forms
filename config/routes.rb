@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'exams/index'
+  get 'exams/show'
   root "portal/dashboard#index"
   
   devise_for :users
@@ -32,6 +34,7 @@ Rails.application.routes.draw do
     end
 
     resources :courses
+    resources :exams
 
   end
 end

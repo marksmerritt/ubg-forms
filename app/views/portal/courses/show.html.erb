@@ -15,3 +15,9 @@
     <%= @course.body %>
   </div>
 </div>
+
+<div class="row">
+  <div class="col-md-12 text-center">
+    <%= link_to "Take the Exam", exam_path(@course.exam), id: "exam-#{@course.id}-link" %>
+  </div>
+</div>

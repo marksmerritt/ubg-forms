@@ -149,7 +149,7 @@ YOUTUBE_IDS = ["Z3pD02Qw7Xg", "Y3J8dt7OvyQ", "m0sgigLof24"].freeze
 100.times do 
   Course.create!(
     title: Faker::Educator.subject,
-    body: Faker::Lorem.sentence,
+    body: Faker::Lorem.paragraph_by_chars(1000, false),
     status: "active",
     youtube_id: YOUTUBE_IDS.sample
   )
