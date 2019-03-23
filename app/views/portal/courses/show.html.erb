@@ -1,0 +1,17 @@
+<div class="row">
+  <div class="col-md-12 text-center">
+    <h3><%= @course.title %></h3>
+  </div>
+</div>
+
+<div class="row justify-content-center">
+  <div class="col-md-12 text-center">
+    <iframe width="640" height="360" src='https://www.youtube.com/embed/<%= @course.youtube_id %>?rel=0&autoplay=<%= params[:autoplay] || 0 %>' frameborder='0' allowfullscreen></iframe>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12 text-center">
+    <%= @course.body %>
+  </div>
+</div>
