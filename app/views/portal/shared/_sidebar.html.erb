@@ -42,21 +42,12 @@
             <% end %>
           </li>
 
-          <li class="<%= active_link?(root_path, "active") %>">
-            <%= link_to root_path do %>
+          <li class="<%= active_link?(help_index_path, "active") %>">
+            <%= link_to help_index_path, id: "help-index-link" do %>
               <%= display_icon("help-with-circle", "icon--md") %>
               <span class="sidebar__link">Help</span>
             <% end %>
           </li>
-          
-          <% if current_user.admin? %>
-            <li class="<%= active_link?(admin_index_path, "active") %>">
-              <%= link_to admin_index_path, id: "link-admin-index" do %>
-                <%= display_icon("network", "icon--md") %>
-                <span class="sidebar__link">Admin Area</span>
-              <% end %>
-            </li>
-          <% end %>
         </ul>
       </div>
     </div>

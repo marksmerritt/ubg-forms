@@ -1,5 +1,9 @@
 <div class="container">
   <h4 class="new-form-links__header">Create a new form</h4>
+  
+  <% if current_user.admin? %>
+    <%= link_to "Create a New Form Type", new_form_type_path, id: "link-create-form-type" %>
+  <% end %>
 
   <div class="container new-form-links">
     <div class="row">
@@ -35,12 +39,12 @@
             <td><%= form.created_at %></td>
             <td><%= form.user.display_name %></td>
             <td><%= form.job_number %></td>
-            <td class="text-right">
+            <td class="text-center">
               <%= link_to edit_form_type_form_path(form.form_type, form) do %>
                 <%= display_icon("clipboard-edit", "icon--sm") %>
               <% end %>
               <%= link_to form_type_form_path(form.form_type, form), method: :delete do %>
-                <%= display_icon("bin1", "icon--sm icon--danger") %>
+                <%= display_icon("bin1", "icon--sm icon--danger icon--trash") %>
               <% end %>
             </td>
           </tr>

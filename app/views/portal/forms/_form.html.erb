@@ -1,70 +1,72 @@
 <div class="form-container">
-  <%= render "portal/shared/company_header" %>
+  <div class="new_form_type">
+    <%= render "portal/shared/company_header" %>
 
-  <h3 class="form-header"><%= @form_type.name %></h3>
+    <h3 class="form-header"><%= @form_type.name %></h3>
 
-  <%= form_for [@form_type, @form] do |f| %>
-    <% if @form.errors.any? %>
-      <div>
-        <ul>
-          <% @form.errors.full_messages.each do |msg| %>
-            <li><%= msg %></li>
-          <% end %>
-        </ul>
-      </div>
-    <% end %>
-    
-    <div class="row">
-      <%= f.fields_for :header_properties, OpenStruct.new(@form.header_properties) do |builder| %>
-        <% @form_type.header_fields.each do |field| %>
-          <div class="col-md-6">
-            <div class="form-field-container">
-              <%= render "portal/forms/fields/#{field.field_type}", field: field, f: builder %>
-            </div>
-          </div>
-        <% end %>
-      <% end %>
-    </div>
-    
-    <div class="row">
-      <div class="col-md-12">
-        <div class="pass-fail-table__container">
-          <table class="table-striped pass-fail-table">
-            <tr>
-              <th scope="col"></th>
-              <th scope="col">Pass</th>
-              <th scope="col">Fail</th>
-            </tr>
-            <%= f.fields_for :checklist_properties, OpenStruct.new(@form.checklist_properties) do |builder| %>
-              <% @form_type.checklist_fields.each do |field| %>
-                <%= render "portal/forms/fields/pass_fail", field: field, f: builder %>
-              <% end %>
+    <%= form_for [@form_type, @form] do |f| %>
+      <% if @form.errors.any? %>
+        <div>
+          <ul>
+            <% @form.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
             <% end %>
-          </table>
+          </ul>
+        </div>
+      <% end %>
+      
+      <div class="row">
+        <%= f.fields_for :header_properties, OpenStruct.new(@form.header_properties) do |builder| %>
+          <% @form_type.header_fields.each do |field| %>
+            <div class="col-md-6">
+              <div class="form-field-container">
+                <%= render "portal/forms/fields/#{field.field_type}", field: field, f: builder %>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+      
+      <div class="row">
+        <div class="col-md-12">
+          <div class="pass-fail-table__container">
+            <table class="table-striped pass-fail-table">
+              <tr>
+                <th scope="col"></th>
+                <th scope="col">Pass</th>
+                <th scope="col">Fail</th>
+              </tr>
+              <%= f.fields_for :checklist_properties, OpenStruct.new(@form.checklist_properties) do |builder| %>
+                <% @form_type.checklist_fields.each do |field| %>
+                  <%= render "portal/forms/fields/pass_fail", field: field, f: builder %>
+                <% end %>
+              <% end %>
+            </table>
+          </div>
         </div>
       </div>
-    </div>
 
-    
-    <div class="row">
-      <%= f.fields_for :footer_properties, OpenStruct.new(@form.footer_properties) do |builder| %>
-        <% @form_type.footer_fields.each do |field| %>
-          <div class="col-md-6">
-            <div class="form-field-container">
-              <%= render "portal/forms/fields/#{field.field_type}", field: field, f: builder %>
+      
+      <div class="row">
+        <%= f.fields_for :footer_properties, OpenStruct.new(@form.footer_properties) do |builder| %>
+          <% @form_type.footer_fields.each do |field| %>
+            <div class="col-md-6">
+              <div class="form-field-container">
+                <%= render "portal/forms/fields/#{field.field_type}", field: field, f: builder %>
+              </div>
             </div>
-          </div>
+          <% end %>
         <% end %>
-      <% end %>
-    </div>
+      </div>
 
-    <div>
-      <%= f.label :images %>
-      <%= f.file_field :images, multiple: true %>
-    </div>
+      <div>
+        <%= f.label :images %>
+        <%= f.file_field :images, multiple: true %>
+      </div>
 
-    <div>
-      <%= f.submit form_submit_text(@form) %>
-    </div>
-  <% end %>
+      <div>
+        <%= f.submit form_submit_text(@form) %>
+      </div>
+    <% end %>
+  </div>
 </div>

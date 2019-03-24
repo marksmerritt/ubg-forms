@@ -35,9 +35,9 @@ Rails.application.routes.draw do
     resources :exams
 
     resources :stats, only: :index
-
-     
     get "stats/new-forms"
     get "stats/new-users"
+
+    resources :help, only: :index
   end
 end
