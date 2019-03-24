@@ -176,7 +176,7 @@ iframe {
   background-position: center;
   position: relative;
   z-index: 1;
-  background-image: url('login-bg.jpg');
+  background-image: asset_url('login-bg.jpg');
 }
 
 .login100-more::before {
