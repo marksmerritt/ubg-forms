@@ -14,11 +14,14 @@ class FormToAzureJob < ApplicationJob
   end
 
   def send_form(form)
-    share = "forms"
-    directory = "forklift_inspections"
-    filename = "form_#{form.id}"
-    content = generate_pdf(form)
     client = create_azure_instance
+    share = "forms"
+    form_type = form.form_type.name.underscore
+    client.create_directory(share, form_type) unless form_type_dir_exists?(client, share, form_type)
+    
+    directory = "#{form_type}"
+    filename = "#{form_type}_#{form.id}"
+    content = generate_pdf(form)
 
     file = client.create_file(share, directory, filename, content.size)
     client.put_file_range(share, directory, filename, 0, content.size - 1, content)
@@ -50,5 +53,9 @@ class FormToAzureJob < ApplicationJob
   def create_azure_instance
     Azure::Storage::File::FileService.create(storage_account_name: ENV["AZURE_STORAGE_ACCOUNT"],
                                              storage_access_key: ENV["AZURE_STORAGE_ACCESS_KEY"])
+  end
+
+  def form_type_dir_exists?(client, share, form_type)
+    client.create_directory(share, form_type)
   end
 end
