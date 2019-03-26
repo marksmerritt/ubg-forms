@@ -21,5 +21,6 @@
     <% else %>
       <%= yield %>
     <% end %>
+    <%= render "portal/shared/flash" if flash.present? %>
   </body>
 </html>
