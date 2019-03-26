@@ -19,7 +19,7 @@ class FormToAzureJob < ApplicationJob
     form_type = form.form_type.name.underscore
     client.create_directory(share, form_type) unless form_type_dir_exists?(client, share, form_type)
     
-    directory = "#{form_type}"
+    directory = "#{form_type}s"
     filename = "#{form_type}_#{form.id}"
     content = generate_pdf(form)
 
