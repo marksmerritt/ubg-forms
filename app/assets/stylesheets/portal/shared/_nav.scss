@@ -10,8 +10,14 @@
   }
 }
 
-.nav-item {
+.nav-item--left {
   &:not(last-child) {
-    margin-left: 4rem;
+    margin-right: 4rem;
+  }
+}
+
+.nav-item--right {
+  &:not(last-child) {
+    margin-right: .5rem;
   }
 }

@@ -12,35 +12,35 @@
 
       <!---------------------- Navigation Links ---------------------->
 
-      <li class="nav-item <%= active_link?(dashboard_index_path, "active") %>">
+      <li class="nav-item nav-item--left <%= active_link?(dashboard_index_path, "active") %>">
         <%= link_to dashboard_index_path, class: "nav-link" do %>
           <%= display_icon("spinner2", "icon--md") %>
           <span class="navbar__link">Dashboard</span>
         <% end %>
       </li>
       
-      <li class="nav-item <%= active_link?(form_overview_path, "active") %>">
+      <li class="nav-item nav-item--left <%= active_link?(form_overview_path, "active") %>">
         <%= link_to form_overview_path, class: "nav-link" do %>
           <%= display_icon("clipboard-edit", "icon--md") %>
           <span class="navbar__link">Forms</span>
         <% end %>
       </li>
 
-      <li class="nav-item <%= active_link?(courses_path, "active") %>">
+      <li class="nav-item nav-item--left <%= active_link?(courses_path, "active") %>">
         <%= link_to courses_path, id: "courses-index-link", class: "nav-link" do %>
           <%= display_icon("play", "icon--md") %>
           <span class="navbar__link">Courses</span>
         <% end %>
       </li>
 
-      <li class="nav-item <%= active_link?(help_index_path, "active") %>">
+      <li class="nav-item nav-item--left <%= active_link?(help_index_path, "active") %>">
         <%= link_to help_index_path, id: "help-index-link", class: "nav-link" do %>
           <%= display_icon("help-with-circle", "icon--md") %>
           <span class="navbar__link">Help</span>
         <% end %>
       </li>
 
-      <li class="nav-item <%= active_link?(stats_path, "active") %>">
+      <li class="nav-item nav-item--left <%= active_link?(stats_path, "active") %>">
         <%= link_to stats_path, id: "stats-overview-link", class: "nav-link" do %>
           <%= display_icon("bar-graph", "icon--md") %>
           <span class="navbar__link">Stats</span>
@@ -50,7 +50,7 @@
     
     <!---------------------- Navigation Side Icons ---------------------->
 
-    <div class="nav-item dropdown">
+    <div class="nav-item nav-item--right dropdown">
       <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <%= display_icon("bell", "icon--md") %>
       </a>
@@ -60,7 +60,7 @@
         <a class="dropdown-item" href="#">Something else here</a>
       </div>
     </div>
-    <div class="nav-item dropdown">
+    <div class="nav-item nav-item--right dropdown">
       <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <%= display_icon("cog", "icon--md") %>
       </a>
