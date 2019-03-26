@@ -1,0 +1,16 @@
+.navbar {
+
+  &__logo {
+    width: 7rem;
+  }
+
+  &__logo-text {
+    font-size: 1.3rem;
+  }
+}
+
+.nav-item {
+  &:not(last-child) {
+    margin-left: 4rem;
+  }
+}

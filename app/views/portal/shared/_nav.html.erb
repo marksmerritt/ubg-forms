@@ -1,0 +1,73 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <%= link_to dashboard_index_path, class: "navbar-brand" do %>
+    <%= image_tag("um-logo.png", class: "navbar__logo") %>
+    <span class="navbar__logo-text">Portal</span>
+  <% end %>
+
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+    <ul class="navbar-nav mx-auto mt-2 mt-lg-0">
+
+      <!---------------------- Navigation Links ---------------------->
+
+      <li class="nav-item <%= active_link?(dashboard_index_path, "active") %>">
+        <%= link_to dashboard_index_path, class: "nav-link" do %>
+          <%= display_icon("spinner2", "icon--md") %>
+          <span class="sidebar__link">Dashboard</span>
+        <% end %>
+      </li>
+      
+      <li class="nav-item <%= active_link?(form_overview_path, "active") %>">
+        <%= link_to form_overview_path, class: "nav-link" do %>
+          <%= display_icon("clipboard-edit", "icon--md") %>
+          <span class="sidebar__link">Forms</span>
+        <% end %>
+      </li>
+
+      <li class="nav-item <%= active_link?(courses_path, "active") %>">
+        <%= link_to courses_path, id: "courses-index-link", class: "nav-link" do %>
+          <%= display_icon("play", "icon--md") %>
+          <span class="sidebar__link">Courses</span>
+        <% end %>
+      </li>
+
+      <li class="nav-item <%= active_link?(help_index_path, "active") %>">
+        <%= link_to help_index_path, id: "help-index-link", class: "nav-link" do %>
+          <%= display_icon("help-with-circle", "icon--md") %>
+          <span class="sidebar__link">Help</span>
+        <% end %>
+      </li>
+
+      <li class="nav-item <%= active_link?(stats_path, "active") %>">
+        <%= link_to stats_path, id: "stats-overview-link", class: "nav-link" do %>
+          <%= display_icon("bar-graph", "icon--md") %>
+          <span class="sidebar__link">Stats</span>
+        <% end %>
+      </li>
+    </ul>
+    
+    <!---------------------- Navigation Side Icons ---------------------->
+
+    <div class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <%= display_icon("bell", "icon--md") %>
+      </a>
+      <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+        <a class="dropdown-item" href="#">Actio w;lqefhlj flhefwklhkfewqh jkewfhjkl wehfjkl wheqfjk lhweqn</a>
+        <a class="dropdown-item" href="#">Another action</a>
+        <a class="dropdown-item" href="#">Something else here</a>
+      </div>
+    </div>
+    <div class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <%= display_icon("cog", "icon--md") %>
+      </a>
+      <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+        <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+      </div>
+    </div>
+
+  </div>
+</nav>

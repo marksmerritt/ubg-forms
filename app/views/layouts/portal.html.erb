@@ -14,21 +14,12 @@
 
   <body>
     <% if current_user.present? %>
-      <div class="wrapper ">
-        <%= render "portal/shared/sidebar" %>
-        <div class="main-panel">
-          <%= render "portal/shared/header" %>
-
-          <div class="content">
-            <%= yield %>
-            <!-- Footer -->  
-          </div>
-        </div>
+      <%= render "portal/shared/nav" %>
+      <div class="container">
+        <%= yield %>
       </div>
     <% else %>
       <%= yield %>
     <% end %>
-
-    <script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
   </body>
 </html>
