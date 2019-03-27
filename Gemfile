@@ -58,3 +58,4 @@ gem 'chartkick'
 gem 'groupdate'
 gem 'impressionist', '~> 1.6', '>= 1.6.1'
 gem 'devise_invitable', '~> 2.0.0'
+gem "browser"
