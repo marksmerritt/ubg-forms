@@ -55,19 +55,18 @@
         <%= display_icon("bell", "icon--md") %>
       </a>
       <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-        <a class="dropdown-item" href="#">Actio w;lqefhlj flhefwklhkfewqh jkewfhjkl wehfjkl wheqfjk lhweqn</a>
-        <a class="dropdown-item" href="#">Another action</a>
-        <a class="dropdown-item" href="#">Something else here</a>
+        <a class="dropdown-item" href="#">Mark Invited You to Join The App</a>
+      <a class="dropdown-item" href="#">Testing Notifications...</a>
       </div>
     </div>
     <div class="nav-item nav-item--right dropdown">
       <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <%= display_icon("cog", "icon--md") %>
+        <%= image_tag(display_avatar(current_user, 40), class: "rounded-circle") %>
       </a>
       <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+        <%= link_to "Invite a User", new_user_invitation_path, class: "dropdown-item" %>
         <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
       </div>
     </div>
-
   </div>
 </nav>
