@@ -1,0 +1,89 @@
+<div class="testing-container">
+  <div class="testing">
+    <h3 class="testing__heading">Testing Instructions (For Developers)</h3>
+    <h5 class="testing__subheading">
+      **Feedback should only be included for the backend. Frontend design has not been completed.
+    </h5>
+    <ol class="testing__list">
+      <li class="testing-list__question-container">
+        <h5 class="testing-list__question">
+          Open another browser window and navigate to the app. Have these instructions in one window, and the app in another.
+        </h5>
+      </li>
+      <li class="testing-list__question-container">
+        <h5 class="testing-list__question">
+          Click on the <strong>"Forms"</strong> link in the navbar
+        </h5>
+      </li>
+      <li class="testing-list__question-container">
+        <h5 class="testing-list__question">
+          Click on <strong>"Create A New Form Type"</strong> (This will only be available to ADMIN Users)
+        </h5>
+      </li>
+      <li class="testing-list__question-container">
+        <h5 class="testing-list__question">
+          Add and remove fields as you wish in order to test out the Form Builder. <strong>DO NOT</strong> delete the first field (known bug which will be fixed before delivering to the client). If you accidently delete the first field, refresh the page.
+        </h5>
+      </li>
+      <li class="testing-list__question-container">
+        <h5 class="testing-list__question">
+          Once you are done with the Form Builder, click <strong>"Create"</strong> at the bottom of the form. 
+          This will create a new form type which foremans/workers will now be able to access. 
+        </h5>
+      </li>
+      <li class="testing-list__question-container">
+        <h5 class="testing-list__question">
+          The app should redirect you to the <strong>"Form Overview Page"</strong>. Click on the form type that you just created under the <strong>"Create a New Form"</strong> section, fill out all fields, and click submit.
+        </h5>
+      </li>
+      <li class="testing-list__question-container">
+        <h5 class="testing-list__question">
+          You should be redirected and receive a notification that your form was <strong>"successfully submitted"</strong>. 
+        </h5>
+      </li>
+      <li class="testing-list__question-container">
+        <h5 class="testing-list__question">
+          Now, in order to test the search functionality, scroll down to the table that displays all forms. Enter various search terms that will limit the results to your newly created form (Your name is a good place to start).
+        </h5>
+      </li>
+    </ol>
+
+    <h4 class="testing__heading">Azure Testing</h4>
+    <ol class="testing-list testing-list--azure">
+      <li class="testing-list__question-container">
+        <h5 class="testing-list__question">
+          To make sure that your form was successfully submitted to Azure, please follow this link: <%= link_to "www.azure.com"%>
+          <div>
+            Click on "Portal"
+            And enter the Azure Credentials that I provided in your welcome email.
+          </div>
+        </h5>
+      </li>
+      <li class="testing-list__question-container">
+        <h5 class="testing-list__question">
+          Click on the link <strong>"umdevelopment"</strong> under Recent Resources.
+        </h5>
+      </li>
+      <li class="testing-list__question-container">
+        <h5 class="testing-list__question">
+          Click on the link <strong>"Files"</strong>.
+        </h5>
+      </li>
+      <li class="testing-list__question-container">
+        <h5 class="testing-list__question">
+          This should bring you to a page with two directories. One named <strong>"forms"</strong> and one named <strong>"test-share"</strong>. Click on <strong>"forms"</strong>.
+        </h5>
+      </li>
+      <li class="testing-list__question-container">
+        <h5 class="testing-list__question">
+          Verify that the name of your newly created form type has a directory, click on it, and download your form. 
+        </h5>
+      </li>
+      <li class="testing-list__question-container">
+        <h5 class="testing-list__question">
+          Verify that the form you downloaded matches what you submitted on the app.
+        </h5>
+      </li>
+    </ol>
+  </div>
+</div>

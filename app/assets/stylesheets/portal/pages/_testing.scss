@@ -1,0 +1,33 @@
+.testing-container {
+  margin-top: 4rem;
+}
+
+.testing {
+  width: 90%;
+  margin: 0 auto;
+  border: 1px solid $color-primary;
+  padding: 3rem;
+
+
+  &__heading {
+    margin-top: 3rem;
+    font-size: 3rem;
+    text-decoration: underline;
+  }
+
+  &__subheading {
+    font-weight: 700;
+    font-size: 1.3rem;
+  }
+}
+
+.testing-list {
+
+  &__question-container {
+    margin: 2rem;
+  }
+
+  &__question {
+    font-size: 2rem;
+  }
+}
