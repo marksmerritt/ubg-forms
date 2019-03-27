@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root "portal/dashboard#index"
+  root "portal/form_overviews#show"
   
   devise_for :users, skip: :registrations
 
