@@ -16,10 +16,10 @@ class FormToAzureJob < ApplicationJob
   def send_form(form)
     client = create_azure_instance
     share = "forms"
-    form_type = form.form_type.name.underscore
+    form_type = "#{form.form_type.name.gsub!(' ', '_').downcase!}s"
     client.create_directory(share, form_type) unless form_type_dir_exists?(client, share, form_type)
     
-    directory = "#{form_type}s"
+    directory = form_type
     filename = "#{form_type}_#{form.id}"
     content = generate_pdf(form)
 
@@ -56,6 +56,6 @@ class FormToAzureJob < ApplicationJob
   end
 
   def form_type_dir_exists?(client, share, form_type)
-    client.create_directory(share, form_type)
+    client.list_directories_and_files(share, form_type).any?
   end
 end
