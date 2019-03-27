@@ -10,11 +10,11 @@ class ApplicationController < ActionController::Base
   protected
 
   def after_sign_in_path_for(resource)
-    dashboard_index_path
+    form_overview_path
   end
 
   def after_sign_up_path_for(resource)
-    dashboard_index_path
+    form_overview_path
   end
 
   def configure_permitted_parameters
@@ -24,7 +24,7 @@ class ApplicationController < ActionController::Base
 
   def user_not_authorized
     flash[:alert] = "You have not been authorized to perform this action."
-    redirect_to(request.referrer || dashboard_index_path)
+    redirect_to(request.referrer || form_overview_path)
   end
 
   def layout_by_resource
