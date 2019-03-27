@@ -1,7 +1,4 @@
 Rails.application.routes.draw do
-  namespace :portal do
-    get 'feedback/index'
-  end
   root "portal/dashboard#index"
   
   devise_for :users, skip: :registrations
@@ -42,5 +39,6 @@ Rails.application.routes.draw do
     get "stats/new-users"
 
     resources :help, only: :index
+    resources :feedbacks
   end
 end

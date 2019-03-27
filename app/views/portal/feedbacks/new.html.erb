@@ -1,0 +1,11 @@
+<%= form_for @feedback do |f| %>
+  <div class="form-gorup">
+    <%= f.label :title %>
+    <%= f.text_field :title, class: "form-control" %>
+  </div>
+
+  <div class="form-gorup">
+    <%= f.label :description %>
+    <%= f.text_area :description, class: "form-control" %>
+  </div>
+<% end %>
