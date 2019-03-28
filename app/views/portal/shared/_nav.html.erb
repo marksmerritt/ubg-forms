@@ -33,6 +33,15 @@
           <span">Help</span>
         </li>
       <% end %>
+      
+      <% if current_user.admin? %>
+        <%= link_to admin_index_path, id: "admin-index-link", class: "navbar__link" do %>
+          <li class="nav-item nav-item--left <%= active_link?(help_index_path, "navbar__active") %>">
+            <%= display_icon("cog", "icon--md") %>
+            <span">Admin</span>
+          </li>
+        <% end %>
+      <% end %>
     </ul>
     <div class="nav-item">
       <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>

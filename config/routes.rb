@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   root "portal/form_overviews#show"
   
-  devise_for :users, skip: :registrations
+  devise_for :users, skip: :registrations, controllers: {
+    invitations: "invitations"
+  }
 
   scope module: 'static' do 
     scope controller: :home do
