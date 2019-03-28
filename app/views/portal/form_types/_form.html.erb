@@ -2,15 +2,10 @@
 
   <%= form_for @form_type do |f| %>
     <%= render "portal/shared/company_header" %>
-    
-    <!----------------- Name of Form Field ----------------->
 
     <div class="new_form_type__name">
       <%= f.text_field :name, class: "new_form_type__name-field", id: "field-form-type-name", placeholder: "Form title..." %>
     </div>  
-    
-    
-    <!----------------- Header Fields ----------------->
     
     <div class="new_form_type__header-fields-container">
       <%= f.fields_for :header_fields do |builder| %>
@@ -24,9 +19,6 @@
        :wrap_object => Proc.new { |field| field.type = 'HeaderFormField'; field }, id: "add-header-field-link" %>
       </div>
     </div>
-    
-    
-    <!----------------- Checklist Fields ----------------->
 
     <div class="checklist-fields-container">
       <div class="checklist-fields">
@@ -47,9 +39,6 @@
         <p class="checklist-col-name">Fail</p>
       </div>
     </div>
-
-
-    <!----------------- Footer Fields ----------------->
     
     <div class="new_form_type__footer-fields-container">
       <%= f.fields_for :footer_fields do |builder| %>
