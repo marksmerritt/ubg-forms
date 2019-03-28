@@ -1,11 +1,22 @@
-<%= form_for @feedback do |f| %>
-  <div class="form-gorup">
-    <%= f.label :title %>
-    <%= f.text_field :title, class: "form-control" %>
+<div class="row">
+  <div class="col-md-12">
+    <h4 class="feedback-form__heading">Bug Report</h4>
   </div>
+</div>
+<div class="row feedback-form-container">
+  <div class="col-md-6">
+    <%= form_for @feedback do |f| %>
+      <div class="form-gorup">
+        <%= f.label :title %>
+        <%= f.text_field :title, class: "form-control feedback-form__input" %>
+      </div>
 
-  <div class="form-gorup">
-    <%= f.label :description %>
-    <%= f.text_area :description, class: "form-control" %>
+      <div class="form-gorup">
+        <%= f.label :description %>
+        <%= f.text_area :description, class: "form-control feedback-form__input", rows: 10 %>
+      </div>
+
+      <%= f.submit "Submit", class: "feedback-form__submit-btn" %>
+    <% end %>
   </div>
-<% end %>
+</div>

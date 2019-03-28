@@ -49,7 +49,7 @@ class Portal::FormTypesController < Portal::BaseController
 
   def form_type_params
     valid_field_params = FormField.attribute_names.map(&:to_sym).push(:_destroy)
-    params.require(:form_type).permit(:name, 
+    params.require(:form_type).permit(:name, :background_image,
                                       header_fields_attributes: valid_field_params,
                                       checklist_fields_attributes: valid_field_params,
                                       footer_fields_attributes: valid_field_params)

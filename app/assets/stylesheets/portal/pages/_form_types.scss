@@ -1,5 +1,9 @@
+.form-overview-content {
+  margin-top: 4rem;
+}
 
 .new_form_type {
+  font-size: 1.7rem;
   min-height: 100vh;
   background-color: $color-white;
   padding: 3rem;
@@ -10,13 +14,14 @@
     grid-column: 1 / -1;
     
     text-align: center;  
+    margin-top: 3rem;
   }
 
   &__name-field {
     margin: 3rem 0 1rem 0;
     width: 50%;
-    height: 3rem;
-    font-size: 1.5rem;
+    height: 4rem;
+    font-size: 3rem;
     text-align: center;
     font-weight: 700;
     border: none;
@@ -35,6 +40,11 @@
   &__checklist {
     grid-column: 1 / -1;
   }
+  
+  &__image-upload {
+    text-align: center;
+    margin-top: 5rem;
+  }
 
   &__submit {
     grid-column: 1 / -1;
@@ -49,22 +59,25 @@
     grid-template-rows: repeat(6, min-content);
   }
 
+  &__footer-fields-container {
+    margin-top: 7rem;
+  }
+
   &__text-field {
-    height: 1.8rem;
-    width: 50%;
+    height: 3rem;
+    width: 70%;
     font-size: inherit;
 
     &--check {
-      height: 1.8rem;
+      height: 3rem;
       width: 80%;
       font-size: inherit;
     }
   }
 
   &__add-field-icon {
-    height: 1rem;
-    width: 1rem;
-    // margin: 1rem 3.7rem;
+    height: 1.3rem;
+    width: 1.3rem;
     fill: green;
     transition: all .2s;
 
@@ -86,7 +99,7 @@
 
   &__btn-submit {
     margin-top: 7rem;
-    font-size: 1rem;
+    font-size: 1.7rem;
     color: $color-primary;
     padding: .5rem 3rem;
     border: none;
@@ -112,13 +125,16 @@
 
 .checklist-fields-container {
   width: 70%;
-  margin: 1rem auto;
+  margin: 5rem auto;
   text-align: center;
   border: 1px solid $color-grey-light-4;
   border-radius: .3rem;
   display: grid;
-  grid-template-columns: 15rem repeat(2, 1fr);
+  grid-template-columns: 30rem repeat(2, 1fr);
   grid-template-rows: min-content;
+}
+
+.checklist-fields {
 }
 
 .checklist-field-container {

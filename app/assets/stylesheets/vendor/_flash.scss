@@ -4,6 +4,7 @@
 .toast-message {
   -ms-word-wrap: break-word;
   word-wrap: break-word;
+  font-size: 1.5rem;
 }
 .toast-message a,
 .toast-message label {
@@ -155,7 +156,7 @@ button.toast-close-button {
   background-color: #bd362f;
 }
 .toast-info {
-  background-color: $color-primary;
+  background-color: $color-grey-dark-2;
 }
 .toast-warning {
   background-color: #f89406;

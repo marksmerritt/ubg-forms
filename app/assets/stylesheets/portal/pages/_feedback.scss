@@ -1,0 +1,20 @@
+.feedback-form-container {
+  margin-top: 3rem;
+}
+
+.feedback-form {
+
+  &__heading {
+    margin-top: 3rem;
+    font-weight: 700;
+    text-decoration: underline;
+  }
+
+  &__submit-btn {
+    margin-top: 3rem;
+  }
+
+  &__input {
+    font-size: inherit;
+  }
+}

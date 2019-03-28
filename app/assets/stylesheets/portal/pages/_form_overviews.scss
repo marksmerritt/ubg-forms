@@ -7,33 +7,27 @@
   }
 }
 
-.new-form-link-container {
+.new-form-link {
+  
+  &__container {
+    text-align: center;
+    padding: 3rem;
+    border: 1px solid $color-grey-light-4;
+    margin-top: 3rem;
+  }
+}
+
+.new-form-type-link {
   margin-top: 3rem;
   text-align: center;
 }
 
-.new-form-link {
-  padding: .7rem 3rem;
-  color: $color-primary;
-  border: 2px solid currentColor;
-  border-radius: 1rem;
-  background-color: $color-white;
-  
-  &:not(last-child) {
-    margin-right: 1rem;
-  }
-
-
-
-  &:active,
-  &:hover {
-    background-color: $color-primary;
-    color: $color-white;
-    text-decoration: none;
-  }
+.icon--add {
+  display: inline-block;
+  height: 2.5rem;
+  width: 2.5rem;
+  fill: green;
 }
-
-
 
 //------------------ Forms Table ------------------//
 

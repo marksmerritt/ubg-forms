@@ -1,9 +1,6 @@
 .company-header {
   &__logo {
-    margin-top: -.2rem;
-    color: $color-primary;
-    font-size: 3rem;
-    font-weight: 700;
+    width: 6rem;
   }
 
   &__name, 
@@ -14,7 +11,7 @@
 
   &__name {
     margin-top: .3rem;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     text-align: center;
   }
 
