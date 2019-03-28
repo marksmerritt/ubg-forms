@@ -5,10 +5,10 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'static', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'static', media: 'all' %>
     <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,600,700" rel="stylesheet">
 
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application' %>
   </head>
 
   <body>
@@ -17,9 +17,4 @@
     <%= render "static/shared/footer" %>
     <%= render "static/shared/contact_modal" %>
   </body>
-  <script>
-  var scroll = new SmoothScroll('a[href*="#"]', {
-    ignore: '[data-scroll-ignore]'
-  });
-</script>
 </html>
