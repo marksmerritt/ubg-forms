@@ -39,3 +39,49 @@
     font-weight: 700;
   }
 }
+
+.attach-img-container {
+  margin-top: 5rem;
+  margin-left: 3rem;
+}
+
+.attach-img-btn {
+  text-align: center;
+}
+
+.form-submit-btn-container {
+  margin-top: 7rem;
+  text-align: center;
+}
+
+.form-submit-btn {
+  padding: .7rem 3rem;
+  border: none;
+  color: $color-primary;
+  border: 1px solid currentColor;
+
+  &:hover,
+  &:active {
+    background-color: $color-primary;
+    color: $color-white;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

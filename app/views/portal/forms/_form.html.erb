@@ -66,13 +66,13 @@
         <% end %>
       </div>
 
-      <div>
-        <%= f.label :images %>
-        <%= f.file_field :images, multiple: true %>
+      <div class="row attach-img-container">
+        <%= f.label :images, "Attach Images:" %>
+        <%= f.file_field :images, multiple: true, class: "attach-img-btn" %>
       </div>
 
-      <div>
-        <%= f.submit form_submit_text(@form) %>
+      <div class="row form-submit-btn-container">
+        <%= f.submit form_submit_text(@form), class: "form-submit-btn" %>
       </div>
     <% end %>
   </div>
