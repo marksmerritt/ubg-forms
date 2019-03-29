@@ -16,6 +16,13 @@
       <% end %>
       
       <div class="row">
+        <div class="col-md-12 text-center">
+          <%= f.label :job_number, "Job #" %>
+          <%= f.text_field :job_number %>
+        </div>
+      </div>
+
+      <div class="row">
         <%= f.fields_for :header_properties, OpenStruct.new(@form.header_properties) do |builder| %>
           <% @form_type.header_fields.each do |field| %>
             <div class="col-md-6">
