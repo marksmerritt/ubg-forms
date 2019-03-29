@@ -1,22 +1,45 @@
-<h1><%= form_type.name %></h1>
+<%= render "portal/shared/company_header" %>
+<h3 class="form-header"><%= form_type.name %></h3>
 
-<% form.header_properties.each do |name, value| %>
-  <p>
-    <b><%= name.humanize %>:</b>
-    <%= value %>
-  </p>
-<% end %>
+<div class="row">
+  <% form.header_properties.each do |name, value| %>
+    <div class="col-xs-6">
+      <b><%= name.humanize %>:</b>
+      <%= value %>
+    </div>
+  <% end %>
+</div>
 
-<% form.checklist_properties.each do |name, value| %>
-  <p>
-    <b><%= name.humanize %>:</b>
-    <%= value %>
-  </p>
-<% end %>
+<div class="row">
+  <div class="col-xs-12">
+    <div class="pass-fail-table__container">
+      <table class="table-striped pass-fail-table">
+        <tr>
+          <th scope="col"></th>
+          <th scope="col">Pass</th>
+          <th scope="col">Fail</th>
+        </tr>
+        <% form.checklist_properties.each do |name, value| %>
+          <tr>
+            <td><%= name.humanize %></td>
+            <td>
+              <%= "X" if value == "pass" %>
+            </td>
+            <td>
+              <%= "X" if value == "fail" %>
+            </td>
+          </tr>
+        <% end %>
+      </table>
+    </div>
+  </div>
+</div>
 
-<% form.footer_properties.each do |name, value| %>
-  <p>
-    <b><%= name.humanize %>:</b>
-    <%= value %>
-  </p>
-<% end %>
+<div class="row">
+  <% form.footer_properties.each do |name, value| %>
+    <div class="col-xs-6">
+      <b><%= name.humanize %>:</b>
+      <%= value %>
+    </div>
+  <% end %>
+</div>

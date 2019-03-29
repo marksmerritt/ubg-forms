@@ -1,3 +1,52 @@
-body {
-  font-size: 6rem;
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+@import "base/variables";
+@import "base/mixins";
+@import "base/resets";
+@import "base/typography";
+
+@import "portal/icons";
+
+
+.form-container {
+  margin: 5rem;
+  background-color: $color-white;
+  border-radius: .2rem;
+  box-shadow: 0 2rem 5rem rgba(0,0,0,.09);
+}
+
+.form-header {
+  margin: 5rem 0;
+  text-align: center;
+  font-size: 3rem;
+}
+
+.form-field-container {
+}
+
+.pass-fail-table {
+  margin: 3rem auto;
+  width: 60%;
+
+  &__container {
+    width: 100%;
+  }
+}
+
+
+.form-text-field-container {
+  margin-top: 1rem;
+}
+
+.form-text-field {
+  width: 100%;
+  
+  &__name-container {
+    text-align: right;
+  }
+
+  &__name {
+    font-weight: 700;
+  }
 }

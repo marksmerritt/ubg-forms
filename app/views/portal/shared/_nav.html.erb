@@ -1,48 +1,74 @@
-<nav class="navbar navbar-expand-lg navbar-light">
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <%= link_to dashboard_index_path, class: "navbar-brand" do %>
-    <%= image_tag("um-logo.png", class: "navbar__logo") %>
-    <span class="navbar__logo-text">Portal</span>
-  <% end %>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
 
-  <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-    <ul class="navbar-nav mx-auto mt-2 mt-lg-0">
-      
-      <%= link_to form_overview_path, class: "navbar__link" do %>
-        <li class="nav-item nav-item--left <%= active_link?(form_overview_path, "navbar__active") %>">
-          
-            <%= display_icon("clipboard-edit", "icon--md") %>
-            <span>Forms</span>
-        </li>
+    <!-- BRAND -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#alignment-example" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <%= link_to dashboard_index_path, class: "navbar-brand" do %>
+        <%= image_tag("um-logo.png", class: "navbar__logo") %>
+        <span class="navbar__logo-text">Portal</span>
       <% end %>
 
-      <%= link_to stats_path, id: "stats-overview-link", class: "navbar__link" do %>
-        <li class="nav-item nav-item--left <%= active_link?(stats_path, "navbar__active") %>">
-          <%= display_icon("bar-graph", "icon--md") %>
-          <span>Stats</span>
-        </li>
-      <% end %>
-      
-      <%= link_to help_index_path, id: "help-index-link", class: "navbar__link" do %>
-        <li class="nav-item nav-item--left <%= active_link?(help_index_path, "navbar__active") %>">
-          <%= display_icon("help-with-circle", "icon--md") %>
-          <span">Help</span>
-        </li>
-      <% end %>
-      
-      <% if current_user.admin? %>
-        <%= link_to admin_index_path, id: "admin-index-link", class: "navbar__link" do %>
-          <li class="nav-item nav-item--left <%= active_link?(help_index_path, "navbar__active") %>">
-            <%= display_icon("cog", "icon--md") %>
-            <span">Admin</span>
+    </div>
+
+    <!-- COLLAPSIBLE NAVBAR -->
+    <div class="collapse navbar-collapse" id="alignment-example">
+
+      <!-- Links -->
+      <ul class="nav navbar-nav">
+        
+        <%= link_to form_overview_path do %>
+          <li class="<%= active_link?(form_overview_path, "navbar__active") %>">
+            
+              <%= display_icon("clipboard-edit", "icon--md") %>
+              <span>Forms</span>
           </li>
         <% end %>
-      <% end %>
-    </ul>
-    <div class="nav-item">
-      <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+
+        <%= link_to stats_path, id: "stats-overview-link" do %>
+          <li class="<%= active_link?(stats_path, "navbar__active") %>">
+            <%= display_icon("bar-graph", "icon--md") %>
+            <span>Stats</span>
+          </li>
+        <% end %>
+        
+        <%= link_to help_index_path, id: "help-index-link" do %>
+          <li class="<%= active_link?(help_index_path, "navbar__active") %>">
+            <%= display_icon("help-with-circle", "icon--md") %>
+            <span">Help</span>
+          </li>
+        <% end %>
+        
+        <% if current_user.admin? %>
+          <%= link_to admin_index_path, id: "admin-index-link" do %>
+            <li class="<%= active_link?(help_index_path, "navbar__active") %>">
+              <%= display_icon("cog", "icon--md") %>
+              <span">Admin</span>
+            </li>
+          <% end %>
+        <% end %>
+
+      </ul>
+    <!--   <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Link 1 <span class="sr-only">(current)</span></a></li>
+        <li><a href="#">Link 2</a></li>
+        <li><a href="#">Link 3</a></li>
+      </ul>  --> 
+
+      <!-- Link (right) -->
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+        </li>
+      </ul>
+
     </div>
+
   </div>
 </nav>

@@ -14,10 +14,8 @@
 
   <body>
     <% if current_user.present? %>
-      <div class="container">
-        <%= render "portal/shared/nav" %>
-        <%= yield %>
-      </div>
+      <%= render "portal/shared/nav" %>
+      <%= yield %>
     <% else %>
       <%= yield %>
     <% end %>

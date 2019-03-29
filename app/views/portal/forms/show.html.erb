@@ -1,35 +1,49 @@
-<h1><%= @form_type.name %></h1>
 
-<% @form.header_properties.each do |name, value| %>
-  <p>
-    <b><%= name.humanize %>:</b>
-    <%= value %>
-  </p>
-<% end %>
+<%= render "portal/shared/company_header" %>
+<h3 class="form-header"><%= @form_type.name %></h3>
 
-<% @form.checklist_properties.each do |name, value| %>
-  <p>
-    <b><%= name.humanize %>:</b>
-    <%= value %>
-  </p>
-<% end %>
+<div class="row">
+  <% @form.header_properties.each do |name, value| %>
+    <div class="col-md-6">
+      <b><%= name.humanize %>:</b>
+      <%= value %>
+    </div>
+  <% end %>
+</div>
 
-<% @form.footer_properties.each do |name, value| %>
-  <p>
-    <b><%= name.humanize %>:</b>
-    <%= value %>
-  </p>
-<% end %>
+<div class="row">
+  <div class="col-md-12">
+    <div class="pass-fail-table__container">
+      <table class="table-striped pass-fail-table">
+        <tr>
+          <th scope="col"></th>
+          <th scope="col">Pass</th>
+          <th scope="col">Fail</th>
+        </tr>
+        <% @form.checklist_properties.each do |name, value| %>
+          <tr>
+            <td><%= name.humanize %></td>
+            <td>
+              <%= "X" if value == "pass" %>
+            </td>
+            <td>
+              <%= "X" if value == "fail" %>
+            </td>
+          </tr>
+        <% end %>
+      </table>
+    </div>
+  </div>
+</div>
 
-<% if @form.images.attached? %>
-  <p>
-    <strong>Attached Images:</strong>
-    <br>
-    <% @form.images.each do |image| %>
-      <%= image_tag(image.representation(resize: '300x300'), class: "form-image") %>
-    <% end %>
-  </p>
-<% end %>
+<div class="row">
+  <% @form.footer_properties.each do |name, value| %>
+    <div class="col-md-6">
+      <b><%= name.humanize %>:</b>
+      <%= value %>
+    </div>
+  <% end %>
+</div>
 
-<%= link_to "Edit", edit_form_type_form_path(@form_type, @form), id: "edit-form-#{@form.id}" %>
-<%= link_to "Delete", form_type_form_path(@form_type, @form), method: :delete, id: "destroy-form-#{@form.id}", data: { confirm: 'Are you sure you want to delete this form?' } %>
+
+

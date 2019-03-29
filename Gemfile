@@ -49,7 +49,7 @@ gem "azure-storage"
 gem 'azure-storage-blob'
 gem 'figaro', '~> 1.1', '>= 1.1.1'
 gem 'mini_magick', '~> 4.9', '>= 4.9.3'
-gem 'bootstrap', '~> 4.3.1'
+gem 'bootstrap-sass', '~> 3.4.1'
 gem "font-awesome-rails"
 gem 'gravatar_image_tag'
 gem 'sidekiq', '~> 5.0', '>= 5.0.5'

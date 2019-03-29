@@ -14,5 +14,6 @@
 
   <body>
     <%= yield %>
+    <%= render "portal/shared/flash" if flash.present? %>
   </body>
 </html>
