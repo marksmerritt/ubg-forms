@@ -8,7 +8,7 @@ class FormToAzureJob < ApplicationJob
 
   def send_form(form)
     client = create_azure_instance
-    form_type = "#{form.form_type.name.gsub!(' ', '-').downcase!}s"
+    form_type = "#{form.form_type.name.gsub(' ', '-').downcase!}s"
 
     # Create an Azure container using the form type name unless it already exists
     client.create_container(form_type) unless container_exists?(client, form_type)
