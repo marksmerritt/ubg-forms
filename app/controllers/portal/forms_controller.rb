@@ -49,11 +49,9 @@ class Portal::FormsController < Portal::BaseController
   end
 
   def destroy
-    if @form.destroy
-      redirect_to form_overview_path, notice: "Your form was successfully deleted"
-    else
-      redirect_to [@form_type, @form], notice: "Unable to delete form. Please try again"
-    end
+    @form = Form.find(params[:id])
+    DeleteFormFromAzureJob.perform_later(@form.id) unless Rails.env.test?
+    redirect_to form_overview_path, notice: "Your form was successfully deleted"
   end
 
 
