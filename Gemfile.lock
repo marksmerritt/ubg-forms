@@ -56,12 +56,12 @@ GEM
       faraday (~> 0.9)
       faraday_middleware (~> 0.10)
       nokogiri (~> 1.6, >= 1.6.8)
-    azure-storage-common (1.1.0)
-      azure-core (~> 0.1.13)
-      nokogiri (~> 1.6, >= 1.6.8)
-    azure-storage-file (1.0.1)
+    azure-storage-blob (1.1.0)
       azure-core (~> 0.1.13)
       azure-storage-common (~> 1.0)
+      nokogiri (~> 1.6, >= 1.6.8)
+    azure-storage-common (1.1.0)
+      azure-core (~> 0.1.13)
       nokogiri (~> 1.6, >= 1.6.8)
     bcrypt (3.1.12)
     bindex (0.5.0)
@@ -308,7 +308,7 @@ PLATFORMS
 
 DEPENDENCIES
   azure-storage
-  azure-storage-file (~> 1.0, >= 1.0.1)
+  azure-storage-blob
   bootsnap (>= 1.1.0)
   bootstrap (~> 4.3.1)
   browser
