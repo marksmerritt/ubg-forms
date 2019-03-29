@@ -1,26 +1,23 @@
 //------------------ New Form Links ------------------//
 
 .new-form-links {
-  
+  margin-bottom: 6rem;
+
   &__header {
-    
+    text-align: center;
+    font-weight: 700;
   }
 }
 
 .new-form-link {
-  
-  &__container {
+  font-size: 2rem;
+
+  &__link-container {
     text-align: center;
-    padding: 3rem;
-    border: 1px solid $color-grey-light-4;
     margin-top: 3rem;
   }
 }
 
-.new-form-type-link {
-  margin-top: 3rem;
-  text-align: center;
-}
 
 .icon--add {
   display: inline-block;
@@ -32,7 +29,7 @@
 //------------------ Forms Table ------------------//
 
 .forms-table-container {
-  margin-top: 10rem;
+  margin: 6rem 0;
 }
 
 .forms-table {
@@ -49,10 +46,14 @@
   }
 
   &__header {
-    font-size: 1.7rem;
+    text-align: center;
+    font-weight: 700;
+    margin-bottom: 3rem;
   }
 
   &__search-bar {
+    text-align: center;
+    margin: 0 auto;
     width: 50%;
     font-size: inherit;
   }

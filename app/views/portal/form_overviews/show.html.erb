@@ -1,30 +1,17 @@
 <div class="container form-overview-content">
-  <h4 class="new-form-links__header">Create a new form</h4>
+  <h4 class="new-form-links__header">Create a new form:</h4>
   <div class="row new-form-links">
     <% @form_types.each do |form_type| %>
-      <div class="col-md-4 new-form-link__container">
-        <%= link_to "#{form_type.name}", new_form_type_form_path(form_type), id: "create-new-form-#{form_type.id}", class: "new-form-link" %>
+      <div class="col-md-4 new-form-link__link-container">
+        <%= link_to form_type.name, new_form_type_form_path(form_type), id: "create-new-form-#{form_type.id}" , class: "new-form-link" %>
       </div>
     <% end %>
   </div>
 
-  <% if current_user.admin? %>
-    <div class="row">
-      <div class="col-md-12">
-        <div class="new-form-type-link">
-          <%= link_to new_form_type_path, id: "link-create-form-type" do %>
-            <%= display_icon("add-solid", "icon--add") %>
-            <span>Create a new form type</span>
-          <% end %>
-        </div>
-      </div>
-    </div>
-  <% end %>
-
-
+  <hr>
 
   <div class="container forms-table-container">
-    <h2 class="forms-table__header">Submitted Forms</h2>
+    <h4 class="forms-table__header">Submitted Forms:</h4>
     <input class="form-control forms-table__search-bar" id="myInput" type="text" placeholder="Search for anything..">
     <br>
     <table class="table table-striped table-bordered forms-table">
