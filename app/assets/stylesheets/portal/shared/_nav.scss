@@ -1,23 +1,28 @@
-.navbar {
-  height: 10rem;
+.navbar-brand {
+  margin-right: 3rem;
+  margin-top: .7rem;
+}
 
+.navbar {
   &__logo {
-    width: 7rem;
+    display: inline-block;
+    width: 5rem;
+    margin: 0 5rem;
   }
 
-  &__logo-text {
-    font-size: 1.3rem;
+  &__item {
+    margin-right: 5rem;
+    
+    &--last {
+      margin-right: 0;
+    }
   }
 
   &__link {
     color: $color-grey-dark-1;
-    
-    &:hover,
-    &:active {
-      text-decoration: none;
-      color: $color-primary;
-      fill: $color-primary;
-    }
+    display: inline-block;
+    margin-top: -2rem;
+    font-size: 1.5rem;
   }
 
   &__active {
@@ -25,12 +30,15 @@
     color: $color-primary;
     fill: $color-primary;
   }
-}
 
-.nav-item--left {
-  &:not(last-child) {
-    margin-right: 8rem;
+  &__icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    padding-top: 1.2rem;
   }
 }
 
+.sign-out-link {
+  margin-top: 1rem;
+}
 

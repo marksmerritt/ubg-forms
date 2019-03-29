@@ -89,7 +89,7 @@ button.toast-close-button {
   overflow: hidden;
   margin: 0 0 6px;
   padding: 15px 15px 15px 50px;
-  width: 1000px;
+  width: 40%;
   -moz-border-radius: 3px 3px 3px 3px;
   -webkit-border-radius: 3px 3px 3px 3px;
   border-radius: 3px 3px 3px 3px;
@@ -122,7 +122,7 @@ button.toast-close-button {
 }
 #toast-container.toast-top-center > div,
 #toast-container.toast-bottom-center > div {
-  width: 1000px;
+  width: 40%;
   margin-left: auto;
   margin-right: auto;
 }
