@@ -42,6 +42,8 @@ class Portal::FormsController < Portal::BaseController
 
   def update
     if @form.update(form_params)
+      DeleteFormFromAzureJob.perform_later(@form.id) unless Rails.env.test?
+      FormToAzureJob.perform_later(@form.id) unless Rails.env.test?
       redirect_to [@form_type, @form], notice: "Your Form was updated successfully"
     else
       render :edit
