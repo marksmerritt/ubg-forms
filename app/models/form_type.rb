@@ -14,8 +14,15 @@ class FormType < ApplicationRecord
   end
 
   validates :name, presence: true, uniqueness: true
+  validate :azure_container_compliance
 
   def valid_fields
     fields.pluck(:name).map(&:to_sym)
+  end
+
+  def azure_container_compliance
+    unless name.scan(/[!@#$%^&*()_+{}\[\]:;'"\/\\?><.,]/).empty?
+      errors.add(:name, "can only contain letters, numbers, or a dash (-)")
+    end
   end
 end

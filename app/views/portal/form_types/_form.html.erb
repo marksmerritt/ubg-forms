@@ -1,6 +1,17 @@
 <div class="form-container">
 
   <%= form_for @form_type do |f| %>
+    <% if @form_type.errors.any? %>
+      <p>Errors:</p>
+      <div id="error_explanation">
+        <ul>
+          <% @form_type.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
     <%= render "portal/shared/company_header" %>
 
     <div class="new_form_type__name">
