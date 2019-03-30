@@ -21,12 +21,10 @@ class Form < ApplicationRecord
   end
 
   def check_for_failures
-    has_a_failure = checklist_properties.values.any?{ |val| val == "fail" }
+    update(has_failures: has_a_failure?)
+  end
 
-    if has_a_failure
-      update(has_failures: true)
-    else
-      update(has_failures: false)
-    end
+  def has_a_failure?
+    checklist_properties.values.any?{ |val| val == "fail" }
   end
 end
