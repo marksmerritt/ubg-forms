@@ -1,4 +1,6 @@
 class Form < ApplicationRecord
+  after_create :check_for_failures
+
   has_many_attached :images
   
   belongs_to :form_type
@@ -16,5 +18,15 @@ class Form < ApplicationRecord
 
   def has_empty_fields?(fields)
     fields.values.any?{ |field| field.empty? }
+  end
+
+  def check_for_failures
+    has_a_failure = checklist_properties.values.any?{ |val| val == "fail" }
+
+    if has_a_failure
+      update(has_failures: true)
+    else
+      update(has_failures: false)
+    end
   end
 end
