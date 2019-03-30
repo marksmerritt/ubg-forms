@@ -1,17 +1,20 @@
 class DeleteFormFromAzureJob < ApplicationJob
   queue_as :default
 
-  def perform(form_id)
-    form = Form.find(form_id)
-    delete_form(form)
+  def perform(form_identifier)
+    delete_form(form_identifier)
   end
 
-  def delete_form(form)
-    client = create_azure_instance
-    form_type = "#{form.form_type.name.gsub!(' ', '-').downcase!}s"
-    filename = "#{form_type}_#{form.id}"
+  def delete_form(form_identifier)
+    identifiers = form_identifier.split("_")
 
-    client.delete_blob(form_type, filename)
+    container = identifiers[0].gsub(' ', '-').downcase + "s"
+    form_id = identifiers[1]
+
+    filename = "#{container}_#{form_id}"
+
+    client = create_azure_instance
+    client.delete_blob(container, filename)
   end
 
 
@@ -22,3 +25,4 @@ class DeleteFormFromAzureJob < ApplicationJob
                                              storage_access_key: ENV["AZURE_STORAGE_ACCESS_KEY"])
   end
 end
+

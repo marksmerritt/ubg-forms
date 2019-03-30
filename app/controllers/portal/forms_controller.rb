@@ -52,8 +52,14 @@ class Portal::FormsController < Portal::BaseController
 
   def destroy
     @form = Form.find(params[:id])
-    DeleteFormFromAzureJob.perform_later(@form.id) unless Rails.env.test?
-    redirect_to form_overview_path, notice: "Your form was successfully deleted"
+    @job_identifier = "#{@form.form_type.name}_#{@form.id}"
+
+    if @form.destroy
+      DeleteFormFromAzureJob.perform_later(@job_identifier) unless Rails.env.test?
+      redirect_to form_overview_path, notice: "Your form was successfully deleted"
+    else
+      redirect_to form_overview_path, notice: "Unable to delete your form. Please try again"
+    end
   end
 
 
