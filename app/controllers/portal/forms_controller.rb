@@ -31,7 +31,7 @@ class Portal::FormsController < Portal::BaseController
 
     if @form.save
       FormToAzureJob.perform_later(@form.id) unless Rails.env.test?
-      redirect_to [@form_type, @form], notice: "Your Form was submitted successfully"
+      redirect_to form_overview_path, notice: "Your Form was submitted successfully"
     else
       render :new
     end

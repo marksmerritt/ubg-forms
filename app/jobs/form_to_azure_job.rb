@@ -1,3 +1,5 @@
+# TODO: Refactor
+
 class FormToAzureJob < ApplicationJob
   queue_as :default
 
@@ -18,6 +20,8 @@ class FormToAzureJob < ApplicationJob
     content = generate_pdf(form)
 
     client.create_block_blob(form_type, filename, content)
+
+    FormSubmissionMailer.email_form(form, content, form.user).deliver_now
   end
 
 
