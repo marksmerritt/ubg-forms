@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_30_203634) do
+ActiveRecord::Schema.define(version: 2019_03_31_182127) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -84,6 +84,13 @@ ActiveRecord::Schema.define(version: 2019_03_30_203634) do
     t.datetime "updated_at", null: false
     t.string "type"
     t.index ["form_type_id"], name: "index_form_fields_on_form_type_id"
+  end
+
+  create_table "form_time_trackers", force: :cascade do |t|
+    t.datetime "new_impression_at"
+    t.datetime "create_impression_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "form_types", force: :cascade do |t|

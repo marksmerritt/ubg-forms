@@ -1,4 +1,5 @@
 class Portal::FormsController < Portal::BaseController
+  impressionist :actions=>[:new,:create]
   before_action :set_form_type
   before_action :set_form, :authorize_form, only: [:show, :edit, :update, :destroy]
 
@@ -31,6 +32,7 @@ class Portal::FormsController < Portal::BaseController
 
     if @form.save
       FormToAzureJob.perform_later(@form.id) unless Rails.env.test?
+      CalcFormTimeJob.perform_later(current_user.id)
       redirect_to form_overview_path, notice: "Your Form was submitted successfully"
     else
       render :new

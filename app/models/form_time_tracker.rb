@@ -1,0 +1,2 @@
+class FormTimeTracker < ApplicationRecord
+end
