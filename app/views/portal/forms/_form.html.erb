@@ -34,24 +34,26 @@
         <% end %>
       </div>
       
-      <div class="row">
-        <div class="col-md-12">
-          <div class="pass-fail-table__container">
-            <table class="table-striped pass-fail-table">
-              <tr>
-                <th scope="col"></th>
-                <th scope="col">Pass</th>
-                <th scope="col">Fail</th>
-              </tr>
-              <%= f.fields_for :checklist_properties, OpenStruct.new(@form.checklist_properties) do |builder| %>
-                <% @form_type.checklist_fields.each do |field| %>
-                  <%= render "portal/forms/fields/pass_fail", field: field, f: builder %>
+      <% if @form_type.has_checklist? %>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="pass-fail-table__container">
+              <table class="table-striped pass-fail-table">
+                <tr>
+                  <th scope="col"></th>
+                  <th scope="col">Pass</th>
+                  <th scope="col">Fail</th>
+                </tr>
+                <%= f.fields_for :checklist_properties, OpenStruct.new(@form.checklist_properties) do |builder| %>
+                  <% @form_type.checklist_fields.each do |field| %>
+                    <%= render "portal/forms/fields/pass_fail", field: field, f: builder %>
+                  <% end %>
                 <% end %>
-              <% end %>
-            </table>
+              </table>
+            </div>
           </div>
         </div>
-      </div>
+      <% end %>
 
       
       <div class="row">

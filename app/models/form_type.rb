@@ -25,4 +25,8 @@ class FormType < ApplicationRecord
       errors.add(:name, "can only contain letters, numbers, or a dash (-)")
     end
   end
+
+  def has_checklist?
+    checklist_fields.any?
+  end
 end

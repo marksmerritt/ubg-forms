@@ -11,7 +11,7 @@ class Form < ApplicationRecord
   validate :all_fields_present
 
   def all_fields_present
-    if has_empty_fields?(header_properties) || has_empty_fields?(checklist_properties) || has_empty_fields?(footer_properties)
+    if has_empty_fields?(header_properties) || (form_type.has_checklist? && has_empty_fields?(checklist_properties)) || has_empty_fields?(footer_properties)
       errors.add(:base, "Please fill out all fields")
     end
   end
