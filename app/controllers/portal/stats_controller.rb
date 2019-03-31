@@ -12,4 +12,8 @@ class Portal::StatsController < Portal::BaseController
   def new_forms
     render json: Form.group_by_day(:updated_at).count
   end
+
+  def new_form_time
+    render json: FormTimeTracker.pluck(:created_at, :time_taken)
+  end
 end

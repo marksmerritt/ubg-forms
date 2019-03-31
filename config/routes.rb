@@ -39,6 +39,7 @@ Rails.application.routes.draw do
     resources :stats, only: :index
     get "stats/new-forms"
     get "stats/new-users"
+    get "stats/new-form-time"
 
     resources :help, only: :index
     resources :feedbacks
