@@ -21,7 +21,9 @@ class FormToAzureJob < ApplicationJob
 
     client.create_block_blob(form_type, filename, content)
 
-    FormSubmissionMailer.email_form(form, content, form.user).deliver_now
+    if form.has_failures
+      FormSubmissionMailer.email_form(form, content, form.user).deliver_now
+    end
   end
 
 
