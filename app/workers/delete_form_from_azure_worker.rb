@@ -1,5 +1,5 @@
-class DeleteFormFromAzureJob < ApplicationJob
-  queue_as :default
+class DeleteFormFromAzureWorker
+  include Sidekiq::Worker 
 
   def perform(form_identifier)
     delete_form(form_identifier)
@@ -25,4 +25,3 @@ class DeleteFormFromAzureJob < ApplicationJob
                                              storage_access_key: ENV["AZURE_STORAGE_ACCESS_KEY"])
   end
 end
-

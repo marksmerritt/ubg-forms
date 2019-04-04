@@ -31,8 +31,8 @@ class Portal::FormsController < Portal::BaseController
     @form.user = current_user
 
     if @form.save
-      FormToAzureJob.perform_later(@form.id) unless Rails.env.test?
-      CalcFormTimeJob.perform_later(current_user.id)
+      FormToAzureWorker.perform_async(@form.id)
+      CalcFormTimeWorker.perform_async(current_user.id)
       redirect_to form_overview_path, notice: "Your Form was submitted successfully"
     else
       render :new
@@ -44,8 +44,8 @@ class Portal::FormsController < Portal::BaseController
 
   def update
     if @form.update(form_params)
-      DeleteFormFromAzureJob.perform_later(@form.id) unless Rails.env.test?
-      FormToAzureJob.perform_later(@form.id) unless Rails.env.test?
+      DeleteFormFromAzureWorker.perform_async(@form.id) 
+      FormToAzureWorker.perform_async(@form.id) 
       redirect_to [@form_type, @form], notice: "Your Form was updated successfully"
     else
       render :edit
@@ -57,7 +57,7 @@ class Portal::FormsController < Portal::BaseController
     @job_identifier = "#{@form.form_type.name}_#{@form.id}"
 
     if @form.destroy
-      DeleteFormFromAzureJob.perform_later(@job_identifier) unless Rails.env.test?
+      DeleteFormFromAzureWorker.perform_async(@job_identifier)
       redirect_to form_overview_path, notice: "Your form was successfully deleted"
     else
       redirect_to form_overview_path, notice: "Unable to delete your form. Please try again"

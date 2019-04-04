@@ -1,7 +1,5 @@
-# TODO: Refactor
-
-class FormToAzureJob < ApplicationJob
-  queue_as :default
+class FormToAzureWorker
+  include Sidekiq::Worker 
 
   def perform(form_id)
     form = Form.find(form_id)

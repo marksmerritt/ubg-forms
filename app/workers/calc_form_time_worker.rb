@@ -1,5 +1,5 @@
-class CalcFormTimeJob < ApplicationJob
-  queue_as :default
+class CalcFormTimeWorker
+  include Sidekiq::Worker 
 
   def perform(user_id)
     @form_time_tracker = FormTimeTracker.new
