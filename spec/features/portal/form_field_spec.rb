@@ -14,11 +14,7 @@ describe "navigation" do
         click_link "new-form-type"
         fill_in "field-form-type-name", with: "Forklift Inspection"
         fill_in "form_type_header_fields_attributes_0_name", with: "Tires"
-        find('#form_type_header_fields_attributes_0_field_type option:first-of-type').select_option
-        find(:css, "#form_type_header_fields_attributes_0_required").set(true)
-
         fill_in "form_type_footer_fields_attributes_0_name", with: "Comments"
-        find('#form_type_footer_fields_attributes_0_field_type option:last-of-type').select_option
 
         expect{ click_button "Create" }.to change{ FormField.count }.by(2)
       end

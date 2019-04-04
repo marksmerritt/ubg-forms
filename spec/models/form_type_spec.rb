@@ -8,7 +8,18 @@ RSpec.describe FormType, type: :model do
   end
 
   describe "validation" do 
-    it { should validate_presence_of(:name) }
-    it { should validate_uniqueness_of(:name) }
+    before do 
+      @form_type = FactoryBot.create(:scaffold_form_type)
+    end
+
+    it "has a name" do 
+      @form_type.name = ""
+      expect(@form_type).to_not be_valid
+    end
+
+    it "has a unique name" do 
+      @form_type2 = FactoryBot.build_stubbed(:form_type, name: @form_type.name)
+      expect(@form_type2).to_not be_valid
+    end
   end
 end
