@@ -39,10 +39,10 @@
           <div class="col-md-12">
             <div class="pass-fail-table__container">
               <table class="table-striped pass-fail-table">
-                <tr>
-                  <th scope="col"></th>
-                  <th scope="col">Pass</th>
-                  <th scope="col">Fail</th>
+                <tr class="pass-fail-table__headers">
+                  <th scope="col" class="pass-fail-table__col"></th>
+                  <th scope="col" class="pass-fail-table__col">Pass</th>
+                  <th scope="col" class="pass-fail-table__col">Fail</th>
                 </tr>
                 <%= f.fields_for :checklist_properties, OpenStruct.new(@form.checklist_properties) do |builder| %>
                   <% @form_type.checklist_fields.each do |field| %>

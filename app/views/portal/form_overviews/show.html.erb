@@ -28,7 +28,7 @@
         <% @forms.each do |form| %>
           <tr>
             <td>
-              <%= link_to form.form_type.name, form_type_form_path(form.form_type, form, format: "pdf"), class: "forms-table__form-link", target: "_blank" %>
+              <%= link_to form.form_type.name, form_type_form_path(form.form_type, form), class: "forms-table__form-link" %>
             </td>
             <td><%= form.created_at %></td>
             <td><%= form.user.display_name %></td>

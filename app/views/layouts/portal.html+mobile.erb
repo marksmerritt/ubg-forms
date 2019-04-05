@@ -13,6 +13,9 @@
   </head>
 
   <body>
+    <div class="mobile-back-container">
+      <%= link_to "Back", form_overview_path, class: "mobile-back" %>
+    </div>
     <%= yield %>
     <%= render "portal/shared/flash" if flash.present? %>
   </body>

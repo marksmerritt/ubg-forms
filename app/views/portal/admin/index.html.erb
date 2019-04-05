@@ -1,13 +1,16 @@
 <div class="container">
   <div class="row admin-container">
-    <h4>Admin Actions:</h4>
+    <h4 class="admin-header">Admin Actions:</h4>
     <div class="col-md-12">
-      <ul class="admin-actions-list">
-        <li>
-          <%= link_to "Invite a New User", new_user_invitation_path %>    
+      <ul class="admin-items">
+        <li class="admin-item">
+          <%= link_to "Invite a New User", new_user_invitation_path, class: "admin-link" %>    
         </li>
-        <li>
-          <%= link_to "Create a New Form Type", new_form_type_path %>    
+        <li class="admin-item">
+          <%= link_to "Manage Forms", form_types_path, class: "admin-link" %>    
+        </li>
+        <li class="admin-item">
+          <%= link_to "View App Feedback", feedbacks_path, class: "admin-link" %>    
         </li>
       </ul>
     </div>

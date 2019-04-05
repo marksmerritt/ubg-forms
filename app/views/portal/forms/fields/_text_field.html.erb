@@ -1,10 +1,6 @@
 <div class="row form-text-field-container">
-  <div class="col-md-4">
-    <div class="form-text-field__name-container">
-      <%= f.label field.name, class: "form-text-field__name" %>:
-    </div>
-  </div>
-  <div class="col-md-8">
+  <div class="col-md-12">
+    <%= f.label field.name, class: "form-text-field__name" %>:
     <%= f.text_field field.name, class: "form-text-field" %>
   </div>
 </div>

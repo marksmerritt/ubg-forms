@@ -1,45 +1,78 @@
-<%= render "portal/shared/company_header" %>
-<h3 class="form-header"><%= form_type.name %></h3>
+<div class="form-show__container container">
 
-<div class="row">
-  <% form.header_properties.each do |name, value| %>
-    <div class="col-xs-6">
-      <b><%= name.humanize %>:</b>
-      <%= value %>
+  <!---------- Company Header ---------->
+  <div class="row company-header">
+    <div class="col-md-3">
+      <%= wicked_pdf_image_tag("um-logo.png", class: "company-header__logo") %>
     </div>
-  <% end %>
-</div>
-
-<div class="row">
-  <div class="col-xs-12">
-    <div class="pass-fail-table__container">
-      <table class="table-striped pass-fail-table">
-        <tr>
-          <th scope="col"></th>
-          <th scope="col">Pass</th>
-          <th scope="col">Fail</th>
-        </tr>
-        <% form.checklist_properties.each do |name, value| %>
-          <tr>
-            <td><%= name.humanize %></td>
-            <td>
-              <%= "X" if value == "pass" %>
-            </td>
-            <td>
-              <%= "X" if value == "fail" %>
-            </td>
-          </tr>
-        <% end %>
-      </table>
+    <div class="col-md-6">
+      <div class="company-header__name">
+        United Masonry 
+        Incorporated of 
+        Virginia
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="company-header__contact">
+        9204 Venture Court<br>
+        Manassas, VA 20111<br>
+        P) 703.971.6840<br>
+      </div>
     </div>
   </div>
-</div>
 
-<div class="row">
-  <% form.footer_properties.each do |name, value| %>
-    <div class="col-xs-6">
-      <b><%= name.humanize %>:</b>
-      <%= value %>
+  <h3 class="form-header"><%= form_type.name %></h3>
+
+  <div class="row">
+    <% form.header_properties.each do |name, value| %>
+      <div class="col-xs-6">
+        <div class="form-show__property">
+          <b><%= name.humanize %>:</b>
+          <%= value %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="pass-fail-table__container">
+        <table class="table-striped pass-fail-table">
+          <tr class="pass-fail-table__headers">
+            <th scope="col" class="pass-fail-table__col"></th>
+            <th scope="col" class="pass-fail-table__col">Pass</th>
+            <th scope="col" class="pass-fail-table__col">Fail</th>
+          </tr>
+          <% form.checklist_properties.each do |name, value| %>
+            <tr class="pass-fail-table__row">
+              <td class="pass-fail-table__property">
+                <%= name.humanize %>
+              </td>
+              <td>
+                <div class="pass-fail-table__x">
+                  <%= "X" if value == "pass" %>
+                </div>
+              </td>
+              <td>
+                <div class="pass-fail-table__x">
+                  <%= "X" if value == "fail" %>
+                </div>
+              </td>
+            </tr>
+          <% end %>
+        </table>
+      </div>
     </div>
-  <% end %>
+  </div>
+
+  <div class="row text-center">
+    <% form.footer_properties.each do |name, value| %>
+      <div class="col-xs-6">
+        <div class="form-show__property">
+          <b><%= name.humanize %>:</b>
+          <%= value %>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>

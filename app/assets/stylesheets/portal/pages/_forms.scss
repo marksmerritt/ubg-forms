@@ -1,3 +1,5 @@
+//------------- New -------------//
+
 .form-container {
   margin: 5rem;
   background-color: $color-white;
@@ -6,26 +8,49 @@
 }
 
 .form-header {
-  margin: 5rem 0;
+  margin: 8rem 0;
   text-align: center;
   font-size: 3rem;
+  font-weight: 600;
 }
 
 .form-field-container {
 }
 
 .pass-fail-table {
-  margin: 3rem auto;
+  margin: 5rem auto;
   width: 60%;
+  border: 1px solid $color-grey-dark-3;
 
   &__container {
     width: 100%;
+  }
+
+  &__headers {
+    border: 1px solid $color-grey-dark-3;
+  }
+
+  &__col {
+    padding: .5rem;
+  }
+
+  &__row {
+    border: 1px solid $color-grey-dark-3;
+  }
+
+  &__property {
+    padding: 1.5rem;
+  }
+
+  &__x {
+    font-weight: 600;
+    margin-left: 1.5rem;
   }
 }
 
 
 .form-text-field-container {
-  margin-top: 1rem;
+  margin-top: 2rem;
 }
 
 .form-text-field {
@@ -36,6 +61,7 @@
   }
 
   &__name {
+    margin-top: 2rem;
     font-weight: 700;
   }
 }
@@ -70,15 +96,36 @@
 
 
 
+//------------- Show -------------//
+
+.form-show {
+
+  &__container {
+    border: 1px solid $color-grey-dark-3;
+    padding-top: 3rem;
+    padding-bottom: 10rem;
+  }
+
+  &__property {
+    text-align: center;
+    font-size: 1.8rem;
+  }
+}
 
 
+//------------- Media Queries -------------//
 
+@media only screen and (max-width: 1000px) {
+  .form-container {
+    margin: 1rem;
+  }
+}
 
-
-
-
-
-
+@media only screen and (max-width: 600px) {
+  .pass-fail-table {
+    width: 100%;
+  }
+}
 
 
 

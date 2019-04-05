@@ -1,4 +1,6 @@
 .company-header {
+  padding: 3rem;
+
   &__logo {
     width: 6rem;
   }
@@ -20,3 +22,25 @@
     font-size: 1rem;
   }
 }
+
+
+
+
+//------------- Media Queries -------------//
+
+// @media only screen and (max-width: 600px) {
+//   .company-header {
+//     display: none;
+//   }
+// }
+
+// @media only screen and (max-width: 1000px) {
+//   .company-header {
+//     &__contact,
+//     &__name {
+//       display: none;
+//     }
+//   }
+// }
+
+

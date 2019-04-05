@@ -1,5 +1,15 @@
-<tr>
-  <td><%= f.label field.name %></td>
-  <td><%= f.radio_button field.name, "pass" %></td>
-  <td><%= f.radio_button field.name, "fail" %></td>
+<tr class="pass-fail-table__row">
+  <td class="pass-fail-table__property">
+    <%= f.label field.name %>
+  </td>
+  <td>
+    <div class="pass-fail-table__x">
+      <%= f.radio_button field.name, "pass" %>
+    </div>
+  </td>
+  <td>
+    <div class="pass-fail-table__x">
+      <%= f.radio_button field.name, "fail" %>
+    </div>
+  </td>
 </tr>
