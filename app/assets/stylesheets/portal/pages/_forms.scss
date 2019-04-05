@@ -8,7 +8,7 @@
 }
 
 .form-header {
-  margin: 8rem 0;
+  margin: 15rem 0;
   text-align: center;
   font-size: 3rem;
   font-weight: 600;
@@ -18,7 +18,7 @@
 }
 
 .pass-fail-table {
-  margin: 5rem auto;
+  margin: 10rem auto;
   width: 60%;
   border: 1px solid $color-grey-dark-3;
 
@@ -107,6 +107,7 @@
   &__property {
     text-align: center;
     font-size: 1.8rem;
+    margin-top: 3rem;
   }
 }
 
