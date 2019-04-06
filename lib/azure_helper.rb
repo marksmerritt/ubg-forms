@@ -21,7 +21,7 @@ module AzureHelper
     content = PdfGenerator.generate(form)
 
     client.create_block_blob(container, filename, content)
-    send_failure_email(form, content) if form.has_failures
+    send_failure_email(form, content) if form.has_failures?
   end
 
   def self.delete_form(filename)
