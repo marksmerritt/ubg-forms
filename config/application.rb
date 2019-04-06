@@ -19,6 +19,8 @@ module UnitedMasonry
 
     config.active_job.queue_adapter = :sidekiq
 
+    config.eager_load_paths << Rails.root.join('lib')
+
     config.generators do |g|
       g.system_tests = nil
       g.test_framework :rspec

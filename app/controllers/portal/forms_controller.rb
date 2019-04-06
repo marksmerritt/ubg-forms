@@ -1,3 +1,5 @@
+require "azure_helper"
+
 class Portal::FormsController < Portal::BaseController
   impressionist :actions=>[:new,:create]
   before_action :set_form_type
@@ -54,10 +56,10 @@ class Portal::FormsController < Portal::BaseController
 
   def destroy
     @form = Form.find(params[:id])
-    @job_identifier = "#{@form.form_type.name}_#{@form.id}"
+    @azure_filename = AzureHelper.generate_filename(@form)
 
     if @form.destroy
-      DeleteFormFromAzureWorker.perform_async(@job_identifier)
+      DeleteFormFromAzureWorker.perform_async(@azure_filename)
       redirect_to form_overview_path, notice: "Your form was successfully deleted"
     else
       redirect_to form_overview_path, notice: "Unable to delete your form. Please try again"
