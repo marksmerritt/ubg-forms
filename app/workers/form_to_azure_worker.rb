@@ -8,16 +8,12 @@ class FormToAzureWorker
 
   def send_form(form)
     client = create_azure_instance
-    form_type = "#{form.form_type.name.gsub(' ', '-').downcase!}s"
+    container = ENV["AZURE_CONTAINER_NAME"]
 
-    # Create an Azure container using the form type name unless it already exists
-    client.create_container(form_type) unless container_exists?(client, form_type)
-
-    # TODO: Change filename based on client preference
-    filename = "#{form_type}_#{form.id}"
+    filename = generate_filename(form)
     content = generate_pdf(form)
 
-    client.create_block_blob(form_type, filename, content)
+    client.create_block_blob(container, filename, content)
 
     if form.has_failures
       FormSubmissionMailer.email_form(form, content, form.user).deliver_now
@@ -55,9 +51,9 @@ class FormToAzureWorker
                                              storage_access_key: ENV["AZURE_STORAGE_ACCESS_KEY"])
   end
 
-  def container_exists?(client, form_type)
-    container_names = []
-    client.list_containers().each { |cont| container_names.push(cont.name) }
-    container_names.include?(form_type)
+  def generate_filename(form)
+    form_type = "#{form.form_type.name.gsub(' ', '-').downcase!}s"
+    
+    "#{form_type}/job##{form.job_number}--#{form.created_at.strftime('%Y-%m-%d')}--#{form.id}"
   end
 end
