@@ -16,7 +16,7 @@ module AzureHelper
 
   def self.send_form(form)
     client = create_client_instance
-    container = ENV["AZURE_CONTAINER_NAME"]
+    container = set_container_name
     filename = generate_filename(form)
     content = PdfGenerator.generate(form)
 
@@ -25,9 +25,13 @@ module AzureHelper
 
   def self.delete_form(filename)
     client = create_client_instance
-    container = ENV["AZURE_CONTAINER_NAME"]
+    container = set_container_name
     
     client.delete_blob(container, filename)
+  end
+
+  def self.set_container_name
+    ENV["AZURE_CONTAINER_NAME"]
   end
 end
     
