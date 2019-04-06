@@ -21,6 +21,7 @@ module AzureHelper
     content = PdfGenerator.generate(form)
 
     client.create_block_blob(container, filename, content)
+    send_failure_email(form, content) if form.has_failures
   end
 
   def self.delete_form(filename)
@@ -32,6 +33,10 @@ module AzureHelper
 
   def self.set_container_name
     ENV["AZURE_CONTAINER_NAME"]
+  end
+
+  def self.send_failure_email(form, content)
+    FormSubmissionMailer.email_form(form, content, form.user).deliver_now
   end
 end
     
