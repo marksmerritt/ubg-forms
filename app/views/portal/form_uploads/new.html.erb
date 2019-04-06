@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="row text-center">
+    <%= form_for [@form_type, @form_upload] do |f| %>
+      <div class="row">
+        <%= f.label :form, "Upload Your Form:" %>
+        <%= f.file_field :form %>
+      </div>
+
+      <div class="row form-submit-btn-container">
+        <%= f.submit "Upload", class: "form-submit-btn" %>
+      </div>
+    <% end %>
+  </div>
+</div>
+

@@ -25,6 +25,7 @@ Rails.application.routes.draw do
 
     resources :form_types, except: [:show] do 
       resources :forms
+      resources :form_uploads
     end
 
     resources :notifications do 
