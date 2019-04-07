@@ -1,6 +1,24 @@
 <div class="container">
   <div class="row text-center">
     <%= form_for [@form_type, @form_upload] do |f| %>
+
+      <% if @form_upload.errors.any? %>
+        <p>Errors:</p>
+        <div id="error_explanation">
+          <ul>
+            <% @form_upload.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+
+      <div class="row">
+        <%= f.label :job_number %>
+        <%= f.text_field :job_number %>
+      </div>
+
       <div class="row">
         <%= f.label :form, "Upload Your Form:" %>
         <%= f.file_field :form %>

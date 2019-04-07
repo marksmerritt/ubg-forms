@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_06_190502) do
+ActiveRecord::Schema.define(version: 2019_04_07_203659) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -105,6 +105,7 @@ ActiveRecord::Schema.define(version: 2019_04_06_190502) do
     t.bigint "form_type_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "job_number"
     t.index ["form_type_id"], name: "index_form_uploads_on_form_type_id"
     t.index ["user_id"], name: "index_form_uploads_on_user_id"
   end

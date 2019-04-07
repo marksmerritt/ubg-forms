@@ -12,6 +12,7 @@ class Portal::FormUploadsController < Portal::BaseController
     @form_upload.user = current_user
 
     if @form_upload.save
+      FormUploadToAzureWorker.perform_async(@form_upload.id)
       redirect_to form_overview_path, notice: "Your form was successfully uploaded"
     else
       render :new, notice: "There was an error uploading your form. Please try again."
@@ -22,7 +23,7 @@ class Portal::FormUploadsController < Portal::BaseController
   private
 
   def form_upload_params
-    params.require(:form_upload).permit(:form)
+    params.require(:form_upload).permit(:form, :job_number)
   end
 
   def set_form_type

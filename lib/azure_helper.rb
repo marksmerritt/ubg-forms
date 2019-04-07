@@ -24,6 +24,15 @@ module AzureHelper
     send_failure_email(form, content) if form.has_failures?
   end
 
+  def self.send_uploaded_form(form_upload)
+    client = create_client_instance
+    container = set_container_name
+    filename = generate_filename(form_upload)
+    binary_content = form_upload.form.download
+
+    client.create_block_blob(container, filename, binary_content)
+  end
+
   def self.delete_form(filename)
     client = create_client_instance
     container = set_container_name
