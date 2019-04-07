@@ -1,5 +1,5 @@
 class FormField < ApplicationRecord
-  FIELD_TYPE_OPTIONS = %w(text_field).freeze
+  FIELD_TYPE_OPTIONS = %w(text_field text_area).freeze
 
   belongs_to :form_type
 
