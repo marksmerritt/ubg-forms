@@ -4,34 +4,34 @@
 </div>
 
 <div class="container forms-table-container form-types-table">
-    <h4 class="forms-table__header">Manage Form Types</h4>
+  <h4 class="forms-table__header">Manage Form Types</h4>
 
-    <table class="table table-striped table-bordered forms-table">
-      <thead>
+  <table class="table table-striped table-bordered forms-table">
+    <thead>
+      <tr>
+        <th>Form Type</th>
+        <th>Edit</th>
+        <th>Archive</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @form_types.each do |form_type| %>
         <tr>
-          <th>Form Type</th>
-          <th>Edit</th>
-          <th>Archive</th>
+          <td>
+            <%= form_type.name %>
+          </td>
+          <td class="text-center">
+            <%= link_to edit_form_type_path(form_type), id: "edit-form-type-#{form_type.id}" do %>
+              <%= display_icon("clipboard-edit", "icon--sm") %>
+            <% end %>
+          </td>
+          <td class="text-center">
+            <%= link_to archive_form_type_path(form_type), method: :patch, data: { confirm: "Are you sure you want to archive this form? This will not delete any #{form_type.name}'s that have been created." } do %>
+              <%= display_icon("bin1", "icon--sm icon--danger icon--trash") %>
+            <% end %>
+          </td>
         </tr>
-      </thead>
-      <tbody>
-        <% @form_types.each do |form_type| %>
-          <tr>
-            <td>
-              <%= form_type.name %>
-            </td>
-            <td class="text-center">
-              <%= link_to edit_form_type_path(form_type), id: "edit-form-type-#{form_type.id}" do %>
-                <%= display_icon("clipboard-edit", "icon--sm") %>
-              <% end %>
-            </td>
-            <td class="text-center">
-              <%= link_to archive_form_type_path(form_type), method: :patch, data: { confirm: "Are you sure you want to archive this form? This will not delete any #{form_type.name}'s that have been created." } do %>
-                <%= display_icon("bin1", "icon--sm icon--danger icon--trash") %>
-              <% end %>
-            </td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
-  </div>
+      <% end %>
+    </tbody>
+  </table>
+</div>

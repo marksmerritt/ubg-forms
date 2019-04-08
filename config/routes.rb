@@ -44,6 +44,8 @@ Rails.application.routes.draw do
     get "stats/new-form-time"
 
     resources :help, only: :index
-    resources :feedbacks
+    resources :feedbacks do 
+      patch :resolve, on: :member
+    end
   end
 end

@@ -1,9 +1,32 @@
-<div class="container">
-  <h1>Feedback As Of <%= Date.today %></h1>  
 
-  <% @feedbacks.each do |feedback| %>
-    <%= feedback.inspect %>
-  <% end %>
+<div class="container forms-table-container form-types-table">
+  <table class="table table-striped table-bordered forms-table">
+    <h4>Feedback</h4> 
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @feedbacks.each do |feedback| %>
+        <tr>
+          <td>
+            <%= link_to feedback.title, feedback_path(feedback) %>
+          </td>
+          <td class="text-center">
+            <% if feedback.unresolved? %>
+              <span class="label label-danger">Open</span>
+            <% else %>
+              <span class="label label-success">Closed</span>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 </div>
+
+
 
 
