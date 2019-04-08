@@ -56,10 +56,12 @@ class Portal::FormsController < Portal::BaseController
 
   def destroy
     @form = Form.find(params[:id])
-    @azure_filename = AzureHelper.generate_filename(@form)
+    @azure_dir = AzureHelper.generate_dir(@form)
+    @azure_filename = AzureHelper.generate_filename(form: @form, dir: @azure_dir, content_type: "form")
+    @form_image_count = @form.images.count 
 
     if @form.destroy
-      DeleteFormFromAzureWorker.perform_async(@azure_filename)
+      DeleteFormFromAzureWorker.perform_async(@azure_filename, @form_image_count)
       redirect_to form_overview_path, notice: "Your form was successfully deleted"
     else
       redirect_to form_overview_path, notice: "Unable to delete your form. Please try again"

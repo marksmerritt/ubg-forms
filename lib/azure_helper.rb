@@ -49,11 +49,12 @@ module AzureHelper
     client.create_block_blob(container, filename, binary_content)
   end
 
-  def self.delete_form(filename)
+  def self.delete_form(filename, img_count)
     client = create_client_instance
     container = set_container_name
     
     client.delete_blob(container, filename)
+    delete_images(filename, img_count, client, container) if img_count > 0
   end
 
   def self.set_container_name
@@ -70,6 +71,14 @@ module AzureHelper
 
       filename = generate_filename(form: form, dir: dir, content_type: "image", index: index) 
       client.create_block_blob(container, filename, img_binary)
+    end
+  end
+
+  def self.delete_images(filename, img_count, client, container)
+    image_filename = filename.gsub("form", "image")
+    
+    img_count.times do |i|
+      client.delete_blob(container, (image_filename + "#{i + 1}"))
     end
   end
 end
