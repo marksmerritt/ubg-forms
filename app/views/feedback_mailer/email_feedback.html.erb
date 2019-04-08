@@ -1,0 +1,10 @@
+<h3><%= @user.display_name %> has submitted feedback for the UM Site</h3>
+
+<h5>Title:</h5>
+<p><%= @feedback.title %></p>
+
+
+<h5>Description:</h5>
+<p><%= @feedback.description %></p>
+
+<%= link_to "Click Here To Review", feedback_url(@feedback) %>

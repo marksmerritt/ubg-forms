@@ -10,6 +10,7 @@ Form.delete_all
 FormUpload.delete_all
 FormField.delete_all
 FormType.delete_all
+Feedback.delete_all
 User.delete_all
 
 # -------------------- Users --------------------

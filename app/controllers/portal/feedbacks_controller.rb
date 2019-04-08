@@ -9,8 +9,10 @@ class Portal::FeedbacksController < Portal::BaseController
 
   def create
     @feedback = Feedback.new(feedback_params)
+    @feedback.user = current_user
 
     if @feedback.save
+      EmailFeedbackWorker.perform_async(@feedback.id)
       redirect_to root_path, notice: "Thanks for your feedback! We will review it and correct any issues!"
     else 
       render :new, notice: "An error occurred when trying to submit your feedback. Please try again."

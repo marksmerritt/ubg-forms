@@ -6,6 +6,7 @@ class User < ApplicationRecord
   has_many :registrations
   has_many :courses, through: :registrations
   has_many :exams, through: :courses
+  has_many :feedbacks
 
   has_one_attached :avatar
 
