@@ -1,4 +1,6 @@
 class FormType < ApplicationRecord
+  enum status: { active: 0, archived: 1 }
+  
   FIELD_TYPES = [:fields, :header_fields, :checklist_fields, :footer_fields].freeze
 
   has_many :forms

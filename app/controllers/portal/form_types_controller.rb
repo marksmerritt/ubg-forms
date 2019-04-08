@@ -2,7 +2,7 @@ class Portal::FormTypesController < Portal::BaseController
   before_action :set_form_type, :authorize_form_type, only: [:edit, :update, :destroy]
   
   def index
-    @form_types = FormType.all
+    @form_types = FormType.active
     authorize @form_types
   end
 
@@ -41,6 +41,12 @@ class Portal::FormTypesController < Portal::BaseController
     else
       redirect_to (request.referrer || form_types_path), notice: "Unable to delete form type. Please try again"
     end
+  end
+
+  def archive
+    @form_type = FormType.find(params[:id])
+    @form_type.archived!
+    redirect_to form_types_path, notice: "#{@form_type.name}'s have been archived."
   end
   
 

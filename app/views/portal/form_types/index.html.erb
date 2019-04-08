@@ -26,7 +26,7 @@
               <% end %>
             </td>
             <td class="text-center">
-              <%= link_to form_type_path(form_type), method: :delete, data: { confirm: "Are you sure you want to archive this form?" } do %>
+              <%= link_to archive_form_type_path(form_type), method: :patch, data: { confirm: "Are you sure you want to archive this form? This will not delete any #{form_type.name}'s that have been created." } do %>
                 <%= display_icon("bin1", "icon--sm icon--danger icon--trash") %>
               <% end %>
             </td>
