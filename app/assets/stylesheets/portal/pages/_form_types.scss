@@ -2,13 +2,16 @@
   margin-top: 4rem;
 }
 
-.new_form_type {
+.new_form_type,
+.edit_form_type {
   font-size: 1.7rem;
   min-height: 100vh;
   background-color: $color-white;
   padding: 3rem;
   border: 1px solid $color-grey-light-4;
+}
 
+.new_form_type {
 
   &__name {
     grid-column: 1 / -1;
@@ -152,4 +155,16 @@
 }
 
 
+// ------------ Index ------------ //
 
+.new-form-type-link-container {
+  text-align: center;
+  margin: 3rem 0;
+}
+
+
+.form-types-table {
+  margin: 0 auto;
+  margin-bottom: 10rem;
+  width: 50%;
+}

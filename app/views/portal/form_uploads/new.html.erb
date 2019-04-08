@@ -1,6 +1,6 @@
-<div class="container">
+<div class="container form-uploads__container">
   <div class="row text-center">
-    <%= form_for [@form_type, @form_upload] do |f| %>
+    <%= form_for [@form_type, @form_upload], html: { class: "form-uploads__form" } do |f| %>
 
       <% if @form_upload.errors.any? %>
         <p>Errors:</p>
@@ -14,14 +14,14 @@
       <% end %>
 
 
-      <div class="row">
+      <div class="row form-uploads__field">
         <%= f.label :job_number %>
-        <%= f.text_field :job_number %>
+        <%= f.text_field :job_number, class: "form-uploads__text-field" %>
       </div>
 
-      <div class="row">
+      <div class="row form-uploads__field">
         <%= f.label :form, "Upload Your Form:" %>
-        <%= f.file_field :form %>
+        <%= f.file_field :form, class: "form-uploads__file-field" %>
       </div>
 
       <div class="row form-submit-btn-container">
