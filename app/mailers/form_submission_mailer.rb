@@ -9,8 +9,11 @@ class FormSubmissionMailer < ApplicationMailer
       @form = form
       @user = user
       attachments["#{@form.form_type.name}_#{@form.id}.pdf"] = pdf
-      # mail(to: @user.email, subject: "Equipment Failure")
-      mail(to: ENV["MY_EMAIL_ADDRESS"], subject: "Equipment Failure")
+
+      # TODO: Only for testing purposes
+
+      mail(to: @user.email, subject: "Equipment Failure")
+      # mail(to: ENV["MY_EMAIL_ADDRESS"], subject: "Equipment Failure")
     end
   end
 end
