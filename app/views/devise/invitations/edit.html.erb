@@ -1,32 +1,36 @@
-<h2>Complete Your Profile</h2>
+<%= image_tag "um-logo.png", class: "edit-invitation__logo" %>
 
-<%= form_for(resource, as: resource_name, url: invitation_path(resource_name), html: { method: :put }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
-  <%= f.hidden_field :invitation_token, readonly: true %>
+<div class="container edit-invitation__container">
+  <h2 class="edit-invitation__header">Complete Your Profile</h2>
 
-  <% if f.object.class.require_password_on_accepting %>
-    <div class="field">
-      <%= f.label :first_name %><br />
-      <%= f.text_field :first_name %></p>
-    </div>
+  <%= form_for(resource, as: resource_name, url: invitation_path(resource_name), html: { method: :put, class: "edit-invitation__form" }) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+    <%= f.hidden_field :invitation_token, readonly: true %>
 
-    <div class="field">
-      <%= f.label :last_name %><br />
-      <%= f.text_field :last_name %>
-    </div>
+    <% if f.object.class.require_password_on_accepting %>
+      <div class="field edit-invitation__field">
+        <%= f.label :first_name %><br />
+        <%= f.text_field :first_name, class: "edit-invitation__text-field" %></p>
+      </div>
 
-    <div class="field">
-      <%= f.label :password %><br />
-      <%= f.password_field :password %></p>
-    </div>
+      <div class="field edit-invitation__field">
+        <%= f.label :last_name %><br />
+        <%= f.text_field :last_name, class: "edit-invitation__text-field" %>
+      </div>
 
-    <div class="field">
-      <%= f.label :password_confirmation %><br />
-      <%= f.password_field :password_confirmation %>
+      <div class="field edit-invitation__field">
+        <%= f.label :password %><br />
+        <%= f.password_field :password, class: "edit-invitation__text-field" %></p>
+      </div>
+
+      <div class="field edit-invitation__field">
+        <%= f.label :password_confirmation %><br />
+        <%= f.password_field :password_confirmation, class: "edit-invitation__text-field" %>
+      </div>
+    <% end %>
+
+    <div class="actions">
+      <%= f.submit "Create My Profile", class: "form-submit-btn edit-invitation__btn" %>
     </div>
   <% end %>
-
-  <div class="actions">
-    <%= f.submit "Submit" %>
-  </div>
-<% end %>
+</div>

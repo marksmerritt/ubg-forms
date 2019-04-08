@@ -15,5 +15,6 @@ class Portal::StatsController < Portal::BaseController
 
   def new_form_time
     render json: FormTimeTracker.pluck(:created_at, :time_taken)
+    @avg_time_taken = FormTimeTracker.average(:time_taken)
   end
 end

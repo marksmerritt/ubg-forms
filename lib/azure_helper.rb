@@ -75,7 +75,7 @@ module AzureHelper
   end
 
   def self.delete_images(filename, img_count, client, container)
-    image_filename = filename.gsub("form", "image")
+    image_filename = filename[0..-5] + "image"
     
     img_count.times do |i|
       client.delete_blob(container, (image_filename + "#{i + 1}"))

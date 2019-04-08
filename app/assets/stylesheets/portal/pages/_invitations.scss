@@ -1,0 +1,58 @@
+.new-invitation {
+
+  &__container {
+    text-align: center;
+    margin-top: 5rem;
+  }
+
+  &__header {
+
+  }
+
+  &__form {
+    margin-top: 3rem;
+  }
+
+  &__field {
+    margin-top: 3rem;
+  }
+
+  &__text-field {
+    width: 40rem;
+    text-align: center;
+  }
+
+  &__btn {
+    margin-top: 4rem;
+  }
+}
+
+
+.edit-invitation {
+  &__logo {
+    width: 7rem;
+    margin: 3rem;
+  }
+
+  &__container {
+    text-align: center;
+    padding-bottom: 10rem;
+  }
+
+  &__header {
+
+  }
+
+  &__field {
+    margin-top: 3rem;
+  }
+
+  &__text-field {
+    width: 30rem;
+    text-align: center;
+  }
+
+  &__btn {
+    margin-top: 4rem;
+  }
+}

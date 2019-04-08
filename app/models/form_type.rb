@@ -24,10 +24,6 @@ class FormType < ApplicationRecord
     unless name.scan(/[!@#$%^&*()_+{}\[\]:;'"\/\\?><.,]/).empty?
       errors.add(:name, "can only contain letters, numbers, or a dash (-)")
     end
-
-    if name.downcase.include? "form"
-      errors.add(:name, "cannot contain the word 'Form'")
-    end
   end
 
   def has_checklist?
