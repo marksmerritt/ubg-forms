@@ -75,7 +75,7 @@
         <% @form_uploads.each do |form_upload| %>
           <tr>
             <td>
-              <%= form_upload.form_type.name %>
+              <%= link_to form_upload.form_type.name, url_for(form_upload.form), target: "_blank" %>
             </td>
             <td><%= form_upload.created_at.to_date %></td>
             <td><%= form_upload.user.display_name %></td>
