@@ -32,7 +32,6 @@ module AzureHelper
     container = set_container_name
     dir = generate_dir(form)
     filename = generate_filename(form: form, dir: dir, content_type: "form")
-    byebug
     content = PdfGenerator.generate(form)
 
     client.create_block_blob(container, filename, content)
