@@ -1,93 +1,45 @@
 <div class="testing-container">
   <div class="testing">
     <%= link_to "Submit Feedback", new_feedback_path %>
-    <h3 class="testing__heading">Testing Instructions</h3>
+    <h3 class="testing__heading">Testing Instructions (For Team Members)</h3>
     <ol class="testing__list">
       <li class="testing-list__question-container">
         <h5 class="testing-list__question">
           Open another browser window and navigate to the app. Have these instructions in one window, and the app in another.
         </h5>
       </li>
+      </li>
       <li class="testing-list__question-container">
         <h5 class="testing-list__question">
-          Click on the <strong>"Forms"</strong> link in the navbar
+          Click on <strong>Admin</strong> in the navbar and then click on <strong>"Manage forms"</strong>.
+          Select the <strong>"Create a New Form Type"</strong> link at the top of the page.
         </h5>
       </li>
       <li class="testing-list__question-container">
         <h5 class="testing-list__question">
-          Click on <strong>"Create A New Form Type"</strong> (This will only be available to ADMIN Users)
+          Add and remove fields as you wish in order to test out the Form Builder. The title of the form must be unique. Try Setting it as <strong>"Forklift Inspection"</strong> and click the submit button...the app should come back with an error message saying that name has already been taken. Set it to <strong>your name</strong> and click on the submit button....this should succeed.
         </h5>
       </li>
       <li class="testing-list__question-container">
         <h5 class="testing-list__question">
-          Add and remove fields as you wish in order to test out the Form Builder.<strong>*** MAKE SURE TO SET THE "FORM TITLE" TO YOUR NAME, SO IT IS UNIQUE.</strong>
+          You should have been redirected to page that allows Admins to manage forms. Find your name under the "Form Type" column of the table and click on the 
+          <strong>Edit</strong> icon. You should be redirected to the form that you just created. Add form fields as you wish and click on the <strong>Update</strong> button. You will be redirected to the Form Overview Page. 
         </h5>
       </li>
       <li class="testing-list__question-container">
         <h5 class="testing-list__question">
-          Once you are done with the Form Builder, click <strong>"Create"</strong> at the bottom of the form. 
-          This will create a new form type which foremans/workers will now be able to access. 
+          Click on the <strong>Forms</strong> link in the top navigation bar. Click on the form you just created and updated (Your name) under <strong>"Create a new form"</strong>. Fill out all fields, upload as many images as you want, and click the <strong>Create</strong> button.
+          You should be redirected to the overview page that has your form in the <strong>"Recently Submitted Forms Table</strong>.
         </h5>
       </li>
       <li class="testing-list__question-container">
         <h5 class="testing-list__question">
-          The app should redirect you to the <strong>"Form Overview Page"</strong>. Click on the form type that you just created under the <strong>"Create a New Form"</strong> section, fill out all fields, and click submit.
-        </h5>
-      </li>
-      <li class="testing-list__question-container">
-        <h5 class="testing-list__question">
-          You should be redirected and receive a notification that your form was <strong>"successfully submitted"</strong>. 
-        </h5>
-      </li>
-      <li class="testing-list__question-container">
-        <h5 class="testing-list__question">
-          Now, in order to test the search functionality, scroll down to the table that displays all forms. Enter various search terms that will limit the results to your newly created form.
+          Click on the <strong>"Trash Can Icon"</strong> to delete the form you just submitted.
         </h5>
       </li>
     </ol>
 
-    <h4 class="testing__heading">Azure Testing</h4>
-    <ol class="testing-list testing-list--azure">
-      <li class="testing-list__question-container">
-        <h5 class="testing-list__question">
-          To make sure that your form was successfully submitted to Azure, please follow this link: <a href="https://azure.microsoft.com/en-us/" target="_blank">Azure</a>
-          <div>
-            Click on "Portal" at the top right
-            and enter your Azure Credentials.
-          </div>
-        </h5>
-      </li>
-      <li class="testing-list__question-container">
-        <h5 class="testing-list__question">
-          Click on the link <strong>"umdevelopment"</strong> under Recent Resources.
-        </h5>
-      </li>
-      <li class="testing-list__question-container">
-        <h5 class="testing-list__question">
-          Click on the link <strong>"Files"</strong>.
-        </h5>
-      </li>
-      <li class="testing-list__question-container">
-        <h5 class="testing-list__question">
-          This should bring you to a page with two directories. One named <strong>"forms"</strong> and one named <strong>"test-share"</strong>. Click on <strong>"forms"</strong>.
-        </h5>
-      </li>
-      <li class="testing-list__question-container">
-        <h5 class="testing-list__question">
-          Verify that the name of your newly created form type has a directory, click on it, and download your form. 
-        </h5>
-      </li>
-      <li class="testing-list__question-container">
-        <h5 class="testing-list__question">
-          Verify that the form you downloaded matches what you submitted on the app.
-        </h5>
-      </li>
-      <li class="testing-list__question-container">
-        <h5 class="testing-list__question">
-          If you notice any Issues, please submit a <%= link_to "Feedback Report", new_feedback_path, id: "link-provide-feedback" %>
-        </h5>
-      </li>
-    </ol>
+    <h4>I will be able to see all of the transactions that you just completed, and will be able to confim that your form was uploaded to MS Azure successfully. If you run into any errors during this process let me know.</h4>
   </div>
   <div class="testing__feedback-link">
     
