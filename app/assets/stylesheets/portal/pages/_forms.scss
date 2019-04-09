@@ -93,14 +93,6 @@
   }
 }
 
-.new-form-link--mobile {
-  margin-top: 3rem;
-}
-
-.form-logo--mobile {
-  width: 3rem;
-  margin: 2rem;
-}
 
 //------------- Show -------------//
 
@@ -116,6 +108,27 @@
     margin-top: 3rem;
   }
 }
+
+
+//------------- Mobile -------------//
+
+.mobile-show-container {
+  margin-bottom: 10rem;
+}
+
+.new-form-link-container--mobile {
+  margin-top: 3rem;
+}
+
+.new-form-link--mobile {
+  font-size: 1.8rem;
+}
+
+.form-logo--mobile {
+  width: 3rem;
+  margin: 2rem;
+}
+
 
 
 //------------- Media Queries -------------//
