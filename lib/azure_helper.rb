@@ -12,8 +12,9 @@ module AzureHelper
     "#{form.form_type.name.gsub(' ', '-').downcase!}s"
   end
 
-  def self.generate_filename(form:, dir:, content_type:, index: nil) 
-    base = "#{dir}/job##{form.job_number}--#{form.created_at.strftime('%Y-%m-%d')}--#{form.id}"
+  def self.generate_filename(form:, dir:, content_type:, index: nil)
+    directory = form.is_a?(FormUpload) ? "#{dir}/uploaded--" : "#{dir}/"
+    base = directory + "job##{form.job_number}--#{form.created_at.strftime('%Y-%m-%d')}--#{form.id}"
 
     case content_type
       when "form"
@@ -43,7 +44,7 @@ module AzureHelper
     client = create_client_instance
     container = set_container_name
     dir = generate_dir(form_upload)
-    filename = generate_filename(form: form_upload, dir: dir, content_type: "form").gsub("/", "/uploaded--") 
+    filename = generate_filename(form: form_upload, dir: dir, content_type: "form") 
     binary_content = form_upload.form.download
 
     client.create_block_blob(container, filename, binary_content)
@@ -55,6 +56,13 @@ module AzureHelper
     
     client.delete_blob(container, filename)
     delete_images(filename, img_count, client, container) if img_count > 0
+  end
+
+  def self.delete_uploaded_form(filename)
+    client = create_client_instance
+    container = set_container_name
+    
+    client.delete_blob(container, filename)
   end
 
   def self.set_container_name

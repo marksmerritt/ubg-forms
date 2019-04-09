@@ -19,6 +19,18 @@ class Portal::FormUploadsController < Portal::BaseController
     end
   end
 
+  def destroy
+    @form_upload = FormUpload.find(params[:id])
+    set_azure_deletion_variables(@form_upload)
+
+    if @form_upload.destroy
+      DeleteUploadedFormFromAzureWorker.perform_async(@azure_filename)
+      redirect_to form_overview_path, notice: "Your form was successfully deleted"
+    else
+      redirect_to form_overview_path, notice: "Unable to delete your form. Please try again"
+    end
+  end
+
 
   private
 
@@ -28,5 +40,10 @@ class Portal::FormUploadsController < Portal::BaseController
 
   def set_form_type
     @form_type = FormType.find(params[:form_type_id])
+  end
+
+  def set_azure_deletion_variables(form_upload)
+    @azure_dir = AzureHelper.generate_dir(form_upload)
+    @azure_filename = AzureHelper.generate_filename(form: form_upload, dir: @azure_dir, content_type: "form")
   end
 end
