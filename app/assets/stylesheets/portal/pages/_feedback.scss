@@ -1,8 +1,14 @@
+.feedback-container {
+  text-align: center;
+  width: 60%;
+}
+
 .feedback-form-container {
-  margin-top: 3rem;
+  margin: 3rem auto;
 }
 
 .feedback-form {
+  text-align: center;
 
   &__heading {
     margin-top: 3rem;

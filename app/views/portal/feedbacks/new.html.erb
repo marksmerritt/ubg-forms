@@ -1,22 +1,25 @@
-<div class="row">
-  <div class="col-md-12">
-    <h4 class="feedback-form__heading">App Feedback</h4>
+<div class="container feedback-container">
+  <div class="row text-center">
+    <div class="col-md-12">
+      <h4 class="feedback-form__heading">App Feedback</h4>
+    </div>
   </div>
-</div>
-<div class="row feedback-form-container">
-  <div class="col-md-6">
-    <%= form_for @feedback do |f| %>
-      <div class="form-gorup">
-        <%= f.label :title %>
-        <%= f.text_field :title, class: "form-control feedback-form__input" %>
-      </div>
 
-      <div class="form-gorup">
-        <%= f.label :description %>
-        <%= f.text_area :description, class: "form-control feedback-form__input", rows: 10 %>
-      </div>
+  <div class="row feedback-form-container text-center">
+    <div class="col-md-12">
+      <%= form_for @feedback, html: { class: "feedback-form" } do |f| %>
+        <div class="form-group">
+          <%= f.label :title %>
+          <%= f.text_field :title, class: "form-control feedback-form__input" %>
+        </div>
 
-      <%= f.submit "Submit", class: "feedback-form__submit-btn" %>
-    <% end %>
+        <div class="form-group">
+          <%= f.label :description %>
+          <%= f.text_area :description, class: "form-control feedback-form__input", rows: 10 %>
+        </div>
+
+        <%= f.submit "Submit", class: "form-submit-btn feedback-form__submit-btn" %>
+      <% end %>
+    </div>
   </div>
 </div>

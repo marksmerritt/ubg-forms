@@ -8,7 +8,7 @@ local:
 
 microsoft:
   service: AzureStorage
-  storage_account_name: <%= ENV["AZURE_STORAGE_ACCOUNT"] %>
-  storage_access_key: <%= ENV["AZURE_STORAGE_ACCESS_KEY"] %>
-  container: form-images
+  storage_account_name: <%= ENV["AZURE_IMAGE_STORAGE_ACCOUNT"] %>
+  storage_access_key: <%= ENV["AZURE_IMAGE_STORAGE_ACCESS_KEY"] %>
+  container: <%= ENV["AZURE_IMAGE_CONTAINER_NAME"] %>
 
