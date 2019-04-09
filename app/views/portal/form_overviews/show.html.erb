@@ -81,7 +81,7 @@
             <td><%= form_upload.user.display_name %></td>
             <td><%= form_upload.job_number %></td>
             <td class="text-center">
-              <%= link_to form_type_form_path(form_upload.form_type, form_upload), method: :delete, data: { confirm: "Are you sure you want to delete this form? This will also delete it from your local file system" } do %>
+              <%= link_to form_type_form_upload_path(form_upload.form_type, form_upload), method: :delete, data: { confirm: "Are you sure you want to delete this form? This will also delete it from your local file system" } do %>
                 <%= display_icon("bin1", "icon--sm icon--danger icon--trash") %>
               <% end %>
             </td>
