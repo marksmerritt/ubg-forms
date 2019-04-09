@@ -101,6 +101,7 @@ button.toast-close-button {
   color: #ffffff;
   opacity: 1;
 }
+
 #toast-container > div:hover {
   -moz-box-shadow: 0 0 12px #000000;
   -webkit-box-shadow: 0 0 12px #000000;
@@ -161,7 +162,7 @@ button.toast-close-button {
 @media all and (max-width: 240px) {
   #toast-container > div {
     padding: 8px 8px 8px 50px;
-    width: 11em;
+    width: 100%;
   }
   #toast-container .toast-close-button {
     right: -0.2em;
@@ -171,7 +172,7 @@ button.toast-close-button {
 @media all and (min-width: 241px) and (max-width: 480px) {
   #toast-container > div {
     padding: 8px 8px 8px 50px;
-    width: 18em;
+    width: 100%;
   }
   #toast-container .toast-close-button {
     right: -0.2em;
@@ -181,6 +182,6 @@ button.toast-close-button {
 @media all and (min-width: 481px) and (max-width: 768px) {
   #toast-container > div {
     padding: 15px 15px 15px 50px;
-    width: 25em;
+    width: 100%;
   }
 }
