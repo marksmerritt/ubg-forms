@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: ENV["DEFAULT_MAILER_SENDER"]
+  default from: "info@unitedmasonry.com"
   layout 'mailer'
 end

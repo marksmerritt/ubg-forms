@@ -6,6 +6,6 @@ class EmailFeedbackWorker
   def perform(feedback_id)
     feedback = Feedback.find(feedback_id)
     user = feedback.user
-    FeedbackMailer.email_feedback(user, feedback)
+    FeedbackMailer.email_feedback(user, feedback).deliver_now
   end
 end
