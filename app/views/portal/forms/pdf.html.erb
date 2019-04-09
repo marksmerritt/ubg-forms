@@ -38,37 +38,39 @@
       </div>
     <% end %>
   </div>
-
-  <div class="row">
-    <div class="col-xs-12">
-      <div class="pass-fail-table__container">
-        <table class="table-striped pass-fail-table">
-          <tr class="pass-fail-table__headers">
-            <th scope="col" class="pass-fail-table__col"></th>
-            <th scope="col" class="pass-fail-table__col">Pass</th>
-            <th scope="col" class="pass-fail-table__col">Fail</th>
-          </tr>
-          <% form.checklist_properties.each do |name, value| %>
-            <tr class="pass-fail-table__row">
-              <td class="pass-fail-table__property">
-                <%= name.humanize %>
-              </td>
-              <td>
-                <div class="pass-fail-table__x">
-                  <%= "X" if value == "pass" %>
-                </div>
-              </td>
-              <td>
-                <div class="pass-fail-table__x">
-                  <%= "X" if value == "fail" %>
-                </div>
-              </td>
+  
+  <% if form_type.has_checklist? %>
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="pass-fail-table__container">
+          <table class="table-striped pass-fail-table">
+            <tr class="pass-fail-table__headers">
+              <th scope="col" class="pass-fail-table__col"></th>
+              <th scope="col" class="pass-fail-table__col">Pass</th>
+              <th scope="col" class="pass-fail-table__col">Fail</th>
             </tr>
-          <% end %>
-        </table>
+            <% form.checklist_properties.each do |name, value| %>
+              <tr class="pass-fail-table__row">
+                <td class="pass-fail-table__property">
+                  <%= name.humanize %>
+                </td>
+                <td>
+                  <div class="pass-fail-table__x">
+                    <%= "X" if value == "pass" %>
+                  </div>
+                </td>
+                <td>
+                  <div class="pass-fail-table__x">
+                    <%= "X" if value == "fail" %>
+                  </div>
+                </td>
+              </tr>
+            <% end %>
+          </table>
+        </div>
       </div>
     </div>
-  </div>
+  <% end %>
 
   <div class="row text-center">
     <% form.footer_properties.each do |name, value| %>
