@@ -1,23 +1,18 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12 text-center">
-      <% if @feedback.unresolved? %>
+      <% if @feedback.unresolved? && (current_user.email == User.first.email) %>
         <%= link_to "Resolve", resolve_feedback_path(@feedback), method: :patch, data: { confirm: "Are you sure this issue has been resolved?" } %>
-      <% else %>
-        <span class="label label-success">This issue has been resolved</span>
       <% end %>
     </div>
   </div>
-  
-  <div class="row">
-    <div class="col-md-12">
-      <%= @feedback.title %>
+
+  <div class="panel panel-primary testing-panel">
+    <div class="panel-heading">
+      <h3 class="panel-title"><strong><%= @feedback.title %></strong></h3>
     </div>
-  </div>
-    
-  <div class="row">
-    <div class="col-md-12">
-      <%= @feedback.description %>    
+    <div class="panel-body">
+      <%= @feedback.description %> 
     </div>
   </div>
 </div>
