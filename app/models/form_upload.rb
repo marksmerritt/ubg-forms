@@ -8,5 +8,6 @@ class FormUpload < ApplicationRecord
   # for form uploads to keep them in the same dir
   # structure as other forms. 
   # DO NOT REMOVE THIS FIELD
-  validates_presence_of :form, :job_number
+  validates_presence_of :job_number
+  validates :form, attached: true
 end
