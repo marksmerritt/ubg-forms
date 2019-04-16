@@ -32,6 +32,7 @@
       <thead>
         <tr>
           <th>Form Type</th>
+          <th>Images</th>
           <th>Date Submitted</th>
           <th>Submitted By</th>
           <th>Job #</th>
@@ -44,6 +45,19 @@
           <tr>
             <td>
               <%= link_to form.form_type.name, form_type_form_path(form.form_type, form, format: :pdf), target: "_blank", class: "forms-table__form-link" %>
+            </td>
+            <td>
+              <% if form.images.attached? %>
+                <% form.images.each_with_index do |img, index| %>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <%= link_to "img#{index + 1}", rails_blob_path(img), target: "_blank" %>
+                    </div>
+                  </div>
+                <% end %>
+              <% else %>
+                None
+              <% end %>
             </td>
             <td><%= form.created_at.to_date %></td>
             <td><%= form.user.display_name %></td>
