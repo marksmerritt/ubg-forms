@@ -5,13 +5,17 @@
     </div>
   </div>
 
-  <% @form_types.each do |form_type| %>
+  <% @form_categories.each do |form_category| %>
+    <h4 class="new-form-links__header"><%= form_category.name %></h4>
     <div class="row new-form-link-container--mobile text-center">
-      <div class="col-md-12">
-        <%= link_to new_form_type_form_path(form_type), id: "create-new-form-#{form_type.id}" , class: "new-form-link" do %>
-          <button type="button" class="new-form-link--mobile btn-lg btn-default"><%= form_type.name %></button>
-        <% end %>
-      </div>
-    </div>
+      <% form_category.form_types.each do |form_type| %>
+        <div class="col-md-12">
+          <%= link_to new_form_type_form_path(form_type), id: "create-new-form-#{form_type.id}" , class: "new-form-link" do %>
+            <button type="button" class="new-form-link--mobile btn-lg btn-default"><%= form_type.name %></button>
+          <% end %>
+        </div>
+      <% end %>    
+    </div>  
   <% end %>
 </div>
+
