@@ -10,6 +10,7 @@ Form.delete_all
 FormUpload.delete_all
 FormField.delete_all
 FormType.delete_all
+FormCategory.delete_all
 Feedback.delete_all
 User.delete_all
 
@@ -60,15 +61,51 @@ admin_user.update(created_at: Faker::Date.between(20.days.ago, Date.today))
 puts "#{User.count} Users created"
 
 
+# -------------------- Form Categories ---------------------
+
+FORM_CATEGORIES = ["Machinery", "Equipment", "Safety", "Other"].freeze
+
+FORM_CATEGORIES.each do |form_category|
+  FormCategory.create!(
+    name: form_category
+  )
+end
+
+@form_categories = FormCategory.all
+
+puts "#{FormCategory.count} Form Categories created"
+
+
+
 # -------------------- Form Types ---------------------
 
-FORM_TYPES = ["Forklift Inspection", "Tube Scaffold Inspection", "Swing Scaffold Inspection", "Boom-Scissor Inspection",
-              "Mast Climber Work Platform Scaffold Inspection", "Mixer Inspection", 
-              "Ladder Inspection", "Request For Accident Information", "Safety Notice"].freeze
+# TODO: Refactor
 
-FORM_TYPES.each do |form_type|
+MACHINERY_FORM_TYPES = ["Forklift Inspection", "Boom-Scissor Inspection", "Mixer Inspection"].freeze
+
+EQUIPMENT_FORM_TYPES = ["Tube Scaffold Inspection", "Swing Scaffold Inspection",
+                        "Mast Climber Work Platform Scaffold Inspection", "Ladder Inspection"].freeze
+
+SAFETY_FORM_TYPES = ["Request For Accident Information", "Safety Notice"].freeze
+
+MACHINERY_FORM_TYPES.each do |form_type|
   FormType.create!(
-    name: form_type
+    name: form_type,
+    form_category: FormCategory.where(name: "Machinery").first
+  )
+end
+
+EQUIPMENT_FORM_TYPES.each do |form_type|
+  FormType.create!(
+    name: form_type,
+    form_category: FormCategory.where(name: "Equipment").first
+  )
+end
+
+SAFETY_FORM_TYPES.each do |form_type|
+  FormType.create!(
+    name: form_type,
+    form_category: FormCategory.where(name: "Safety").first
   )
 end
 

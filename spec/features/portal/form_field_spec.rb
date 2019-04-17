@@ -5,6 +5,7 @@ describe "navigation" do
 
   before do 
     login_as(admin_user, :scope => :user)
+    @form_category = FactoryBot.create(:form_category)
   end
 
   describe "new" do

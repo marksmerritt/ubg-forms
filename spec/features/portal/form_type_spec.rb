@@ -18,7 +18,8 @@ describe "navigation" do
   end
 
   describe "update" do 
-    it "can be updated from the index page" do 
+    it "can be updated from the index page" do
+      @form_category = FactoryBot.create(:form_category) 
       visit form_types_path
       click_link "edit-form-type-#{@scaffold_form_type.id}"
       fill_in "field-form-type-name", with: "Something Else"

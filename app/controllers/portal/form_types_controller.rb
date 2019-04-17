@@ -1,4 +1,5 @@
 class Portal::FormTypesController < Portal::BaseController
+  before_action :set_form_categories
   before_action :set_form_type, :authorize_form_type, only: [:edit, :update, :destroy]
   
   def index
@@ -55,10 +56,14 @@ class Portal::FormTypesController < Portal::BaseController
 
   def form_type_params
     valid_field_params = FormField.attribute_names.map(&:to_sym).push(:_destroy)
-    params.require(:form_type).permit(:name, :background_image,
+    params.require(:form_type).permit(:name, :background_image, :form_category_id,
                                       header_fields_attributes: valid_field_params,
                                       checklist_fields_attributes: valid_field_params,
                                       footer_fields_attributes: valid_field_params)
+  end
+
+  def set_form_categories
+    @form_categories = FormCategory.all
   end
 
   def set_form_type

@@ -9,6 +9,8 @@ class FormType < ApplicationRecord
   has_many :checklist_fields, class_name: "ChecklistFormField", dependent: :destroy
   has_many :footer_fields, class_name: "FooterFormField", dependent: :destroy
 
+  belongs_to :form_category
+
   has_one_attached :background_image
 
   FIELD_TYPES.each do |type|
