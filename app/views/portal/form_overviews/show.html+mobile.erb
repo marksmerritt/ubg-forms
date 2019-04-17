@@ -8,7 +8,13 @@
   <% @form_types.each do |form_type| %>
     <div class="row new-form-link-container--mobile text-center">
       <div class="col-md-12">
-        <%= link_to "#{form_type.name}", new_form_type_form_path(form_type), id: "create-new-form-#{form_type.id}", class: "new-form-link--mobile btn-lg btn-default" %>
+        <% @form_types.each do |form_type| %>
+          <div class="col-md-4 new-form-link__link-container">
+            <%= link_to new_form_type_form_path(form_type), id: "create-new-form-#{form_type.id}" , class: "new-form-link" do %>
+              <button type="button" class="new-form-link--mobile btn-lg btn-default"><%= form_type.name %></button>
+            <% end %>
+          </div>
+        <% end %>
       </div>
     </div>
   <% end %>
