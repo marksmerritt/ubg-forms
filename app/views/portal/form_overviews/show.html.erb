@@ -41,7 +41,7 @@
                 <% form.images.each_with_index do |img, index| %>
                   <div class="row">
                     <div class="col-md-12">
-                      <%= link_to "img#{index + 1}", rails_blob_path(img), target: "_blank" %>
+                      <%= link_to "img#{index + 1}", rails_blob_path(img), target: "_blank", class: "forms-table__form-link" %>
                     </div>
                   </div>
                 <% end %>
