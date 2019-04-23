@@ -1,3 +1,5 @@
-<h4>A <%= @form.form_type.name %> was submitted that contains a failure.</h4>
+<h4>Job Number: <%= @form.job_number %></h4>
 
-<p>Please see the attachment to download the form.</p>
+<p>A <%= @form.form_type.name %> was submitted by <%= @form.user.display_name %> that contains a failure.</p>
+
+<p>Please see the attachments to download the form and images of the failure.</p>

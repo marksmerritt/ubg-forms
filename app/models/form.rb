@@ -9,6 +9,7 @@ class Form < ApplicationRecord
   
   validates_presence_of :job_number
   validate :all_fields_present
+  validate :image_limit
 
   def all_fields_present
     if has_empty_fields?(header_properties) || (form_type.has_checklist? && has_empty_fields?(checklist_properties)) || has_empty_fields?(footer_properties)
@@ -26,5 +27,11 @@ class Form < ApplicationRecord
 
   def has_a_failure?
     checklist_properties.values.any?{ |val| val == "fail" }
+  end
+
+  def image_limit
+    if images.attached?
+      errors.add(:base, "Exceeded maximum number of images (5)") if images.length > 5
+    end
   end
 end

@@ -70,7 +70,7 @@ module AzureHelper
   end
 
   def self.send_failure_email(form, content)
-    FormSubmissionMailer.email_form(form, content, form.user).deliver_now
+    FormSubmissionMailer.email_form(form, content).deliver_now
   end
 
   def self.send_images_with_form(client, form, container, dir)
