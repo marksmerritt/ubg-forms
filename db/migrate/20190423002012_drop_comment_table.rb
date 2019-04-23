@@ -1,5 +1,7 @@
 class DropCommentTable < ActiveRecord::Migration[5.2]
-  def change
-    drop_table :comments, force: :cascade
+  if Rails.env.development?
+    def change
+      drop_table :comments, force: :cascade
+    end
   end
 end
