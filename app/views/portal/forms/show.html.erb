@@ -56,6 +56,17 @@
       </div>
     <% end %>
   </div>
+
+  <div class="row">
+    <h3>Comments:</h3>
+    <% @form.comments.each do |comment| %>
+      <div class="well">
+        <%= comment.body %>
+      </div>
+    <% end %>
+    
+
+  </div>
 </div>
 
 

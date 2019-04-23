@@ -1,6 +1,8 @@
 class Form < ApplicationRecord
   after_create :check_for_failures
 
+  has_many :comments, as: :commentable
+
   has_many_attached :images
   
   belongs_to :form_type
