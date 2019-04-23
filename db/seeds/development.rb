@@ -13,6 +13,23 @@ FormType.delete_all
 FormCategory.delete_all
 Feedback.delete_all
 User.delete_all
+Company.delete_all
+
+# -------------------- Companies --------------------
+
+COMPANY_NAMES = ["United Masonry", "United Building Envelope", "Alban Masonry"].freeze
+COMPANY_ABBREV = ["UM", "UBER", "ALBAN"].freeze
+
+COMPANY_NAMES.each_with_index do |company_name, index|
+  Company.create!(
+    name: company_name,
+    initials: COMPANY_ABBREV[index]
+  )
+end
+
+@companies = Company.all
+
+puts "#{Company.count} companies created"
 
 # -------------------- Users --------------------
 
@@ -22,7 +39,8 @@ employee_user = User.new(
   role: :employee,
   email: "employee@example.com",
   password: "helloworld",
-  password_confirmation: "helloworld"
+  password_confirmation: "helloworld",
+  company: @companies.sample
 )
 
 employee_user.skip_confirmation!
@@ -36,7 +54,8 @@ supervisor_user = User.new(
   role: :supervisor,
   email: "supervisor@example.com",
   password: "helloworld",
-  password_confirmation: "helloworld"
+  password_confirmation: "helloworld",
+  company: @companies.sample
 )
 
 supervisor_user.skip_confirmation!
@@ -49,7 +68,8 @@ admin_user = User.new(
   role: :admin,
   email: "admin@example.com",
   password: "helloworld",
-  password_confirmation: "helloworld"
+  password_confirmation: "helloworld",
+  company: @companies.sample
 )
 
 admin_user.skip_confirmation!

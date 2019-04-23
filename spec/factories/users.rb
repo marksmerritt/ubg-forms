@@ -13,6 +13,7 @@ FactoryBot.define do
     password { "helloworld" }
     password_confirmation { "helloworld" }
     confirmed_at { Date.yesterday }
+    association :company
   end
 
   factory :employee_user, class: User do
@@ -22,6 +23,7 @@ FactoryBot.define do
     password { "helloworld" }
     password_confirmation { "helloworld" }
     confirmed_at { Date.yesterday }
+    association :company
   end
 
   factory :supervisor_user, class: User do
@@ -32,6 +34,7 @@ FactoryBot.define do
     password { "helloworld" }
     password_confirmation { "helloworld" }
     confirmed_at { Date.yesterday }
+    association :company
   end
 
   factory :admin_user, class: User do
@@ -42,5 +45,6 @@ FactoryBot.define do
     password { "helloworld" }
     password_confirmation { "helloworld" }
     confirmed_at { Date.yesterday }
+    association :company
   end
 end
