@@ -17,8 +17,8 @@ Company.delete_all
 
 # -------------------- Companies --------------------
 
-COMPANY_NAMES = ["United Masonry", "United Building Envelope", "Alban Masonry"].freeze
-COMPANY_ABBREV = ["UM", "UBER", "ALBAN"].freeze
+COMPANY_NAMES = ["United Masonry", "United Building Envelope", "Alban Masonry", "United Building Group"].freeze
+COMPANY_ABBREV = ["UM", "UBER", "ALBAN", "UBG"].freeze
 
 COMPANY_NAMES.each_with_index do |company_name, index|
   Company.create!(
