@@ -13,7 +13,7 @@ class FormSubmissionMailer < ApplicationMailer
 
     if @form.images.attached?
       @form.images.each_with_index do |img, index|
-        attachments["img_#{index}"] = img.blob.download
+        attachments["img_#{index}.#{img.content_type.split("/").last}"] = img.blob.download
       end
     end
 
