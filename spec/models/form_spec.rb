@@ -8,5 +8,11 @@ RSpec.describe Form, type: :model do
   end
 
   describe "validation" do 
+    let(:form) { FactoryBot.create(:form) }
+
+    it "has a job number" do 
+      form.job_number = nil
+      expect(form).to_not be_valid
+    end
   end
 end

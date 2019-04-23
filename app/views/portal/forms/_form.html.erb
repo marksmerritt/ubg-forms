@@ -74,6 +74,13 @@
         <% end %>
       </div>
 
+      <div class="row">
+        <div class="col-md-6">
+          <%= f.label :comment, "Comments", class: "form-text-field__name" %>:
+          <%= f.text_area :comment, class: "form-text-field", rows: 7 %>
+        </div>
+      </div>
+
       <div class="row attach-img-container">
         <%= f.label :images, "Attach Images:" %>
         <%= f.file_field :images, multiple: true, class: "attach-img-btn" %>

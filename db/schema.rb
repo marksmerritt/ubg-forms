@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_23_002212) do
+ActiveRecord::Schema.define(version: 2019_04_23_184824) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,15 +34,6 @@ ActiveRecord::Schema.define(version: 2019_04_23_002212) do
     t.string "checksum", null: false
     t.datetime "created_at", null: false
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
-  end
-
-  create_table "comments", force: :cascade do |t|
-    t.string "commentable_type"
-    t.integer "commentable_id"
-    t.integer "user_id"
-    t.text "body"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "courses", force: :cascade do |t|
@@ -142,6 +133,7 @@ ActiveRecord::Schema.define(version: 2019_04_23_002212) do
     t.string "job_number"
     t.boolean "has_failures"
     t.bigint "comment_id"
+    t.text "comment"
     t.index ["comment_id"], name: "index_forms_on_comment_id"
     t.index ["form_type_id"], name: "index_forms_on_form_type_id"
     t.index ["job_number"], name: "index_forms_on_job_number"

@@ -83,6 +83,17 @@
     <% end %>
   </div>
 
+  <div class="row text-center">
+    <% form.footer_properties.each do |name, value| %>
+      <div class="col-xs-6">
+        <div class="form-show__property">
+          <b>Comments</b>
+          <%= form.comment %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
   <div class="row text-center pdf-name-date">
     <div class="col-md-12">
       Submitted by: <strong><%= form.user.display_name %></strong> 
