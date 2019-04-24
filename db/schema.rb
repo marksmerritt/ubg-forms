@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_23_232459) do
+ActiveRecord::Schema.define(version: 2019_04_23_235318) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 2019_04_23_232459) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "initials"
+    t.integer "level", default: 0
   end
 
   create_table "courses", force: :cascade do |t|
@@ -141,7 +142,9 @@ ActiveRecord::Schema.define(version: 2019_04_23_232459) do
     t.boolean "has_failures"
     t.bigint "comment_id"
     t.text "comment"
+    t.bigint "company_id"
     t.index ["comment_id"], name: "index_forms_on_comment_id"
+    t.index ["company_id"], name: "index_forms_on_company_id"
     t.index ["form_type_id"], name: "index_forms_on_form_type_id"
     t.index ["job_number"], name: "index_forms_on_job_number"
     t.index ["user_id"], name: "index_forms_on_user_id"
@@ -256,6 +259,7 @@ ActiveRecord::Schema.define(version: 2019_04_23_232459) do
   add_foreign_key "form_types", "form_categories"
   add_foreign_key "form_uploads", "form_types"
   add_foreign_key "form_uploads", "users"
+  add_foreign_key "forms", "companies"
   add_foreign_key "forms", "form_types"
   add_foreign_key "forms", "users"
   add_foreign_key "questions", "exams"

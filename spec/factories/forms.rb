@@ -1,5 +1,6 @@
 FactoryBot.define do
   factory :form do
+    association :company
     association :form_type
     association :user
     job_number { "1234" }

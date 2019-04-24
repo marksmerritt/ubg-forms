@@ -27,6 +27,8 @@ class Portal::FormsController < Portal::BaseController
 
   def create
     @form = Form.new(form_params)
+    @form.company ||= current_user.company
+
     authorize @form
 
     @form.form_type = @form_type

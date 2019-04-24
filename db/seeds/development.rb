@@ -23,7 +23,8 @@ COMPANY_ABBREV = ["UM", "UBER", "ALBAN", "UBG"].freeze
 COMPANY_NAMES.each_with_index do |company_name, index|
   Company.create!(
     name: company_name,
-    initials: COMPANY_ABBREV[index]
+    initials: COMPANY_ABBREV[index],
+    level: company_name == "United Building Group" ? "top" : "sub"
   )
 end
 
