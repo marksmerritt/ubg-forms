@@ -35,6 +35,7 @@ class Portal::FormsController < Portal::BaseController
     @form.user = current_user
 
     if @form.save
+      @form.prepend_job_number(@form.company.job_num_prepend)
       FormToAzureWorker.perform_async(@form.id)
       CalcFormTimeWorker.perform_async(current_user.id)
       redirect_to form_overview_path, notice: "Your Form was submitted successfully"

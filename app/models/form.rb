@@ -35,4 +35,8 @@ class Form < ApplicationRecord
       errors.add(:base, "Exceeded maximum number of images (5)") if images.length > 5
     end
   end
+
+  def prepend_job_number(company_prepend)
+    update(job_number: job_number.prepend("#{company_prepend}-"))
+  end
 end

@@ -20,12 +20,14 @@ Company.delete_all
 
 COMPANY_NAMES = ["United Masonry", "United Building Envelope", "Alban Masonry", "United Building Group"].freeze
 COMPANY_ABBREV = ["UM", "UBER", "ALBAN", "UBG"].freeze
+COMPANY_PREPEND = ["UM", "U", "A", "UBG"].freeze
 
 COMPANY_NAMES.each_with_index do |company_name, index|
   Company.create!(
     name: company_name,
     initials: COMPANY_ABBREV[index],
-    level: company_name == "United Building Group" ? "top" : "sub"
+    level: company_name == "United Building Group" ? "top" : "sub",
+    job_num_prepend: COMPANY_PREPEND[index]
   )
 end
 
