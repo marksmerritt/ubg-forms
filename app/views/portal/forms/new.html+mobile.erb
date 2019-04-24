@@ -22,7 +22,7 @@
       
       <div class="row">
         <div class="col-md-12 text-center">
-          <%= f.label :job_number, "Job #" %>
+          <%= f.label :job_number, "Job #: #{current_user.company.job_num_prepend}-" %>
           <%= f.text_field :job_number %>
         </div>
       </div>
