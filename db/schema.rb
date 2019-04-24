@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_23_235318) do
+ActiveRecord::Schema.define(version: 2019_04_24_013503) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,12 +36,22 @@ ActiveRecord::Schema.define(version: 2019_04_23_235318) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
+  create_table "addresses", force: :cascade do |t|
+    t.string "line1"
+    t.string "line2"
+    t.string "phone"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "companies", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "initials"
     t.integer "level", default: 0
+    t.bigint "address_id"
+    t.index ["address_id"], name: "index_companies_on_address_id"
   end
 
   create_table "courses", force: :cascade do |t|
@@ -253,6 +263,7 @@ ActiveRecord::Schema.define(version: 2019_04_23_235318) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "companies", "addresses"
   add_foreign_key "exams", "courses"
   add_foreign_key "feedbacks", "users"
   add_foreign_key "form_fields", "form_types"

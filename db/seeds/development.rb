@@ -15,6 +15,7 @@ Feedback.delete_all
 User.delete_all
 Company.delete_all
 
+
 # -------------------- Companies --------------------
 
 COMPANY_NAMES = ["United Masonry", "United Building Envelope", "Alban Masonry", "United Building Group"].freeze
@@ -70,17 +71,61 @@ admin_user = User.new(
   email: "admin@example.com",
   password: "helloworld",
   password_confirmation: "helloworld",
-  company: @companies.sample
+  company: Company.find_by_initials("UBG")
 )
 
 admin_user.skip_confirmation!
 admin_user.save!
 admin_user.update(created_at: Faker::Date.between(20.days.ago, Date.today))
 
+
+uber_user = User.new(
+  first_name: "Uber",
+  last_name: "User", 
+  role: :admin,
+  email: "uber@example.com",
+  password: "helloworld",
+  password_confirmation: "helloworld",
+  company: Company.find_by_initials("UBER")
+)
+
+uber_user.skip_confirmation!
+uber_user.save!
+uber_user.update(created_at: Faker::Date.between(20.days.ago, Date.today))
+
+alban_user = User.new(
+  first_name: "Alban",
+  last_name: "User", 
+  role: :admin,
+  email: "alban@example.com",
+  password: "helloworld",
+  password_confirmation: "helloworld",
+  company: Company.find_by_initials("ALBAN")
+)
+
+alban_user.skip_confirmation!
+alban_user.save!
+alban_user.update(created_at: Faker::Date.between(20.days.ago, Date.today))
+
+
+um_user = User.new(
+  first_name: "UM",
+  last_name: "User", 
+  role: :admin,
+  email: "um@example.com",
+  password: "helloworld",
+  password_confirmation: "helloworld",
+  company: Company.find_by_initials("UM")
+)
+
+um_user.skip_confirmation!
+um_user.save!
+um_user.update(created_at: Faker::Date.between(20.days.ago, Date.today))
+
+
 @users = User.all
 
 puts "#{User.count} Users created"
-
 
 # -------------------- Form Categories ---------------------
 

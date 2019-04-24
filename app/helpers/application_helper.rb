@@ -25,4 +25,9 @@ module ApplicationHelper
       end
     end
   end
+
+  def logo_helper(user, style)
+    current_logo = "#{user.company.initials.downcase}-logo.jpg"
+    image_tag(current_logo, class: style)
+  end
 end

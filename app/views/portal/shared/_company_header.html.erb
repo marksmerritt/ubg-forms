@@ -1,12 +1,10 @@
 <div class="row company-header">
   <div class="col-md-3">
-    <%= image_tag("um-logo.png", class: "company-header__logo") %>
+    <%= logo_helper(current_user, "company-header__logo") %>
   </div>
   <div class="col-md-6">
     <div class="company-header__name">
-      United Masonry 
-      Incorporated of 
-      Virginia
+      <%= current_user.company.name %>
     </div>
   </div>
   <div class="col-md-3">
