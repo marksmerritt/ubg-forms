@@ -18,7 +18,7 @@
 
     <div class="field new-invitation__field">
       <%= f.label :company, "What company does this user work for?" %>
-      <%= collection_select(:user, :company_id, Company.all, :id, :name) %>
+      <%= collection_select(:user, :company_id, Company.all, :id, :name, include_blank: true) %>
     </div>
 
     <div class="actions">

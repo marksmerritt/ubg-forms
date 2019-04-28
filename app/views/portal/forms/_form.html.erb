@@ -6,7 +6,7 @@
 </div>
 <div class="form-container">
   <div class="new_form_type">
-    <%= render "portal/shared/company_header" %>
+    <%= render "portal/shared/company_header" unless current_user.company.top? %>
 
     <h3 class="form-header"><%= @form_type.name %></h3>
 
@@ -21,9 +21,23 @@
         </div>
       <% end %>
       
+      <% if current_user.company.top? %>
+        <div class="row new_form_type__company-select-container">
+          <div class="col-md-12 text-center">
+            <p>Which company are you inspecting?</p>
+          </div>
+          <div class="col-md-12 text-center">
+            <%= collection_select(:form, :company_id, Company.all, :id, :name, include_blank: true) %>
+          </div>
+        </div>
+      <% end %>
+
       <div class="row">
         <div class="col-md-12 text-center">
-          <%= f.label :job_number, "Job #: #{current_user.company.job_num_prepend}-" %>
+          <p><small>* The company prefix will automatically be added. Please only include numbers.</small></p>
+        </div>
+        <div class="col-md-12 text-center">
+          <%= f.label :job_number, "Job #:" %>
           <%= f.text_field :job_number %>
         </div>
       </div>

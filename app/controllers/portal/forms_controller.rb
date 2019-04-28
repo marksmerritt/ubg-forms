@@ -27,7 +27,7 @@ class Portal::FormsController < Portal::BaseController
 
   def create
     @form = Form.new(form_params)
-    @form.company ||= current_user.company
+    @form.company_id ||= current_user.company.id
 
     authorize @form
 
@@ -76,7 +76,7 @@ class Portal::FormsController < Portal::BaseController
 
   def form_params
     valid_params = @form_type.valid_fields
-    params.require(:form).permit(:job_number, :comment,
+    params.require(:form).permit(:company_id, :job_number, :comment,
                                  header_properties: valid_params,
                                  checklist_properties: valid_params,
                                  footer_properties: valid_params,

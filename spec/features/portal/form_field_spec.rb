@@ -16,6 +16,7 @@ describe "navigation" do
         fill_in "field-form-type-name", with: "Forklift Inspection"
         fill_in "form_type_header_fields_attributes_0_name", with: "Tires"
         fill_in "form_type_footer_fields_attributes_0_name", with: "Comments"
+        find('#form_type_form_category_id').find(:xpath, 'option[2]').select_option
 
         expect{ click_button "Create" }.to change{ FormField.count }.by(2)
       end
