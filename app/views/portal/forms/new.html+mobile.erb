@@ -33,7 +33,10 @@
 
       <div class="row">
         <div class="col-md-12 text-center">
-          <%= f.label :job_number, "Job #: #{current_user.company.job_num_prepend}-" %>
+          <p><small>* The company prefix will automatically be added. Please only include numbers.</small></p>
+        </div>
+        <div class="col-md-12 text-center">
+          <%= f.label :job_number, "Job #:" %>
           <%= f.text_field :job_number %>
         </div>
       </div>
