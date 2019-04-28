@@ -26,8 +26,8 @@ module ApplicationHelper
     end
   end
 
-  def logo_helper(user, style, pdf = false)
-    current_logo = "#{user.company.initials.downcase}-logo.jpg"
+  def logo_helper(resource, style, pdf = false)
+    current_logo = "#{resource.company.initials.downcase}-logo.jpg"
 
     if pdf
       wicked_pdf_image_tag(current_logo, class: style)

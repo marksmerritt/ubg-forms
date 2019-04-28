@@ -8,11 +8,11 @@
   <!---------- Company Header ---------->
   <div class="row company-header">
     <div class="col-xs-3">
-      <%= logo_helper(current_user, "company-header__logo", true) %>
+      <%= logo_helper(form, "company-header__logo", true) %>
     </div>
     <div class="col-xs-6">
       <div class="company-header__name">
-        <%= current_user.company.name %>
+        <%= form.company.name %>
       </div>
     </div>
     <div class="col-xs-3">

@@ -13,8 +13,9 @@ module AzureHelper
   end
 
   def self.generate_filename(form:, dir:, content_type:, index: nil)
+    company_name = form.company.name.gsub(' ', '-').downcase!
     directory = form.is_a?(FormUpload) ? "#{dir}/uploaded--" : "#{dir}/"
-    base = directory + "job##{form.job_number}--#{form.created_at.strftime('%Y-%m-%d')}--#{form.id}"
+    base = "#{company_name}/" + directory + "job##{form.job_number}--#{form.created_at.strftime('%Y-%m-%d')}--#{form.id}"
 
     case content_type
       when "form"
