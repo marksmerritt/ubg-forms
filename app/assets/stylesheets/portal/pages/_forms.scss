@@ -83,12 +83,12 @@
 .form-submit-btn {
   padding: .7rem 3rem;
   border: none;
-  color: $color-primary;
+  color: #000;
   border: 1px solid currentColor;
 
   &:hover,
   &:active {
-    background-color: $color-primary;
+    background-color: #000;
     color: $color-white;
   }
 }

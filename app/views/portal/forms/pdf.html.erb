@@ -8,13 +8,11 @@
   <!---------- Company Header ---------->
   <div class="row company-header">
     <div class="col-xs-3">
-      <%= wicked_pdf_image_tag("um-logo.png", class: "company-header__logo") %>
+      <%= logo_helper(current_user, "company-header__logo", true) %>
     </div>
     <div class="col-xs-6">
       <div class="company-header__name">
-        United Masonry 
-        Incorporated of 
-        Virginia
+        <%= current_user.company.name %>
       </div>
     </div>
     <div class="col-xs-3">

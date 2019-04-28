@@ -33,16 +33,7 @@
 
 .forms-table {
   background-color: $color-white;
-  
-  &__form-link {
-    color: $color-primary;
 
-    &:active,
-    &:hover {
-      color: $color-primary;
-      font-weight: 700;
-    }
-  }
 
   &__header {
     text-align: center;
