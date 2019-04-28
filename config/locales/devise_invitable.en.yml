@@ -19,10 +19,10 @@ en:
       invitation_instructions:
         subject: "UM Portal Invitation"
         hello: "Hello,"
-        someone_invited_you: "You have been invited to test the United Masonry Portal."
+        someone_invited_you: "You have been invited to United Building Group's Form Management System."
         accept: "Accept invitation"
         accept_until: "This invitation will be due in %{due_date}."
-        ignore: "Please click on the link above to complete your profile and test out the app!"
+        ignore: "Please click on the link above to complete your profile."
   time:
     formats:
       devise:
