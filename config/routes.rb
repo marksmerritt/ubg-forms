@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
   root "portal/form_overviews#show"
+
+  constraints(:host => /united-masonry.herokuapp.com/) do
+    match "/(*path)" => redirect {|params, req| "https://ubgforms.com"}, via: [:get, :post]
+  end
   
   devise_for :users, skip: :registrations, controllers: {
     invitations: "invitations"
