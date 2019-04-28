@@ -34,6 +34,10 @@ module ApplicationHelper
     else
       image_tag(current_logo, class: style)
     end
-    
+  end
+
+  def form_is_editable?(form)
+    date_of_azure_change = Date.parse("2019-04-28")
+    form.created_at > date_of_azure_change
   end
 end
