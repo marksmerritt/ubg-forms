@@ -1,15 +1,11 @@
 
 
+# United Building Group 
 
-# United Masonry (Rough Draft)
+A safety form management system for United Building Group.
 
-A website redesign and safety management system for United Masonry Inc.
+[View It Live](https://ubgforms.com/)
 
-[View It Live](https://united-masonry.herokuapp.com/)
-
-## Contributing
-
-This project is not seeking external contributors.
 
 ## Getting Started 
 
