@@ -60,7 +60,7 @@
               <% end %>
             </td>
             <td class="text-center">
-              <% if form_is_editable?(form) %>
+              <% if form_is_editable?(form, current_user) %>
                 <%= link_to edit_form_type_form_path(form.form_type, form) do %>
                   <%= display_icon("clipboard-edit", "icon--sm") %>
                 <% end %>

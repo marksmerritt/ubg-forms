@@ -36,8 +36,8 @@ module ApplicationHelper
     end
   end
 
-  def form_is_editable?(form)
+  def form_is_editable?(form, user)
     date_of_azure_change = Date.parse("2019-04-28")
-    form.created_at > date_of_azure_change
+    ((form.user == user) || user.admin?) && (form.created_at > date_of_azure_change)
   end
 end

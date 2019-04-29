@@ -68,9 +68,9 @@ supervisor_user.update(created_at: Faker::Date.between(20.days.ago, Date.today))
 
 admin_user = User.new(
   first_name: "Admin",
-  last_name: "User", 
+  last_name: "Merritt", 
   role: :admin,
-  email: "admin@example.com",
+  email: "markmerritt804@gmail.com",
   password: "helloworld",
   password_confirmation: "helloworld",
   company: Company.find_by_initials("UBG")
@@ -84,7 +84,7 @@ admin_user.update(created_at: Faker::Date.between(20.days.ago, Date.today))
 uber_user = User.new(
   first_name: "Uber",
   last_name: "User", 
-  role: :admin,
+  role: :employee,
   email: "uber@example.com",
   password: "helloworld",
   password_confirmation: "helloworld",
@@ -98,7 +98,7 @@ uber_user.update(created_at: Faker::Date.between(20.days.ago, Date.today))
 alban_user = User.new(
   first_name: "Alban",
   last_name: "User", 
-  role: :admin,
+  role: :employee,
   email: "alban@example.com",
   password: "helloworld",
   password_confirmation: "helloworld",
@@ -113,7 +113,7 @@ alban_user.update(created_at: Faker::Date.between(20.days.ago, Date.today))
 um_user = User.new(
   first_name: "UM",
   last_name: "User", 
-  role: :admin,
+  role: :supervisor,
   email: "um@example.com",
   password: "helloworld",
   password_confirmation: "helloworld",

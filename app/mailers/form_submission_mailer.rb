@@ -1,10 +1,6 @@
 class FormSubmissionMailer < ApplicationMailer
   def email_form(form, pdf)
-    if Rail.env.production?
-      @user = User.find_by_last_name("Klewe") || User.find_by_last_name("Merritt")
-    else
-      @user = User.find_by_last_name("Merritt")
-    end
+    @user = User.find_by_last_name("Klewe") || User.find_by_last_name("Merritt")
 
     if @user.subscribed_to_emails?
       @form = form
