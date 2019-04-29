@@ -27,7 +27,7 @@
             <p>Which company are you inspecting?</p>
           </div>
           <div class="col-md-12 text-center">
-            <%= collection_select(:form, :company_id, Company.all, :id, :name, include_blank: true) %>
+            <%= collection_select(:form, :company_id, Company.all, :id, :initials, include_blank: true) %>
           </div>
         </div>
       <% end %>
