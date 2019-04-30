@@ -50,7 +50,7 @@
               <% end %>
             </td>
             <td><%= form.created_at.to_date %></td>
-            <td></td>
+            <td><%= form.user.display_name %></td>
             <td><%= form.job_number %></td>
             <td class="text-center">
               <% if form.has_failures? %>
