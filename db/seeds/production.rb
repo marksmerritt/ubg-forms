@@ -31,7 +31,7 @@ end
   fake_form.user = user
   fake_form.form_type = form.form_type
   fake_form.company = user.company 
-  fake.form.created_at = Faker::Date.between(2.weeks.ago, Date.today)
+  fake_form.created_at = Faker::Date.between(2.weeks.ago, Date.today)
 
   fake_form.save!
 end
