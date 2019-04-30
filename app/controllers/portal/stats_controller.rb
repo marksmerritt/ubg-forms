@@ -1,5 +1,6 @@
 class Portal::StatsController < Portal::BaseController
   def index
+    @form_count = Form.count
   end
 
 
@@ -10,7 +11,7 @@ class Portal::StatsController < Portal::BaseController
   end
 
   def new_forms
-    render json: Form.group_by_day(:updated_at).count
+    render json: Form.group_by_day(:created_at).count
   end
 
   def new_form_time
