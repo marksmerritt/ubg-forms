@@ -71,7 +71,9 @@ module AzureHelper
   end
 
   def self.send_failure_email(form, content)
-    FormSubmissionMailer.email_form(form, content).deliver_now
+    # TODO: Uncomment
+    # Don't send emails with fake data
+    # FormSubmissionMailer.email_form(form, content).deliver_now
   end
 
   def self.send_images_with_form(client, form, container, dir)
