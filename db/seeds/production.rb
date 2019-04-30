@@ -25,11 +25,12 @@ end
 # Generate Fake Forms
 
 700.times do |index|
+  user = @users.sample
   form = Form.all.sample
   fake_form = form.dup
-  fake_form.user = form.user
+  fake_form.user = user
   fake_form.form_type = form.form_type
-  fake_form.company = form.company 
+  fake_form.company = user.company 
   fake.form.created_at = Faker::Date.between(2.weeks.ago, Date.today)
 
   fake_form.save!
