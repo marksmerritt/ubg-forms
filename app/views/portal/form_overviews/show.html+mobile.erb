@@ -1,4 +1,10 @@
 <div class="container mobile-show-container">
+  <div class="alert alert-warning">
+    After reviewing the nearly 1k forms that have been submitted through ubgforms.com, the application will
+    no longer require you to fill out all form fields. Some forms fields do not apply to all situations and 
+    the intent of the app is to make form completion, storage, and retrieval as easy as possible. There may be downtime 
+    while this change is implemented. 
+  </div>
   <% @form_categories.each do |form_category| %>
     <h4 class="new-form-links__header"><%= form_category.name %></h4>
     <div class="row new-form-link-container--mobile text-center">
