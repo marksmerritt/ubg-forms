@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.5.0'
+ruby '2.6.6'
 
 gem 'rails', '~> 5.2.2'
 gem 'pg', '>= 0.18', '< 2.0'
@@ -25,7 +25,7 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
-group :test do 
+group :test do
   gem 'capybara', '~> 3.13', '>= 3.13.2'
   gem 'database_cleaner', '~> 1.7'
   gem 'shoulda-matchers', '~> 4.0'
