@@ -1,13 +1,8 @@
 <div class="row text-center">
   <div class="col-md-6">
-    <h4>Forms Submitted</h4>    
+    <h4>Forms Submitted</h4>
     <%= line_chart stats_new_forms_path, colors: ["#810D0A", "#666"] %>
     <h4>Total: <%= @form_count %></h4>
-  </div>
-
-  <div class="col-md-6">
-    <h4>Form Submission Time (In Seconds)</h4>    
-    <%= scatter_chart stats_new_form_time_path, colors: ["#810D0A", "#666"], xtitle: "Time Taken", ytitle: "id" %>
   </div>
 </div>
 
